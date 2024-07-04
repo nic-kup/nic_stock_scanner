@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>My Plotly Website</title>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/plotly.js/2.18.2/plotly.min.js"></script>
+    <title>Stock Analysis</title>
+    <script src="plotly-2.24.1.min.js"></script>
     <style>
         body {
             font-family: Arial, sans-serif;
@@ -14,33 +14,94 @@
             background-color: #f0f0f0;
         }
 
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background-color: white;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+
+        .controls {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 20px;
+        }
+
+        .control-group {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+
         #plotDiv {
             width: 100%;
-            height: 400px;
-            background-color: white;
-            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            height: 600px;
+        }
+
+        .tracked-stocks {
+            margin-top: 20px;
+        }
+
+        #trackedStocksList {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        #trackedStocksList li {
+            display: inline-block;
+            margin-right: 10px;
+            margin-bottom: 5px;
+            padding: 5px 10px;
+            background-color: #e0e0e0;
+            border-radius: 3px;
+            cursor: pointer;
         }
     </style>
 </head>
 
 <body>
-    <h1>My Plotly Website</h1>
-    <div id="plotDiv"></div>
-
-    <script>
-        // Sample data
-        var data = [{
-            x: [1, 2, 3, 4],
-            y: [10, 15, 13, 17],
-            type: 'scatter'
-        }];
-
-        var layout = {
-            title: 'Sample Plotly Chart'
-        };
-
-        Plotly.newPlot('plotDiv', data, layout);
-    </script>
+    <div class="container">
+        <h1>Stock Analysis</h1>
+        <div class="controls">
+            <div class="control-group">
+                <label for="property1">Property 1:</label>
+                <select id="property1"></select>
+                <input type="checkbox" id="logScale1">
+                <label for="logScale1">Log Scale</label>
+            </div>
+            <div class="control-group">
+                <label for="property2">Property 2:</label>
+                <select id="property2"></select>
+                <input type="checkbox" id="logScale2">
+                <label for="logScale2">Log Scale</label>
+            </div>
+            <div class="control-group">
+                <label for="filterProperty">Filter Property:</label>
+                <select id="filterProperty"></select>
+                <input type="number" id="filterValue" placeholder="Filter Value">
+                <select id="filterComparison">
+                    <option value=">">&gt;</option>
+                    <option value="<">&lt;</option>
+                    <option value="==">=</option>
+                </select>
+            </div>
+            <button id="swapProperties">Swap Properties</button>
+            <input type="checkbox" id="colorBySector">
+            <label for="colorBySector">Color by Sector</label>
+            <input type="checkbox" id="showDiagonal">
+            <label for="showDiagonal">Show x=y Line</label>
+        </div>
+        <div id="plotDiv"></div>
+        <div class="tracked-stocks">
+            <h2>Tracked Stocks</h2>
+            <input type="text" id="addStock" placeholder="Add stock ticker">
+            <button id="addStockButton">Add</button>
+            <ul id="trackedStocksList"></ul>
+        </div>
+    </div>
+    <script src="script.js"></script>
 </body>
 
 </html>
