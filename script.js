@@ -8,11 +8,14 @@ let sectorColors = {};
 // Fetch JSON data
 async function fetchJSONData(url) {
     try {
+        // console.log(`Fetching data from ${url}...`);
         const response = await fetch(url);
         if (!response.ok) {
             throw new Error(`HTTP error! status: ${response.status}`);
         }
-        return await response.json();
+        const data = await response.json();
+        console.log(`Data successfully fetched from ${url}`);
+        return data;
     } catch (error) {
         console.error(`Error fetching ${url}:`, error);
         throw error;
@@ -28,15 +31,15 @@ async function init() {
         tickerInfo = await fetchJSONData('ticker_info.json');
         secInfo = await fetchJSONData('sec_info.json');
 
-        console.log("Ticker Info:", tickerInfo);
-        console.log("Sector Info:", secInfo);
 
-        // Get numerical properties
-        const sampleTicker = Object.keys(tickerInfo)[0];
+        // Get numerical properties using AAPL as the sample ticker
+        const sampleTicker = "AAPL";
+        if (!tickerInfo[sampleTicker]) {
+            throw new Error(`Sample ticker ${sampleTicker} not found in data`);
+        }
         numericalProperties = Object.keys(tickerInfo[sampleTicker]).filter(prop => 
             typeof tickerInfo[sampleTicker][prop] === 'number');
 
-        console.log("Numerical Properties:", numericalProperties);
 
         // Populate dropdowns
         populateDropdowns();
@@ -51,6 +54,7 @@ async function init() {
         document.getElementById('logScale2').addEventListener('change', updatePlot);
         document.getElementById('colorBySector').addEventListener('change', updatePlot);
         document.getElementById('showDiagonal').addEventListener('change', updatePlot);
+        document.getElementById('showBestFit').addEventListener('change', updatePlot);
         document.getElementById('swapProperties').addEventListener('click', swapProperties);
         document.getElementById('addStockButton').addEventListener('click', addStock);
 
@@ -58,6 +62,7 @@ async function init() {
         updatePlot();
     } catch (error) {
         console.error("Error initializing application:", error);
+        document.body.innerHTML = `<h1>Error initializing application</h1><p>${error.message}</p>`;
     }
 }
 
@@ -75,8 +80,17 @@ function populateDropdowns() {
             select.appendChild(option);
         });
     });
-    document.getElementById('filterProperty').insertAdjacentHTML('afterbegin', '<option value="None">None</option>');
+    // Add 'None' option to filterProperty dropdown
+    const noneOption = document.createElement('option');
+    noneOption.value = 'None';
+    noneOption.textContent = 'None';
+    document.getElementById('filterProperty').insertBefore(noneOption, document.getElementById('filterProperty').firstChild);
     console.log("Dropdowns populated.");
+}
+
+// Helper function to transform data based on log scale
+function transformData(data, isLogScale) {
+    return isLogScale ? data.map(d => Math.log(d)) : data;
 }
 
 // Update the plot
@@ -91,12 +105,15 @@ function updatePlot() {
     const logScale2 = document.getElementById('logScale2').checked;
     const colorBySector = document.getElementById('colorBySector').checked;
     const showDiagonal = document.getElementById('showDiagonal').checked;
+    const showBestFit = document.getElementById('showBestFit').checked;
 
     console.log("Selected properties:", prop1, prop2);
     console.log("Filter:", filterProp, filterValue, filterComparison);
 
     const data = [];
     const sectors = new Set();
+    let allX = [];
+    let allY = [];
 
     for (const [ticker, info] of Object.entries(tickerInfo)) {
         if (prop1 in info && prop2 in info && (filterProp === 'None' || filterProp in info)) {
@@ -116,6 +133,9 @@ function updatePlot() {
                     data[sector].x.push(x);
                     data[sector].y.push(y);
                     data[sector].text.push(ticker);
+
+                    allX.push(x);
+                    allY.push(y);
                 }
             }
         }
@@ -157,8 +177,6 @@ function updatePlot() {
 
     // Add diagonal line if requested
     if (showDiagonal) {
-        const allX = plotData.flatMap(d => d.x);
-        const allY = plotData.flatMap(d => d.y);
         const min = Math.min(...allX, ...allY);
         const max = Math.max(...allX, ...allY);
         plotData.push({
@@ -168,6 +186,32 @@ function updatePlot() {
             mode: 'lines',
             name: 'x = y',
             line: { color: 'black', dash: 'dash' }
+        });
+    }
+
+    // Add line of best fit if requested
+    if (showBestFit && allX.length > 1) {
+        const transformedX = transformData(allX, logScale1);
+        const transformedY = transformData(allY, logScale2);
+        const { slope, intercept } = linearRegression(transformedX, transformedY);
+        const bestFitX = [Math.min(...allX), Math.max(...allX)];
+        let bestFitY;
+        if (logScale1 && logScale2) {
+            bestFitY = bestFitX.map(x => Math.exp(slope * Math.log(x) + intercept));
+        } else if (logScale1) {
+            bestFitY = bestFitX.map(x => slope * Math.log(x) + intercept);
+        } else if (logScale2) {
+            bestFitY = bestFitX.map(x => Math.exp(slope * x + intercept));
+        } else {
+            bestFitY = bestFitX.map(x => slope * x + intercept);
+        }
+        plotData.push({
+            x: bestFitX,
+            y: bestFitY,
+            type: 'scatter',
+            mode: 'lines',
+            name: 'Best Fit Line',
+            line: { color: 'red', dash: 'solid' }
         });
     }
 
@@ -184,6 +228,7 @@ function updatePlot() {
     Plotly.newPlot('plotDiv', plotData, layout);
     console.log("Plot updated.");
 }
+
 
 // Helper function to check if a value is a valid number
 function isValidNumber(value) {
@@ -212,6 +257,21 @@ function assignSectorColors(sectors) {
             sectorColors[sector] = colors[index % colors.length];
         }
     });
+}
+
+// Linear regression function
+function linearRegression(x, y) {
+    const n = x.length;
+    let sumX = 0, sumY = 0, sumXY = 0, sumXX = 0;
+    for (let i = 0; i < n; i++) {
+        sumX += x[i];
+        sumY += y[i];
+        sumXY += x[i] * y[i];
+        sumXX += x[i] * x[i];
+    }
+    const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
+    const intercept = (sumY - slope * sumX) / n;
+    return { slope, intercept };
 }
 
 // Swap properties
@@ -252,5 +312,5 @@ function removeStock(ticker) {
     updatePlot();
 }
 
-// Initialize the application
+// Initialize the application when the DOM is fully loaded
 document.addEventListener('DOMContentLoaded', init);

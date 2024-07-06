@@ -1,2 +1,9 @@
 ./node_modules/
 node_modules/
+ticker_info.json
+valid_tickers.json
+sec_info.json
+errors.json
+valid_tickers_intermediate.json
+ticker_info_intermediate.json
+sec_info_intermediate.json
