@@ -187,22 +187,22 @@ async function fetchStockData() {
 			console.log(`Progress: ${i + 1}/${tickers.length}`);
 
 			// Save intermediate results every 100 tickers
-			await fs.writeFile(
-				"ticker_info_intermediate.json",
-				JSON.stringify(tickerInfo, null, 2)
-			);
-			await fs.writeFile(
-				"sec_info_intermediate.json",
-				JSON.stringify(secInfo, null, 2)
-			);
-			await fs.writeFile(
-				"valid_tickers_intermediate.json",
-				JSON.stringify(validTickers, null, 2)
-			);
-			await fs.writeFile(
-				"errors_intermediate.json",
-				JSON.stringify(errors, null, 2)
-			);
+			// await fs.writeFile(
+			// 	"ticker_info_intermediate.json",
+			// 	JSON.stringify(tickerInfo, null, 2)
+			// );
+			// await fs.writeFile(
+			// 	"sec_info_intermediate.json",
+			// 	JSON.stringify(secInfo, null, 2)
+			// );
+			// await fs.writeFile(
+			// 	"valid_tickers_intermediate.json",
+			// 	JSON.stringify(validTickers, null, 2)
+			// );
+			// await fs.writeFile(
+			// 	"errors_intermediate.json",
+			// 	JSON.stringify(errors, null, 2)
+			// );
 		}
 	}
 

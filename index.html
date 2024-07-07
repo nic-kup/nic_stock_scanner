@@ -4,7 +4,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Stock Analysis</title>
+    <title>Nic's Stock Screener</title>
     <script src="plotly-2.24.1.min.js"></script>
     <style>
         body {
@@ -63,7 +63,8 @@
 
 <body>
     <div class="container">
-        <h1>Stock Analysis</h1>
+        <h1>Nic's Stock Screener</h1>
+        <h3>Data from Yahoo Finance API.</h3>
         <div class="controls">
             <div class="control-group">
                 <label for="property1">Property 1:</label>
@@ -78,22 +79,21 @@
                 <label for="logScale2">Log Scale</label>
             </div>
             <div class="control-group">
-                <label for="filterProperty">Filter Property:</label>
-                <select id="filterProperty"></select>
-                <input type="number" id="filterValue" placeholder="Filter Value">
-                <select id="filterComparison">
-                    <option value=">">&gt;</option>
-                    <option value="<">&lt;</option>
-                    <option value="==">=</option>
-                </select>
+                <div id="filters">
+                    <!-- Filters will be added dynamically -->
+                </div>
             </div>
-            <button id="swapProperties">Swap Properties</button>
-            <input type="checkbox" id="colorBySector">
-            <label for="colorBySector">Color by Sector</label>
-            <input type="checkbox" id="showDiagonal">
-            <label for="showDiagonal">Show x=y Line</label>
-            <input type="checkbox" id="showBestFit">
-            <label for="showBestFit">Show Best Fit Line</label>
+            <button id="addFilter">+</button>
+            <div class="control-group">
+                <button id="swapProperties">Swap Properties</button>
+                <input type="checkbox" id="colorBySector">
+                <label for="colorBySector">Color by Sector</label>
+                <input type="checkbox" id="showDiagonal">
+                <label for="showDiagonal">Show x=y Line</label>
+                <input type="checkbox" id="showBestFit">
+                <label for="showBestFit">Show Best Fit Line</label>
+            </div>
+
         </div>
         <div id="plotDiv"></div>
         <div class="tracked-stocks">
@@ -105,6 +105,5 @@
     </div>
     <script src="script.js"></script>
 </body>
-
 
 </html>

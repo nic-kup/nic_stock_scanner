@@ -5,6 +5,9 @@ let trackedStocks = [];
 let numericalProperties = [];
 let sectorColors = {};
 
+// Global variable
+let filterCount = 0;
+
 // Fetch JSON data
 async function fetchJSONData(url) {
 	try {
@@ -44,6 +47,7 @@ async function init() {
 		populateDropdowns();
 
 		// Set up event listeners
+		console.log("Setting up event listeners");
 		document
 			.getElementById("property1")
 			.addEventListener("change", updatePlot);
@@ -51,14 +55,8 @@ async function init() {
 			.getElementById("property2")
 			.addEventListener("change", updatePlot);
 		document
-			.getElementById("filterProperty")
-			.addEventListener("change", updatePlot);
-		document
-			.getElementById("filterValue")
-			.addEventListener("input", updatePlot);
-		document
-			.getElementById("filterComparison")
-			.addEventListener("change", updatePlot);
+			.getElementById("addFilter")
+			.addEventListener("click", addFilter);
 		document
 			.getElementById("logScale1")
 			.addEventListener("change", updatePlot);
@@ -81,6 +79,19 @@ async function init() {
 			.getElementById("addStockButton")
 			.addEventListener("click", addStock);
 
+		// Set default values
+		const property1Select = document.getElementById("property1");
+		const property2Select = document.getElementById("property2");
+		if (numericalProperties.includes("marketCap")) {
+			property1Select.value = "marketCap";
+			console.log("Set Property1 to Market Cap.");
+		} else {
+			console.log("Market Cap not found?");
+		}
+		if (numericalProperties.includes("totalCash")) {
+			property2Select.value = "totalCash";
+			console.log("Set Property2 to Total Cash.");
+		}
 		// Initial plot
 		updatePlot();
 	} catch (error) {
@@ -89,10 +100,57 @@ async function init() {
 	}
 }
 
+function addFilter() {
+	const filtersDiv = document.getElementById("filters");
+	const newFilter = document.createElement("div");
+	newFilter.className = "filter";
+	newFilter.dataset.filterId = filterCount;
+	newFilter.innerHTML = `
+        <label for="filterProperty${filterCount}">Filter Property:</label>
+        <select id="filterProperty${filterCount}" class="filterProperty"></select>
+        <input type="number" id="filterValue${filterCount}" class="filterValue" placeholder="Filter Value">
+        <select id="filterComparison${filterCount}" class="filterComparison">
+            <option value=">">&gt;</option>
+            <option value="<">&lt;</option>
+            <option value="==">=</option>
+        </select>
+        <button class="removeFilter" onclick="removeFilter(${filterCount})">Remove</button>
+    `;
+	filtersDiv.appendChild(newFilter);
+
+	// Populate the new dropdown
+	const newDropdown = document.getElementById(`filterProperty${filterCount}`);
+	populateFilterDropdown(newDropdown);
+
+	// Add event listeners for the new filter inputs
+	document
+		.getElementById(`filterProperty${filterCount}`)
+		.addEventListener("change", updatePlot);
+	document
+		.getElementById(`filterValue${filterCount}`)
+		.addEventListener("input", updatePlot);
+	document
+		.getElementById(`filterComparison${filterCount}`)
+		.addEventListener("change", updatePlot);
+
+	filterCount++;
+	updatePlot();
+}
+
+function removeFilter(id) {
+	const filterToRemove = document.querySelector(
+		`.filter[data-filter-id="${id}"]`
+	);
+	if (filterToRemove) {
+		filterToRemove.remove();
+		updatePlot();
+	}
+}
+
 // Populate dropdown menus
 function populateDropdowns() {
 	console.log("Populating dropdowns...");
-	const dropdowns = ["property1", "property2", "filterProperty"];
+	const dropdowns = ["property1", "property2"];
 	dropdowns.forEach((id) => {
 		const select = document.getElementById(id);
 		select.innerHTML = ""; // Clear existing options
@@ -103,17 +161,18 @@ function populateDropdowns() {
 			select.appendChild(option);
 		});
 	});
-	// Add 'None' option to filterProperty dropdown
-	const noneOption = document.createElement("option");
-	noneOption.value = "None";
-	noneOption.textContent = "None";
-	document
-		.getElementById("filterProperty")
-		.insertBefore(
-			noneOption,
-			document.getElementById("filterProperty").firstChild
-		);
 	console.log("Dropdowns populated.");
+}
+
+// Add this helper function to populate filter dropdowns
+function populateFilterDropdown(dropdown) {
+	dropdown.innerHTML = '<option value="None">None</option>';
+	numericalProperties.forEach((prop) => {
+		const option = document.createElement("option");
+		option.value = prop;
+		option.textContent = prop;
+		dropdown.appendChild(option);
+	});
 }
 
 // Helper function to transform data based on log scale
@@ -131,16 +190,10 @@ function transformData(xData, yData, isLogScaleX, isLogScaleY) {
 	return { transformedX, transformedY };
 }
 
-// Update the plot
 function updatePlot() {
 	console.log("Updating plot...");
 	const prop1 = document.getElementById("property1").value;
 	const prop2 = document.getElementById("property2").value;
-	const filterProp = document.getElementById("filterProperty").value;
-	const filterValue = parseFloat(
-		document.getElementById("filterValue").value
-	);
-	const filterComparison = document.getElementById("filterComparison").value;
 	const logScale1 = document.getElementById("logScale1").checked;
 	const logScale2 = document.getElementById("logScale2").checked;
 	const colorBySector = document.getElementById("colorBySector").checked;
@@ -148,66 +201,115 @@ function updatePlot() {
 	const showBestFit = document.getElementById("showBestFit").checked;
 
 	console.log("Selected properties:", prop1, prop2);
-	console.log("Filter:", filterProp, filterValue, filterComparison);
 
-	const data = [];
+	const data = {};
 	const sectors = new Set();
 	let allX = [];
 	let allY = [];
 
+	// Set to keep track of plotted tickers
+	const plottedTickers = new Set();
+
+	function addDataPoint(ticker, x, y, sector) {
+		if (!plottedTickers.has(ticker)) {
+			plottedTickers.add(ticker);
+
+			const dataKey = colorBySector ? sector : "All Stocks";
+			if (!data[dataKey]) {
+				data[dataKey] = {
+					x: [],
+					y: [],
+					text: [],
+					type: "scatter",
+					mode: "markers",
+					name: dataKey,
+				};
+			}
+
+			data[dataKey].x.push(x);
+			data[dataKey].y.push(y);
+			data[dataKey].text.push(ticker);
+
+			allX.push(x);
+			allY.push(y);
+		}
+	}
+
+	const filters = document.querySelectorAll(".filter");
+
 	for (const [ticker, info] of Object.entries(tickerInfo)) {
-		if (
-			prop1 in info &&
-			prop2 in info &&
-			(filterProp === "None" || filterProp in info)
-		) {
+		if (prop1 in info && prop2 in info) {
 			const x = info[prop1];
 			const y = info[prop2];
-			const filterVal = filterProp !== "None" ? info[filterProp] : 0;
 
-			if (
-				isValidNumber(x) &&
-				isValidNumber(y) &&
-				isValidNumber(filterVal)
-			) {
-				if (applyFilter(filterVal, filterValue, filterComparison)) {
-					// Only include positive values when using log scale
+			if (isValidNumber(x) && isValidNumber(y)) {
+				let passesAllFilters = true;
+
+				// Only apply filters if there are any
+				if (filters.length > 0) {
+					filters.forEach((filter) => {
+						const filterId = filter.dataset.filterId;
+						const filterPropElement = document.getElementById(
+							`filterProperty${filterId}`
+						);
+						const filterValueElement = document.getElementById(
+							`filterValue${filterId}`
+						);
+						const filterComparisonElement = document.getElementById(
+							`filterComparison${filterId}`
+						);
+
+						// Check if all filter elements exist
+						if (
+							filterPropElement &&
+							filterValueElement &&
+							filterComparisonElement
+						) {
+							const filterProp = filterPropElement.value;
+							const filterValue = filterValueElement.value;
+							const filterComparison =
+								filterComparisonElement.value;
+
+							if (
+								filterProp !== "None" &&
+								filterProp in info &&
+								filterValue !== ""
+							) {
+								const filterVal = info[filterProp];
+								if (
+									!applyFilter(
+										filterVal,
+										parseFloat(filterValue),
+										filterComparison
+									)
+								) {
+									passesAllFilters = false;
+									return false; // Exit the forEach loop early
+								}
+							}
+						}
+					});
+				}
+
+				if (passesAllFilters) {
 					if ((!logScale1 || x > 0) && (!logScale2 || y > 0)) {
 						const sector = secInfo[ticker]?.sector || "Unknown";
 						sectors.add(sector);
-
-						if (!data[sector]) {
-							data[sector] = {
-								x: [],
-								y: [],
-								text: [],
-								type: "scatter",
-								mode: "markers",
-								name: sector,
-							};
-						}
-
-						data[sector].x.push(x);
-						data[sector].y.push(y);
-						data[sector].text.push(ticker);
-
-						allX.push(x);
-						allY.push(y);
+						addDataPoint(ticker, x, y, sector);
 					}
 				}
 			}
 		}
 	}
 
-	console.log("Processed data:", data);
-
 	// Assign colors to sectors
 	assignSectorColors(sectors);
 
 	// Convert data object to array and assign colors
-	const plotData = Object.entries(data).map(([sector, sectorData]) => ({
+	const plotData = Object.entries(data).map(([key, sectorData]) => ({
 		...sectorData,
-		marker: { color: sectorColors[sector] },
+		marker: { color: colorBySector ? sectorColors[key] : "blue" },
+		hovertemplate: `<b>%{text}</b><br>${prop1}: %{x}<br>${prop2}: %{y}<extra></extra>`,
 	}));
 
 	// Add traced stocks
@@ -219,6 +321,7 @@ function updatePlot() {
 		mode: "markers",
 		name: "Tracked Stocks",
 		marker: { color: "red", size: 10 },
+		hovertemplate: `<b>%{text}</b><br>${prop1}: %{x}<br>${prop2}: %{y}<extra></extra>`,
 	};
 
 	trackedStocks.forEach((ticker) => {
@@ -233,6 +336,7 @@ function updatePlot() {
 				tracedData.x.push(x);
 				tracedData.y.push(y);
 				tracedData.text.push(ticker);
+				plottedTickers.add(ticker); // Mark as plotted
 			}
 		}
 	});
@@ -243,6 +347,7 @@ function updatePlot() {
 
 	// Add diagonal line if requested
 	if (showDiagonal) {
+		console.log("Generating diagonal.");
 		const min = Math.min(...allX, ...allY);
 		const max = Math.max(...allX, ...allY);
 		plotData.push({
