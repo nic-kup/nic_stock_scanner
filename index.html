@@ -24,9 +24,16 @@
 
         .controls {
             display: flex;
+            flex-direction: column;
+            gap: 15px;
+            margin-bottom: 20px;
+        }
+
+        .control-row {
+            display: flex;
             flex-wrap: wrap;
             gap: 10px;
-            margin-bottom: 20px;
+            align-items: center;
         }
 
         .control-group {
@@ -66,34 +73,41 @@
         <h1>Nic's Stock Screener</h1>
         <h3>Data from Yahoo Finance API.</h3>
         <div class="controls">
-            <div class="control-group">
-                <label for="property1">Property 1:</label>
-                <select id="property1"></select>
-                <input type="checkbox" id="logScale1">
-                <label for="logScale1">Log Scale</label>
+            <div class="control-row">
+                <div class="control-group">
+                    <label for="property1">Property 1:</label>
+                    <select id="property1"></select>
+                    <input type="checkbox" id="logScale1" checked>
+                    <label for="logScale1">Log Scale</label>
+                </div>
+                <div class="control-group">
+                    <label for="property2">Property 2:</label>
+                    <select id="property2"></select>
+                    <input type="checkbox" id="logScale2" checked>
+                    <label for="logScale2">Log Scale</label>
+                </div>
+                <button id="swapProperties">Swap Properties</button>
             </div>
-            <div class="control-group">
-                <label for="property2">Property 2:</label>
-                <select id="property2"></select>
-                <input type="checkbox" id="logScale2">
-                <label for="logScale2">Log Scale</label>
-            </div>
-            <div class="control-group">
+            <div class="control-row">
                 <div id="filters">
                     <!-- Filters will be added dynamically -->
                 </div>
+                <button id="addFilter">Add Filter</button>
             </div>
-            <button id="addFilter">+</button>
-            <div class="control-group">
-                <button id="swapProperties">Swap Properties</button>
-                <input type="checkbox" id="colorBySector">
-                <label for="colorBySector">Color by Sector</label>
-                <input type="checkbox" id="showDiagonal">
-                <label for="showDiagonal">Show x=y Line</label>
-                <input type="checkbox" id="showBestFit">
-                <label for="showBestFit">Show Best Fit Line</label>
+            <div class="control-row">
+                <div class="control-group">
+                    <input type="checkbox" id="colorBySector">
+                    <label for="colorBySector">Color by Sector</label>
+                </div>
+                <div class="control-group">
+                    <input type="checkbox" id="showDiagonal">
+                    <label for="showDiagonal">Show x=y Line</label>
+                </div>
+                <div class="control-group">
+                    <input type="checkbox" id="showBestFit">
+                    <label for="showBestFit">Show Best Fit Line</label>
+                </div>
             </div>
-
         </div>
         <div id="plotDiv"></div>
         <div class="tracked-stocks">

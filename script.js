@@ -11,7 +11,6 @@ let filterCount = 0;
 // Fetch JSON data
 async function fetchJSONData(url) {
 	try {
-		// console.log(`Fetching data from ${url}...`);
 		const response = await fetch(url);
 		if (!response.ok) {
 			throw new Error(`HTTP error! status: ${response.status}`);
@@ -92,6 +91,10 @@ async function init() {
 			property2Select.value = "totalCash";
 			console.log("Set Property2 to Total Cash.");
 		}
+
+		document.getElementById("logScale1").value = true;
+		document.getElementById("logScale2").value = true;
+
 		// Initial plot
 		updatePlot();
 	} catch (error) {
