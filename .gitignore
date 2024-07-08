@@ -8,3 +8,4 @@ valid_tickers_intermediate.json
 ticker_info_intermediate.json
 sec_info_intermediate.json
 errors_intermediate.json
+.prettierrc
