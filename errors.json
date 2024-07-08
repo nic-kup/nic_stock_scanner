@@ -1,0 +1,5 @@
+{
+  "UBFO": "request to https://query2.finance.yahoo.com/v10/finance/quoteSummary/UBFO?formatted=false&modules=price%2CsummaryProfile%2CsummaryDetail%2CfinancialData&crumb=GWinCmy5FX0 failed, reason: read ETIMEDOUT",
+  "USLM": "request to https://query2.finance.yahoo.com/v10/finance/quoteSummary/USLM?formatted=false&modules=price%2CsummaryProfile%2CsummaryDetail%2CfinancialData&crumb=GWinCmy5FX0 failed, reason: read ETIMEDOUT",
+  "VOYA": "request to https://query2.finance.yahoo.com/v10/finance/quoteSummary/VOYA?formatted=false&modules=price%2CsummaryProfile%2CsummaryDetail%2CfinancialData&crumb=GWinCmy5FX0 failed, reason: read ETIMEDOUT"
+}
