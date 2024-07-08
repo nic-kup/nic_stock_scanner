@@ -2,7 +2,7 @@ name: Fetch Stock Data and Deploy
 
 on:
     push:
-        branches: [main]
+        branches: [gh-pages]
     schedule:
         - cron: "0 */8 * * *" # Runs every 8 hours
 
