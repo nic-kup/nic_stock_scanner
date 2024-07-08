@@ -97,6 +97,9 @@ async function init() {
 
 		// Initial plot
 		updatePlot();
+
+		// Update "Last Updated"
+		await updateLastUpdated();
 	} catch (error) {
 		console.error("Error initializing application:", error);
 		document.body.innerHTML = `<h1>Error initializing application</h1><p>${error.message}</p>`;
@@ -191,6 +194,23 @@ function transformData(xData, yData, isLogScaleX, isLogScaleY) {
 	}
 
 	return { transformedX, transformedY };
+}
+
+async function updateLastUpdated() {
+	try {
+		const response = await fetch("last_updated.json");
+		const data = await response.json();
+		const lastUpdated = new Date(data.timestamp);
+		const now = new Date();
+		const hoursAgo = Math.round((now - lastUpdated) / (1000 * 60 * 60));
+
+		const lastUpdatedElement = document.getElementById("lastUpdated");
+		lastUpdatedElement.textContent = `Last updated: ${hoursAgo} hour${
+			hoursAgo !== 1 ? "s" : ""
+		} ago`;
+	} catch (error) {
+		console.error("Error fetching last updated timestamp:", error);
+	}
 }
 
 function updatePlot() {

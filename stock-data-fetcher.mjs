@@ -224,6 +224,13 @@ async function fetchStockData() {
 			Object.keys(errors).length
 		} tickers. See errors.json for details.`
 	);
+	// Save Update Date
+	const timestamp = new Date().toISOString();
+	await fs.writeFile(
+		"last_updated.json",
+		JSON.stringify({ timestamp }, null, 2)
+	);
+	console.log(`Timestamp saved: ${timestamp}`);
 }
 
 fetchStockData().catch(console.error);
