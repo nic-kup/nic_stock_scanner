@@ -5,6 +5,17 @@ let trackedStocks = [];
 let numericalProperties = [];
 let sectorColors = {};
 
+const infoMetrics = [
+	"marketCap",
+	"enterpriseValue",
+	"freeCashflow",
+	"operatingCashflow",
+	"trailingPE",
+	"forwardPE",
+	"dividendYield",
+	"priceToBook",
+];
+
 // Global variable
 let filterCount = 0;
 
@@ -237,9 +248,13 @@ function updatePlot(resetZoom = false) {
 	// Set to keep track of plotted tickers
 	const plottedTickers = new Set();
 
-	function addDataPoint(ticker, x, y, sector) {
+	function addDataPoint(ticker, x, y, sector, isTracked) {
 		if (!plottedTickers.has(ticker)) {
 			plottedTickers.add(ticker);
+
+			if (isTracked) {
+				return;
+			}
 
 			const dataKey = colorBySector ? sector : "All Stocks";
 			if (!data[dataKey]) {
@@ -322,7 +337,8 @@ function updatePlot(resetZoom = false) {
 					if ((!logScale1 || x > 0) && (!logScale2 || y > 0)) {
 						const sector = secInfo[ticker]?.sector || "Unknown";
 						sectors.add(sector);
-						addDataPoint(ticker, x, y, sector);
+						const isTracked = trackedStocks.includes(ticker);
+						addDataPoint(ticker, x, y, sector, isTracked);
 					}
 				}
 			}
@@ -426,7 +442,15 @@ function updatePlot(resetZoom = false) {
 		hovermode: "closest",
 	};
 
-	Plotly.newPlot("plotDiv", plotData, layout);
+	Plotly.newPlot("plotDiv", plotData, layout).then(function () {
+		document.getElementById("plotDiv").on("plotly_click", function (data) {
+			if (data.points.length > 0) {
+				var clickPoint = data.points[0];
+				var ticker = clickPoint.text;
+				handleStockClick(ticker);
+			}
+		});
+	});
 	console.log("Plot updated.");
 }
 
@@ -497,6 +521,17 @@ function applyFilter(value, filterValue, comparison) {
 	}
 }
 
+function handleStockClick(ticker) {
+	console.log("Clicked on stock:", ticker);
+	if (!trackedStocks.includes(ticker)) {
+		trackedStocks.push(ticker);
+		updateTrackedStocksList();
+		updatePlot();
+	} else {
+		console.log("Stock is already tracked:", ticker);
+	}
+}
+
 // Assign colors to sectors
 function assignSectorColors(sectors) {
 	const colors = [
@@ -561,10 +596,64 @@ function updateTrackedStocksList() {
 	list.innerHTML = "";
 	trackedStocks.forEach((ticker) => {
 		const li = document.createElement("li");
-		li.textContent = ticker;
-		li.addEventListener("click", () => removeStock(ticker));
+		li.innerHTML = `
+            <span>${ticker}</span>
+            <div class="button-container">
+                <button class="removeStock">Remove</button>
+                <button class="moreInfo">More Info</button>
+            </div>
+        `;
+		li.querySelector(".removeStock").addEventListener("click", () =>
+			removeStock(ticker)
+		);
+		li.querySelector(".moreInfo").addEventListener("click", () =>
+			showStockInfo(ticker)
+		);
 		list.appendChild(li);
 	});
+}
+
+function showStockInfo(ticker) {
+	const infoContainer = document.getElementById("stockInfoContainer");
+	const infoTitle = document.getElementById("stockInfoTitle");
+	const infoTable = document
+		.getElementById("stockInfoTable")
+		.querySelector("tbody");
+
+	infoTitle.textContent = `${ticker} - ${secInfo[ticker]?.sector}`;
+	infoTable.innerHTML = "";
+
+	infoMetrics.forEach((metric) => {
+		const row = infoTable.insertRow();
+		const cell1 = row.insertCell(0);
+		const cell2 = row.insertCell(1);
+
+		cell1.textContent = metric;
+		const value = tickerInfo[ticker][metric];
+		cell2.textContent = formatValue(metric, value);
+	});
+
+	infoContainer.style.display = "block";
+}
+
+function formatValue(metric, value) {
+	if (typeof value === "undefined" || value === null) return "N/A";
+
+	switch (metric) {
+		case "marketCap":
+		case "enterpriseValue":
+		case "freeCashflow":
+		case "operatingCashflow":
+			return `$${(value / 1e9).toFixed(2)}B`;
+		case "trailingPE":
+		case "forwardPE":
+		case "priceToBook":
+			return value.toFixed(2);
+		case "dividendYield":
+			return `${(value * 100).toFixed(2)}%`;
+		default:
+			return value.toString();
+	}
 }
 
 // Remove stock from tracked stocks
@@ -576,3 +665,7 @@ function removeStock(ticker) {
 
 // Initialize the application when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", init);
+// Add event listener for closing the stock info
+// document.getElementById("closeStockInfo").addEventListener("click", () => {
+// 	document.getElementById("stockInfoContainer").style.display = "none";
+// });

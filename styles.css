@@ -1,0 +1,113 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.controls {
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 20px;
+}
+
+.control-row {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#plotDiv {
+    width: 100%;
+    height: 600px;
+}
+
+.tracked-stocks-container {
+    display: flex;
+    margin-top: 20px;
+}
+
+.tracked-stocks {
+    flex: 1;
+    margin-right: 20px;
+}
+
+#trackedStocksList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#trackedStocksList li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+}
+
+#trackedStocksList li span {
+    flex: 0 0 80px; /* Fixed width for stock ticker */
+    margin-right: 10px;
+}
+
+#trackedStocksList li .button-container {
+    display: flex;
+    gap: 5px; /* Space between buttons */
+}
+
+#trackedStocksList li button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+}
+
+#trackedStocksList li .removeStock {
+    background-color: #ff6b6b;
+    color: white;
+}
+
+#trackedStocksList li .moreInfo {
+    background-color: #4ecdc4;
+    color: white;
+}
+
+#stockInfoContainer {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#stockInfoTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#stockInfoTable th, #stockInfoTable td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+#stockInfoTable th {
+    background-color: #f2f2f2;
+}

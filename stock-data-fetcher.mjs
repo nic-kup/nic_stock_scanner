@@ -140,6 +140,7 @@ async function fetchStockData() {
 					"summaryProfile",
 					"summaryDetail",
 					"financialData",
+					"defaultKeyStatistics",
 				],
 			});
 
