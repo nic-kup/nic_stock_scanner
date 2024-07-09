@@ -45,35 +45,37 @@ async function init() {
 		// Populate dropdowns
 		populateDropdowns();
 
-		// Set up event listeners
-		console.log("Setting up event listeners");
+		// Update Plot
 		document
 			.getElementById("property1")
-			.addEventListener("change", updatePlot);
+			.addEventListener("change", () => updatePlot(true));
 		document
 			.getElementById("property2")
-			.addEventListener("change", updatePlot);
+			.addEventListener("change", () => updatePlot(true));
+		document
+			.getElementById("swapProperties")
+			.addEventListener("click", () => updatePlot(true));
+		document
+			.getElementById("logScale1")
+			.addEventListener("change", () => updatePlot(true));
+		document
+			.getElementById("logScale2")
+			.addEventListener("change", () => updatePlot(true));
+
+		// Don't update plot
+		document
+			.getElementById("colorBySector")
+			.addEventListener("change", () => updatePlot(false));
+		document
+			.getElementById("showDiagonal")
+			.addEventListener("change", () => updatePlot(false));
+		document
+			.getElementById("showBestFit")
+			.addEventListener("change", () => updatePlot(false));
+
 		document
 			.getElementById("addFilter")
 			.addEventListener("click", addFilter);
-		document
-			.getElementById("logScale1")
-			.addEventListener("change", updatePlot);
-		document
-			.getElementById("logScale2")
-			.addEventListener("change", updatePlot);
-		document
-			.getElementById("colorBySector")
-			.addEventListener("change", updatePlot);
-		document
-			.getElementById("showDiagonal")
-			.addEventListener("change", updatePlot);
-		document
-			.getElementById("showBestFit")
-			.addEventListener("change", updatePlot);
-		document
-			.getElementById("swapProperties")
-			.addEventListener("click", swapProperties);
 		document
 			.getElementById("addStockButton")
 			.addEventListener("click", addStock);
@@ -131,13 +133,13 @@ function addFilter() {
 	// Add event listeners for the new filter inputs
 	document
 		.getElementById(`filterProperty${filterCount}`)
-		.addEventListener("change", updatePlot);
+		.addEventListener("change", () => updatePlot(false));
 	document
 		.getElementById(`filterValue${filterCount}`)
-		.addEventListener("input", updatePlot);
+		.addEventListener("input", () => updatePlot(false));
 	document
 		.getElementById(`filterComparison${filterCount}`)
-		.addEventListener("change", updatePlot);
+		.addEventListener("change", () => updatePlot(false));
 
 	filterCount++;
 	updatePlot();
@@ -213,7 +215,7 @@ async function updateLastUpdated() {
 	}
 }
 
-function updatePlot() {
+function updatePlot(resetZoom = false) {
 	console.log("Updating plot...");
 	const prop1 = document.getElementById("property1").value;
 	const prop2 = document.getElementById("property2").value;
@@ -222,6 +224,8 @@ function updatePlot() {
 	const colorBySector = document.getElementById("colorBySector").checked;
 	const showDiagonal = document.getElementById("showDiagonal").checked;
 	const showBestFit = document.getElementById("showBestFit").checked;
+
+	const currentLayout = document.getElementById("plotDiv").layout;
 
 	console.log("Selected properties:", prop1, prop2);
 
@@ -343,7 +347,11 @@ function updatePlot() {
 		type: "scatter",
 		mode: "markers",
 		name: "Tracked Stocks",
-		marker: { color: "red", size: 10 },
+		marker: {
+			color: "red",
+			size: 10,
+			line: { width: 2, color: "DarkSlateGrey" },
+		},
 		hovertemplate: `<b>%{text}</b><br>${prop1}: %{x}<br>${prop2}: %{y}<extra></extra>`,
 	};
 
@@ -397,8 +405,24 @@ function updatePlot() {
 
 	const layout = {
 		title: `${prop2} vs ${prop1}`,
-		xaxis: { title: prop1, type: logScale1 ? "log" : "linear" },
-		yaxis: { title: prop2, type: logScale2 ? "log" : "linear" },
+		xaxis: {
+			title: prop1,
+			type: logScale1 ? "log" : "linear",
+			range: resetZoom
+				? undefined
+				: currentLayout
+				? currentLayout.xaxis.range
+				: undefined,
+		},
+		yaxis: {
+			title: prop2,
+			type: logScale2 ? "log" : "linear",
+			range: resetZoom
+				? undefined
+				: currentLayout
+				? currentLayout.yaxis.range
+				: undefined,
+		},
 		hovermode: "closest",
 	};
 
