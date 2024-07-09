@@ -484,7 +484,7 @@ function isValidNumber(value) {
 
 // Apply filter to data
 function applyFilter(value, filterValue, comparison) {
-	if (isNaN(filterValue)) return true;
+	if (isNaN(filterValue)) return false;
 	switch (comparison) {
 		case ">":
 			return value > filterValue;

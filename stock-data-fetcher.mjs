@@ -69,7 +69,6 @@ const numericalProperties = [
 	"payoutRatio",
 	"pegRatio",
 	"previousClose",
-	"priceHint",
 	"priceToBook",
 	"priceToSalesTrailing12Months",
 	"profitMargins",
@@ -144,7 +143,10 @@ async function fetchStockData() {
 				],
 			});
 
-			if (info.price?.currency === "USD") {
+			if (
+				info.price?.currency === "USD" &&
+				info.price?.marketCap !== undefined
+			) {
 				secInfo[ticker] = {
 					sector: info.summaryProfile?.sector || "N/A",
 					industry: info.summaryProfile?.industry || "N/A",
@@ -159,6 +161,12 @@ async function fetchStockData() {
 						prop in info.summaryDetail
 					) {
 						tickerInfo[ticker][prop] = info.summaryDetail[prop];
+					} else if (
+						info.defaultKeyStatistics &&
+						prop in info.defaultKeyStatistics
+					) {
+						tickerInfo[ticker][prop] =
+							info.defaultKeyStatistics[prop];
 					}
 				}
 
