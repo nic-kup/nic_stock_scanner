@@ -20,6 +20,18 @@ body {
     margin-bottom: 20px;
 }
 
+.properties-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: flex-start;
+}
+
+.property-row {
+    flex: 1;
+    min-width: 250px;
+}
+
 .control-row {
     display: flex;
     flex-wrap: wrap;
@@ -63,30 +75,44 @@ body {
 }
 
 #trackedStocksList li span {
-    flex: 0 0 80px; /* Fixed width for stock ticker */
+    flex: 0 0 80px;
     margin-right: 10px;
 }
 
 #trackedStocksList li .button-container {
     display: flex;
-    gap: 5px; /* Space between buttons */
+    gap: 5px;
 }
 
-#trackedStocksList li button {
+/* Updated button styles */
+button {
     padding: 5px 10px;
     border: none;
     border-radius: 3px;
     cursor: pointer;
-}
-
-#trackedStocksList li .removeStock {
-    background-color: #ff6b6b;
-    color: white;
-}
-
-#trackedStocksList li .moreInfo {
     background-color: #4ecdc4;
     color: white;
+    transition: background-color 0.3s ease;
+}
+
+button:hover {
+    background-color: #45b7ae;
+}
+
+button.removeStock {
+    background-color: #ff6b6b;
+}
+
+button.removeStock:hover {
+    background-color: #ff5252;
+}
+
+button.removeFilter {
+    background-color: #ff6b6b;
+}
+
+button.removeFilter:hover {
+    background-color: #ff5252;
 }
 
 #stockInfoContainer {
@@ -110,4 +136,67 @@ body {
 
 #stockInfoTable th {
     background-color: #f2f2f2;
+}
+.properties-container {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.property-row {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.control-group label {
+    min-width: 80px;
+}
+
+.control-group select {
+    width: 250px;
+}
+
+.checkbox-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+#swapProperties {
+    position: absolute;
+    right: 0;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+    .property-row {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+
+    .control-group {
+        width: 100%;
+    }
+
+    .control-group select {
+        width: 100%;
+    }
+
+    #swapProperties {
+        position: static;
+        transform: none;
+        margin-top: 10px;
+        align-self: flex-end;
+    }
 }

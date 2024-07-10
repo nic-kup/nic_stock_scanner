@@ -14,18 +14,26 @@
         <h1>Nic's Stock Screener</h1>
         <h3>Data from Yahoo Finance API.</h3>
         <div class="controls">
-            <div class="control-row">
-                <div class="control-group">
-                    <label for="property1">Property 1:</label>
-                    <select id="property1"></select>
-                    <input type="checkbox" id="logScale1" checked>
-                    <label for="logScale1">Log Scale</label>
+            <div class="properties-container">
+                <div class="property-row">
+                    <div class="control-group">
+                        <label for="property1">Property 1:</label>
+                        <select id="property1"></select>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="logScale1" checked>
+                            <label for="logScale1">Log Scale</label>
+                        </div>
+                    </div>
                 </div>
-                <div class="control-group">
-                    <label for="property2">Property 2:</label>
-                    <select id="property2"></select>
-                    <input type="checkbox" id="logScale2" checked>
-                    <label for="logScale2">Log Scale</label>
+                <div class="property-row">
+                    <div class="control-group">
+                        <label for="property2">Property 2:</label>
+                        <select id="property2"></select>
+                        <div class="checkbox-group">
+                            <input type="checkbox" id="logScale2" checked>
+                            <label for="logScale2">Log Scale</label>
+                        </div>
+                    </div>
                 </div>
                 <button id="swapProperties">Swap Properties</button>
             </div>

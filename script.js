@@ -64,15 +64,16 @@ async function init() {
 			.getElementById("property2")
 			.addEventListener("change", () => updatePlot(true));
 		document
-			.getElementById("swapProperties")
-			.addEventListener("click", () => updatePlot(true));
-		document
 			.getElementById("logScale1")
 			.addEventListener("change", () => updatePlot(true));
 		document
 			.getElementById("logScale2")
 			.addEventListener("change", () => updatePlot(true));
 
+		// Update Plot (but within own function)
+		document
+			.getElementById("swapProperties")
+			.addEventListener("click", swapProperties);
 		// Don't update plot
 		document
 			.getElementById("colorBySector")
@@ -131,7 +132,6 @@ function addFilter() {
         <select id="filterComparison${filterCount}" class="filterComparison">
             <option value=">">&gt;</option>
             <option value="<">&lt;</option>
-            <option value="==">=</option>
         </select>
         <button class="removeFilter" onclick="removeFilter(${filterCount})">Remove</button>
     `;
@@ -576,7 +576,7 @@ function swapProperties() {
 	const prop1 = document.getElementById("property1");
 	const prop2 = document.getElementById("property2");
 	[prop1.value, prop2.value] = [prop2.value, prop1.value];
-	updatePlot();
+	updatePlot(true);
 }
 
 // Add stock to tracked stocks
