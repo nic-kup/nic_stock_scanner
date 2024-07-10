@@ -11,14 +11,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "AACIU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "AACIW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "AACT": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
@@ -28,10 +20,6 @@
     "industry": "Biotechnology"
   },
   "AAGR": {
-    "sector": "Consumer Defensive",
-    "industry": "Farm Products"
-  },
-  "AAGRW": {
     "sector": "Consumer Defensive",
     "industry": "Farm Products"
   },
@@ -155,15 +143,7 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "ACABW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "ACAC": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "ACACU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -192,10 +172,6 @@
     "industry": "Biotechnology"
   },
   "ACGL": {
-    "sector": "Financial Services",
-    "industry": "Insurance - Diversified"
-  },
-  "ACGLN": {
     "sector": "Financial Services",
     "industry": "Insurance - Diversified"
   },
@@ -260,10 +236,6 @@
     "industry": "Steel"
   },
   "ACON": {
-    "sector": "Healthcare",
-    "industry": "Health Information Services"
-  },
-  "ACONW": {
     "sector": "Healthcare",
     "industry": "Health Information Services"
   },
@@ -359,10 +331,6 @@
     "sector": "Consumer Cyclical",
     "industry": "Auto Parts"
   },
-  "ADNWW": {
-    "sector": "Utilities",
-    "industry": "Utilities - Renewable"
-  },
   "ADP": {
     "sector": "Industrials",
     "industry": "Staffing & Employment Services"
@@ -399,19 +367,11 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "ADVWW": {
-    "sector": "Communication Services",
-    "industry": "Advertising Agencies"
-  },
   "ADX": {
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
   "AEAE": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "AEAEW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -440,10 +400,6 @@
     "industry": "Medical Devices"
   },
   "AENT": {
-    "sector": "Communication Services",
-    "industry": "Entertainment"
-  },
-  "AENTW": {
     "sector": "Communication Services",
     "industry": "Entertainment"
   },
@@ -507,19 +463,11 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "AFJKU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "AFL": {
     "sector": "Financial Services",
     "industry": "Insurance - Life"
   },
   "AFRI": {
-    "sector": "Consumer Defensive",
-    "industry": "Farm Products"
-  },
-  "AFRIW": {
     "sector": "Consumer Defensive",
     "industry": "Farm Products"
   },
@@ -540,10 +488,6 @@
     "industry": "Entertainment"
   },
   "AGBA": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
-  "AGBAW": {
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
@@ -583,23 +527,11 @@
     "sector": "Real Estate",
     "industry": "REIT - Mortgage"
   },
-  "AGNCL": {
-    "sector": "Real Estate",
-    "industry": "REIT - Mortgage"
-  },
   "AGNCM": {
     "sector": "Real Estate",
     "industry": "REIT - Mortgage"
   },
   "AGNCN": {
-    "sector": "Real Estate",
-    "industry": "REIT - Mortgage"
-  },
-  "AGNCO": {
-    "sector": "Real Estate",
-    "industry": "REIT - Mortgage"
-  },
-  "AGNCP": {
     "sector": "Real Estate",
     "industry": "REIT - Mortgage"
   },
@@ -612,10 +544,6 @@
     "industry": "Utilities - Regulated Electric"
   },
   "AGRI": {
-    "sector": "Consumer Defensive",
-    "industry": "Farm Products"
-  },
-  "AGRIW": {
     "sector": "Consumer Defensive",
     "industry": "Farm Products"
   },
@@ -675,18 +603,6 @@
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
-  "AILEW": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
-  "AIMAW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "AIMBU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "AIMD": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
@@ -719,10 +635,6 @@
     "sector": "Industrials",
     "industry": "Building Products & Equipment"
   },
-  "AIRJW": {
-    "sector": "Industrials",
-    "industry": "Building Products & Equipment"
-  },
   "AIRS": {
     "sector": "Healthcare",
     "industry": "Medical Care Facilities"
@@ -739,19 +651,11 @@
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
-  "AISPW": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
   "AIT": {
     "sector": "Industrials",
     "industry": "Industrial Distribution"
   },
   "AITR": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "AITRU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -975,10 +879,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "ALSAW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "ALSN": {
     "sector": "Consumer Cyclical",
     "industry": "Auto Parts"
@@ -1016,10 +916,6 @@
     "industry": "Auto Parts"
   },
   "ALVO": {
-    "sector": "Healthcare",
-    "industry": "Drug Manufacturers - Specialty & Generic"
-  },
-  "ALVOW": {
     "sector": "Healthcare",
     "industry": "Drug Manufacturers - Specialty & Generic"
   },
@@ -1124,10 +1020,6 @@
     "industry": "Asset Management"
   },
   "AMPG": {
-    "sector": "Technology",
-    "industry": "Communication Equipment"
-  },
-  "AMPGW": {
     "sector": "Technology",
     "industry": "Communication Equipment"
   },
@@ -1243,10 +1135,6 @@
     "sector": "Communication Services",
     "industry": "Entertainment"
   },
-  "ANGHW": {
-    "sector": "Communication Services",
-    "industry": "Entertainment"
-  },
   "ANGI": {
     "sector": "Communication Services",
     "industry": "Internet Content & Information"
@@ -1283,14 +1171,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "ANSCU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "ANSCW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "ANSS": {
     "sector": "Technology",
     "industry": "Software - Application"
@@ -1316,10 +1196,6 @@
     "industry": "Asset Management"
   },
   "AOGO": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "AOGOU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -1463,14 +1339,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "APXIU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "APXIW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "APYX": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
@@ -1495,10 +1363,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "AQUNU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "AR": {
     "sector": "Energy",
     "industry": "Oil & Gas E&P"
@@ -1508,10 +1372,6 @@
     "industry": "Medical Devices"
   },
   "ARBE": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
-  "ARBEW": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
@@ -1583,10 +1443,6 @@
     "sector": "Consumer Cyclical",
     "industry": "Specialty Retail"
   },
-  "ARKOW": {
-    "sector": "Consumer Cyclical",
-    "industry": "Specialty Retail"
-  },
   "ARKR": {
     "sector": "Consumer Cyclical",
     "industry": "Restaurants"
@@ -1624,10 +1480,6 @@
     "industry": "Pollution & Treatment Controls"
   },
   "ARQQ": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
-  "ARQQW": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
@@ -1779,10 +1631,6 @@
     "sector": "Technology",
     "industry": "Communication Equipment"
   },
-  "ASTSW": {
-    "sector": "Technology",
-    "industry": "Communication Equipment"
-  },
   "ASUR": {
     "sector": "Technology",
     "industry": "Software - Application"
@@ -1839,10 +1687,6 @@
     "sector": "Financial Services",
     "industry": "Credit Services"
   },
-  "ATLCP": {
-    "sector": "Financial Services",
-    "industry": "Credit Services"
-  },
   "ATLO": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
@@ -1864,10 +1708,6 @@
     "industry": "Shell Companies"
   },
   "ATNF": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "ATNFW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -1971,19 +1811,11 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "AUROW": {
-    "sector": "Technology",
-    "industry": "Information Technology Services"
-  },
   "AUTL": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
   "AUUD": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
-  "AUUDW": {
     "sector": "Technology",
     "industry": "Software - Application"
   },
@@ -2052,10 +1884,6 @@
     "industry": "Food Distribution"
   },
   "AVPT": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
-  "AVPTW": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
@@ -2295,10 +2123,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "BAYAU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "BB": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
@@ -2324,10 +2148,6 @@
     "industry": "Biotechnology"
   },
   "BBLG": {
-    "sector": "Healthcare",
-    "industry": "Medical Devices"
-  },
-  "BBLGW": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
   },
@@ -2379,15 +2199,7 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "BCDAW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "BCG": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
-  "BCGWW": {
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
@@ -2423,23 +2235,11 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "BCSAU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "BCSAW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "BCSF": {
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
   "BCTX": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "BCTXW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -2507,10 +2307,6 @@
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
-  "BENFW": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
   "BEP": {
     "sector": "Utilities",
     "industry": "Utilities - Renewable"
@@ -2524,10 +2320,6 @@
     "industry": "Packaging & Containers"
   },
   "BETR": {
-    "sector": "Financial Services",
-    "industry": "Mortgage Finance"
-  },
-  "BETRW": {
     "sector": "Financial Services",
     "industry": "Mortgage Finance"
   },
@@ -2551,10 +2343,6 @@
     "sector": "Consumer Cyclical",
     "industry": "Restaurants"
   },
-  "BFIIW": {
-    "sector": "Consumer Cyclical",
-    "industry": "Restaurants"
-  },
   "BFIN": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
@@ -2572,10 +2360,6 @@
     "industry": "Health Information Services"
   },
   "BFRI": {
-    "sector": "Healthcare",
-    "industry": "Drug Manufacturers - Specialty & Generic"
-  },
-  "BFRIW": {
     "sector": "Healthcare",
     "industry": "Drug Manufacturers - Specialty & Generic"
   },
@@ -2643,10 +2427,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "BHACU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "BHAT": {
     "sector": "Communication Services",
     "industry": "Electronic Gaming & Multimedia"
@@ -2660,18 +2440,6 @@
     "industry": "Electronic Components"
   },
   "BHF": {
-    "sector": "Financial Services",
-    "industry": "Insurance - Life"
-  },
-  "BHFAM": {
-    "sector": "Financial Services",
-    "industry": "Insurance - Life"
-  },
-  "BHFAN": {
-    "sector": "Financial Services",
-    "industry": "Insurance - Life"
-  },
-  "BHFAO": {
     "sector": "Financial Services",
     "industry": "Insurance - Life"
   },
@@ -2712,10 +2480,6 @@
     "industry": "Biotechnology"
   },
   "BIAF": {
-    "sector": "Healthcare",
-    "industry": "Diagnostics & Research"
-  },
-  "BIAFW": {
     "sector": "Healthcare",
     "industry": "Diagnostics & Research"
   },
@@ -2863,10 +2627,6 @@
     "sector": "Industrials",
     "industry": "Airports & Air Services"
   },
-  "BLDEW": {
-    "sector": "Industrials",
-    "industry": "Airports & Air Services"
-  },
   "BLDP": {
     "sector": "Industrials",
     "industry": "Specialty Industrial Machinery"
@@ -2880,10 +2640,6 @@
     "industry": "Asset Management"
   },
   "BLEU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "BLEUW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -2987,10 +2743,6 @@
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
-  "BNAIW": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
   "BNED": {
     "sector": "Consumer Cyclical",
     "industry": "Specialty Retail"
@@ -3000,10 +2752,6 @@
     "industry": "Medical Instruments & Supplies"
   },
   "BNIX": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "BNIXW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -3031,19 +2779,11 @@
     "sector": "Technology",
     "industry": "Software - Application"
   },
-  "BNZIW": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
   "BOC": {
     "sector": "Industrials",
     "industry": "Conglomerates"
   },
   "BOCN": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "BOCNU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -3143,14 +2883,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "BPYPN": {
-    "sector": "Real Estate",
-    "industry": "Real Estate Services"
-  },
-  "BPYPO": {
-    "sector": "Real Estate",
-    "industry": "Real Estate Services"
-  },
   "BPYPP": {
     "sector": "Real Estate",
     "industry": "Real Estate Services"
@@ -3195,14 +2927,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "BRKHU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "BRKHW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "BRKL": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
@@ -3212,10 +2936,6 @@
     "industry": "Medical Devices"
   },
   "BRLS": {
-    "sector": "Consumer Defensive",
-    "industry": "Packaged Foods"
-  },
-  "BRLSW": {
     "sector": "Consumer Defensive",
     "industry": "Packaged Foods"
   },
@@ -3235,19 +2955,11 @@
     "sector": "Energy",
     "industry": "Oil & Gas Midstream"
   },
-  "BROGW": {
-    "sector": "Energy",
-    "industry": "Oil & Gas Midstream"
-  },
   "BROS": {
     "sector": "Consumer Cyclical",
     "industry": "Restaurants"
   },
   "BRSH": {
-    "sector": "Consumer Defensive",
-    "industry": "Household & Personal Products"
-  },
-  "BRSHW": {
     "sector": "Consumer Defensive",
     "industry": "Household & Personal Products"
   },
@@ -3347,10 +3059,6 @@
     "sector": "Technology",
     "industry": "Computer Hardware"
   },
-  "BTCTW": {
-    "sector": "Technology",
-    "industry": "Computer Hardware"
-  },
   "BTCY": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
@@ -3383,10 +3091,6 @@
     "sector": "Healthcare",
     "industry": "Health Information Services"
   },
-  "BTSGU": {
-    "sector": "Healthcare",
-    "industry": "Health Information Services"
-  },
   "BTT": {
     "sector": "Financial Services",
     "industry": "Asset Management"
@@ -3404,10 +3108,6 @@
     "industry": "Beverages - Brewers"
   },
   "BUJA": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "BUJAW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -3451,23 +3151,11 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "BWAQU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "BWAQW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "BWAY": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
   },
   "BWB": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "BWBBP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -3556,10 +3244,6 @@
     "industry": "Shell Companies"
   },
   "BZFD": {
-    "sector": "Communication Services",
-    "industry": "Internet Content & Information"
-  },
-  "BZFDW": {
     "sector": "Communication Services",
     "industry": "Internet Content & Information"
   },
@@ -3831,19 +3515,7 @@
     "sector": "Healthcare",
     "industry": "Health Information Services"
   },
-  "CCLDO": {
-    "sector": "Healthcare",
-    "industry": "Health Information Services"
-  },
-  "CCLDP": {
-    "sector": "Healthcare",
-    "industry": "Health Information Services"
-  },
   "CCNE": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "CCNEP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -3879,19 +3551,11 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "CDAQW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "CDE": {
     "sector": "Basic Materials",
     "industry": "Gold"
   },
   "CDIO": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "CDIOW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -3927,10 +3591,6 @@
     "sector": "Industrials",
     "industry": "Waste Management"
   },
-  "CDTTW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "CDTX": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -3951,19 +3611,11 @@
     "sector": "Utilities",
     "industry": "Utilities - Regulated Water"
   },
-  "CDZIP": {
-    "sector": "Utilities",
-    "industry": "Utilities - Regulated Water"
-  },
   "CE": {
     "sector": "Basic Materials",
     "industry": "Chemicals"
   },
   "CEAD": {
-    "sector": "Industrials",
-    "industry": "Farm & Heavy Construction Machinery"
-  },
-  "CEADW": {
     "sector": "Industrials",
     "industry": "Farm & Heavy Construction Machinery"
   },
@@ -3995,10 +3647,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "CELUW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "CELZ": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -4024,10 +3672,6 @@
     "industry": "Biotechnology"
   },
   "CERO": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "CEROW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -4072,10 +3716,6 @@
     "industry": "Banks - Regional"
   },
   "CFFS": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "CFFSW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -4187,18 +3827,6 @@
     "sector": "Energy",
     "industry": "Oil & Gas E&P"
   },
-  "CHKEL": {
-    "sector": "Energy",
-    "industry": "Oil & Gas E&P"
-  },
-  "CHKEW": {
-    "sector": "Energy",
-    "industry": "Oil & Gas E&P"
-  },
-  "CHKEZ": {
-    "sector": "Energy",
-    "industry": "Oil & Gas E&P"
-  },
   "CHKP": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
@@ -4234,26 +3862,6 @@
   "CHRW": {
     "sector": "Industrials",
     "industry": "Integrated Freight & Logistics"
-  },
-  "CHSCL": {
-    "sector": "Consumer Defensive",
-    "industry": "Farm Products"
-  },
-  "CHSCM": {
-    "sector": "Consumer Defensive",
-    "industry": "Farm Products"
-  },
-  "CHSCN": {
-    "sector": "Consumer Defensive",
-    "industry": "Farm Products"
-  },
-  "CHSCO": {
-    "sector": "Consumer Defensive",
-    "industry": "Farm Products"
-  },
-  "CHSCP": {
-    "sector": "Consumer Defensive",
-    "industry": "Farm Products"
   },
   "CHSN": {
     "sector": "Consumer Cyclical",
@@ -4303,10 +3911,6 @@
     "sector": "Financial Services",
     "industry": "Capital Markets"
   },
-  "CIFRW": {
-    "sector": "Financial Services",
-    "industry": "Capital Markets"
-  },
   "CIGI": {
     "sector": "Real Estate",
     "industry": "Real Estate Services"
@@ -4327,10 +3931,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "CINGW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "CIO": {
     "sector": "Real Estate",
     "industry": "REIT - Office"
@@ -4348,10 +3948,6 @@
     "industry": "Marine Shipping"
   },
   "CITE": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "CITEW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -4392,10 +3988,6 @@
     "industry": "Banks - Regional"
   },
   "CLBT": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
-  "CLBTW": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
@@ -4456,10 +4048,6 @@
     "industry": "Packaged Foods"
   },
   "CLOE": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "CLOEU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -4531,10 +4119,6 @@
     "sector": "Healthcare",
     "industry": "Health Information Services"
   },
-  "CMAXW": {
-    "sector": "Healthcare",
-    "industry": "Health Information Services"
-  },
   "CMBM": {
     "sector": "Technology",
     "industry": "Communication Equipment"
@@ -4584,10 +4168,6 @@
     "industry": "Other Industrial Metals & Mining"
   },
   "CMPO": {
-    "sector": "Industrials",
-    "industry": "Metal Fabrication"
-  },
-  "CMPOW": {
     "sector": "Industrials",
     "industry": "Metal Fabrication"
   },
@@ -4655,14 +4235,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "CNGLU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "CNGLW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "CNH": {
     "sector": "Industrials",
     "industry": "Farm & Heavy Construction Machinery"
@@ -4688,10 +4260,6 @@
     "industry": "Insurance - Life"
   },
   "CNOB": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "CNOBP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -4744,10 +4312,6 @@
     "industry": "Electronics & Computer Distribution"
   },
   "COCH": {
-    "sector": "Healthcare",
-    "industry": "Medical Devices"
-  },
-  "COCHW": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
   },
@@ -4859,14 +4423,6 @@
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
-  "CORZW": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
-  "CORZZ": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
   "COSM": {
     "sector": "Healthcare",
     "industry": "Medical Distribution"
@@ -4963,10 +4519,6 @@
     "sector": "Technology",
     "industry": "Scientific & Technical Instruments"
   },
-  "CPTNW": {
-    "sector": "Technology",
-    "industry": "Scientific & Technical Instruments"
-  },
   "CQP": {
     "sector": "Energy",
     "industry": "Oil & Gas Midstream"
@@ -5019,10 +4571,6 @@
     "sector": "Industrials",
     "industry": "Integrated Freight & Logistics"
   },
-  "CRGOW": {
-    "sector": "Industrials",
-    "industry": "Integrated Freight & Logistics"
-  },
   "CRGX": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -5064,10 +4612,6 @@
     "industry": "Biotechnology"
   },
   "CRML": {
-    "sector": "Basic Materials",
-    "industry": "Other Industrial Metals & Mining"
-  },
-  "CRMLW": {
     "sector": "Basic Materials",
     "industry": "Other Industrial Metals & Mining"
   },
@@ -5167,10 +4711,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "CSLMU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "CSLR": {
     "sector": "Technology",
     "industry": "Solar"
@@ -5188,10 +4728,6 @@
     "industry": "REIT - Residential"
   },
   "CSSE": {
-    "sector": "Communication Services",
-    "industry": "Entertainment"
-  },
-  "CSSEL": {
     "sector": "Communication Services",
     "industry": "Entertainment"
   },
@@ -5347,10 +4883,6 @@
     "sector": "Communication Services",
     "industry": "Broadcasting"
   },
-  "CURIW": {
-    "sector": "Communication Services",
-    "industry": "Broadcasting"
-  },
   "CURV": {
     "sector": "Consumer Cyclical",
     "industry": "Apparel Retail"
@@ -5388,14 +4920,6 @@
     "industry": "Oil & Gas Refining & Marketing"
   },
   "CVII": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "CVIIU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "CVIIW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -5539,10 +5063,6 @@
     "sector": "Healthcare",
     "industry": "Drug Manufacturers - Specialty & Generic"
   },
-  "CYTHW": {
-    "sector": "Healthcare",
-    "industry": "Drug Manufacturers - Specialty & Generic"
-  },
   "CYTK": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -5607,15 +5127,7 @@
     "sector": "Technology",
     "industry": "Software - Application"
   },
-  "DATSW": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
   "DAVE": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
-  "DAVEW": {
     "sector": "Technology",
     "industry": "Software - Application"
   },
@@ -5632,10 +5144,6 @@
     "industry": "Software - Application"
   },
   "DBGI": {
-    "sector": "Consumer Cyclical",
-    "industry": "Apparel Retail"
-  },
-  "DBGIW": {
     "sector": "Consumer Cyclical",
     "industry": "Apparel Retail"
   },
@@ -5672,10 +5180,6 @@
     "industry": "Aerospace & Defense"
   },
   "DCOM": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "DCOMP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -5719,14 +5223,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "DECAU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "DECAW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "DECK": {
     "sector": "Consumer Cyclical",
     "industry": "Footwear & Accessories"
@@ -5767,10 +5263,6 @@
     "sector": "Industrials",
     "industry": "Electrical Equipment & Parts"
   },
-  "DFLIW": {
-    "sector": "Industrials",
-    "industry": "Electrical Equipment & Parts"
-  },
   "DFS": {
     "sector": "Financial Services",
     "industry": "Credit Services"
@@ -5808,10 +5300,6 @@
     "industry": "Health Information Services"
   },
   "DHAI": {
-    "sector": "Healthcare",
-    "industry": "Medical Devices"
-  },
-  "DHAIW": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
   },
@@ -6059,14 +5547,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "DPCSU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "DPCSW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "DPZ": {
     "sector": "Consumer Cyclical",
     "industry": "Restaurants"
@@ -6111,10 +5591,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "DRTSW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "DRVN": {
     "sector": "Consumer Cyclical",
     "industry": "Auto & Truck Dealerships"
@@ -6152,10 +5628,6 @@
     "industry": "Marine Shipping"
   },
   "DSY": {
-    "sector": "Consumer Defensive",
-    "industry": "Household & Personal Products"
-  },
-  "DSYWW": {
     "sector": "Consumer Defensive",
     "industry": "Household & Personal Products"
   },
@@ -6199,15 +5671,7 @@
     "sector": "Technology",
     "industry": "Information Technology Services"
   },
-  "DTSTW": {
-    "sector": "Technology",
-    "industry": "Information Technology Services"
-  },
   "DUET": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "DUETW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -6283,10 +5747,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "DYCQU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "DYN": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -6359,19 +5819,7 @@
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
-  "ECCC": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
-  "ECCF": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
   "ECDA": {
-    "sector": "Consumer Cyclical",
-    "industry": "Auto Manufacturers"
-  },
-  "ECDAW": {
     "sector": "Consumer Cyclical",
     "industry": "Auto Manufacturers"
   },
@@ -6400,10 +5848,6 @@
     "industry": "Utilities - Regulated Electric"
   },
   "EDBL": {
-    "sector": "Consumer Defensive",
-    "industry": "Farm Products"
-  },
-  "EDBLW": {
     "sector": "Consumer Defensive",
     "industry": "Farm Products"
   },
@@ -6471,19 +5915,11 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "EFSCP": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
   "EFT": {
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
   "EFTR": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "EFTRW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -6552,18 +5988,6 @@
     "industry": "Insurance Brokers"
   },
   "EIC": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
-  "EICA": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
-  "EICB": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
-  "EICC": {
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
@@ -6679,14 +6103,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "EMLDU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "EMLDW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "EMN": {
     "sector": "Basic Materials",
     "industry": "Specialty Chemicals"
@@ -6704,10 +6120,6 @@
     "industry": "Engineering & Construction"
   },
   "ENGN": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "ENGNW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -6800,10 +6212,6 @@
     "industry": "Asset Management"
   },
   "EOSE": {
-    "sector": "Industrials",
-    "industry": "Electrical Equipment & Parts"
-  },
-  "EOSEW": {
     "sector": "Industrials",
     "industry": "Electrical Equipment & Parts"
   },
@@ -6931,10 +6339,6 @@
     "sector": "Industrials",
     "industry": "Waste Management"
   },
-  "ESGLW": {
-    "sector": "Industrials",
-    "industry": "Waste Management"
-  },
   "ESGR": {
     "sector": "Financial Services",
     "industry": "Insurance - Diversified"
@@ -6956,10 +6360,6 @@
     "industry": "Specialty Chemicals"
   },
   "ESLA": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "ESLAW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -7071,10 +6471,6 @@
     "sector": "Healthcare",
     "industry": "Health Information Services"
   },
-  "EUDAW": {
-    "sector": "Healthcare",
-    "industry": "Health Information Services"
-  },
   "EURN": {
     "sector": "Energy",
     "industry": "Oil & Gas Midstream"
@@ -7123,19 +6519,7 @@
     "sector": "Consumer Cyclical",
     "industry": "Specialty Retail"
   },
-  "EVGOW": {
-    "sector": "Consumer Cyclical",
-    "industry": "Specialty Retail"
-  },
   "EVGR": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "EVGRU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "EVGRW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -7144,10 +6528,6 @@
     "industry": "Health Information Services"
   },
   "EVLV": {
-    "sector": "Industrials",
-    "industry": "Security & Protection Services"
-  },
-  "EVLVW": {
     "sector": "Industrials",
     "industry": "Security & Protection Services"
   },
@@ -7287,10 +6667,6 @@
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
-  "FAASW": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
   "FAF": {
     "sector": "Financial Services",
     "industry": "Insurance - Specialty"
@@ -7324,14 +6700,6 @@
     "industry": "Restaurants"
   },
   "FATBB": {
-    "sector": "Consumer Cyclical",
-    "industry": "Restaurants"
-  },
-  "FATBP": {
-    "sector": "Consumer Cyclical",
-    "industry": "Restaurants"
-  },
-  "FATBW": {
     "sector": "Consumer Cyclical",
     "industry": "Restaurants"
   },
@@ -7423,14 +6791,6 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "FCNCO": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "FCNCP": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
   "FCPT": {
     "sector": "Real Estate",
     "industry": "REIT - Retail"
@@ -7503,14 +6863,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "FEXDU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "FEXDW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "FF": {
     "sector": "Basic Materials",
     "industry": "Specialty Chemicals"
@@ -7559,10 +6911,6 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "FGBIP": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
   "FGEN": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -7571,15 +6919,7 @@
     "sector": "Financial Services",
     "industry": "Insurance - Diversified"
   },
-  "FGFPP": {
-    "sector": "Financial Services",
-    "industry": "Insurance - Diversified"
-  },
   "FGI": {
-    "sector": "Consumer Cyclical",
-    "industry": "Furnishings, Fixtures & Appliances"
-  },
-  "FGIWW": {
     "sector": "Consumer Cyclical",
     "industry": "Furnishings, Fixtures & Appliances"
   },
@@ -7604,10 +6944,6 @@
     "industry": "Information Technology Services"
   },
   "FIAC": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "FIACW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -7652,14 +6988,6 @@
     "industry": "Banks - Regional"
   },
   "FITBI": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "FITBO": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "FITBP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -7823,10 +7151,6 @@
     "sector": "Basic Materials",
     "industry": "Gold"
   },
-  "FNVTW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "FNWB": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
@@ -7860,10 +7184,6 @@
     "industry": "Footwear & Accessories"
   },
   "FORL": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "FORLU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -7931,10 +7251,6 @@
     "sector": "Consumer Defensive",
     "industry": "Packaged Foods"
   },
-  "FREEW": {
-    "sector": "Consumer Defensive",
-    "industry": "Packaged Foods"
-  },
   "FREY": {
     "sector": "Industrials",
     "industry": "Electrical Equipment & Parts"
@@ -7955,15 +7271,7 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "FRLAW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "FRME": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "FRMEP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -8059,22 +7367,6 @@
     "sector": "Industrials",
     "industry": "Rental & Leasing Services"
   },
-  "FTAIM": {
-    "sector": "Industrials",
-    "industry": "Rental & Leasing Services"
-  },
-  "FTAIN": {
-    "sector": "Industrials",
-    "industry": "Rental & Leasing Services"
-  },
-  "FTAIO": {
-    "sector": "Industrials",
-    "industry": "Rental & Leasing Services"
-  },
-  "FTAIP": {
-    "sector": "Industrials",
-    "industry": "Rental & Leasing Services"
-  },
   "FTCI": {
     "sector": "Technology",
     "industry": "Solar"
@@ -8135,10 +7427,6 @@
     "sector": "Financial Services",
     "industry": "Capital Markets"
   },
-  "FUFUW": {
-    "sector": "Financial Services",
-    "industry": "Capital Markets"
-  },
   "FUL": {
     "sector": "Basic Materials",
     "industry": "Specialty Chemicals"
@@ -8148,10 +7436,6 @@
     "industry": "Biotechnology"
   },
   "FULT": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "FULTP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -8239,10 +7523,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "GAMCU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "GAME": {
     "sector": "Communication Services",
     "industry": "Electronic Gaming & Multimedia"
@@ -8267,10 +7547,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "GATEW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "GATO": {
     "sector": "Basic Materials",
     "industry": "Other Precious Metals & Mining"
@@ -8284,10 +7560,6 @@
     "industry": "Aerospace & Defense"
   },
   "GBBK": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "GBBKW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -8331,10 +7603,6 @@
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
-  "GCMGW": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
   "GCO": {
     "sector": "Consumer Cyclical",
     "industry": "Apparel Retail"
@@ -8375,10 +7643,6 @@
     "sector": "Communication Services",
     "industry": "Electronic Gaming & Multimedia"
   },
-  "GDEVW": {
-    "sector": "Communication Services",
-    "industry": "Electronic Gaming & Multimedia"
-  },
   "GDHG": {
     "sector": "Consumer Cyclical",
     "industry": "Leisure"
@@ -8392,14 +7656,6 @@
     "industry": "Health Information Services"
   },
   "GDST": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "GDSTU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "GDSTW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -8487,10 +7743,6 @@
     "sector": "Industrials",
     "industry": "Security & Protection Services"
   },
-  "GFAIW": {
-    "sector": "Industrials",
-    "industry": "Security & Protection Services"
-  },
   "GFF": {
     "sector": "Industrials",
     "industry": "Conglomerates"
@@ -8511,10 +7763,6 @@
     "sector": "Consumer Cyclical",
     "industry": "Auto Manufacturers"
   },
-  "GGROW": {
-    "sector": "Consumer Cyclical",
-    "industry": "Auto Manufacturers"
-  },
   "GGT": {
     "sector": "Financial Services",
     "industry": "Asset Management"
@@ -8532,10 +7780,6 @@
     "industry": "Mortgage Finance"
   },
   "GHIX": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "GHIXW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -8603,10 +7847,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "GLACU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "GLAD": {
     "sector": "Financial Services",
     "industry": "Asset Management"
@@ -8628,10 +7868,6 @@
     "industry": "Engineering & Construction"
   },
   "GLLI": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "GLLIU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -8664,10 +7900,6 @@
     "industry": "Biotechnology"
   },
   "GLST": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "GLSTU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -8779,10 +8011,6 @@
     "sector": "Consumer Cyclical",
     "industry": "Auto Manufacturers"
   },
-  "GOEVW": {
-    "sector": "Consumer Cyclical",
-    "industry": "Auto Manufacturers"
-  },
   "GOGL": {
     "sector": "Industrials",
     "industry": "Marine Shipping"
@@ -8800,10 +8028,6 @@
     "industry": "Leisure"
   },
   "GOOD": {
-    "sector": "Real Estate",
-    "industry": "REIT - Diversified"
-  },
-  "GOODN": {
     "sector": "Real Estate",
     "industry": "REIT - Diversified"
   },
@@ -8827,10 +8051,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "GOVXW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "GP": {
     "sector": "Industrials",
     "industry": "Farm & Heavy Construction Machinery"
@@ -8839,21 +8059,9 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "GPACU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "GPACW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "GPAK": {
     "sector": "Industrials",
     "industry": "Specialty Business Services"
-  },
-  "GPATU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
   },
   "GPC": {
     "sector": "Consumer Cyclical",
@@ -8903,10 +8111,6 @@
     "sector": "Technology",
     "industry": "Software - Application"
   },
-  "GRABW": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
   "GRAL": {
     "sector": "Healthcare",
     "industry": "Diagnostics & Research"
@@ -8920,10 +8124,6 @@
     "industry": "Specialty Industrial Machinery"
   },
   "GRDI": {
-    "sector": "Financial Services",
-    "industry": "Capital Markets"
-  },
-  "GRDIW": {
     "sector": "Financial Services",
     "industry": "Capital Markets"
   },
@@ -8959,10 +8159,6 @@
     "sector": "Communication Services",
     "industry": "Internet Content & Information"
   },
-  "GROMW": {
-    "sector": "Communication Services",
-    "industry": "Internet Content & Information"
-  },
   "GROV": {
     "sector": "Consumer Defensive",
     "industry": "Household & Personal Products"
@@ -8976,10 +8172,6 @@
     "industry": "Internet Content & Information"
   },
   "GRRR": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
-  "GRRRW": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
@@ -9027,10 +8219,6 @@
     "sector": "Basic Materials",
     "industry": "Other Industrial Metals & Mining"
   },
-  "GSMGW": {
-    "sector": "Communication Services",
-    "industry": "Advertising Agencies"
-  },
   "GSUN": {
     "sector": "Consumer Defensive",
     "industry": "Education & Training Services"
@@ -9038,10 +8226,6 @@
   "GT": {
     "sector": "Consumer Cyclical",
     "industry": "Auto Parts"
-  },
-  "GTACW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
   },
   "GTBP": {
     "sector": "Healthcare",
@@ -9175,10 +8359,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "HAIAW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "HAIN": {
     "sector": "Consumer Defensive",
     "industry": "Packaged Foods"
@@ -9212,18 +8392,6 @@
     "industry": "Electrical Equipment & Parts"
   },
   "HBAN": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "HBANL": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "HBANM": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "HBANP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -9292,10 +8460,6 @@
     "industry": "Health Information Services"
   },
   "HCVI": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "HCVIW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -9376,14 +8540,6 @@
     "industry": "Resorts & Casinos"
   },
   "HHGC": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "HHGCU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "HHGCW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -9547,10 +8703,6 @@
     "sector": "Communication Services",
     "industry": "Entertainment"
   },
-  "HOFVW": {
-    "sector": "Communication Services",
-    "industry": "Entertainment"
-  },
   "HOG": {
     "sector": "Consumer Cyclical",
     "industry": "Recreational Vehicles"
@@ -9628,10 +8780,6 @@
     "industry": "Asset Management"
   },
   "HPK": {
-    "sector": "Energy",
-    "industry": "Oil & Gas E&P"
-  },
-  "HPKEW": {
     "sector": "Energy",
     "industry": "Oil & Gas E&P"
   },
@@ -9739,10 +8887,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "HSPOW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "HST": {
     "sector": "Real Estate",
     "industry": "REIT - Hotel & Motel"
@@ -9779,14 +8923,6 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "HTIA": {
-    "sector": "Real Estate",
-    "industry": "REIT - Healthcare Facilities"
-  },
-  "HTIBP": {
-    "sector": "Real Estate",
-    "industry": "REIT - Healthcare Facilities"
-  },
   "HTLD": {
     "sector": "Industrials",
     "industry": "Trucking"
@@ -9795,15 +8931,7 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "HTLFP": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
   "HTZ": {
-    "sector": "Industrials",
-    "industry": "Rental & Leasing Services"
-  },
-  "HTZWW": {
     "sector": "Industrials",
     "industry": "Rental & Leasing Services"
   },
@@ -9812,10 +8940,6 @@
     "industry": "Electrical Equipment & Parts"
   },
   "HUBC": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
-  "HUBCZ": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
@@ -9828,10 +8952,6 @@
     "industry": "Software - Application"
   },
   "HUDA": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "HUDAU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -9848,10 +8968,6 @@
     "industry": "Healthcare Plans"
   },
   "HUMA": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "HUMAW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -9923,14 +9039,6 @@
     "sector": "Basic Materials",
     "industry": "Gold"
   },
-  "HYMCL": {
-    "sector": "Basic Materials",
-    "industry": "Gold"
-  },
-  "HYMCW": {
-    "sector": "Basic Materials",
-    "industry": "Gold"
-  },
   "HYPR": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
@@ -9940,10 +9048,6 @@
     "industry": "Asset Management"
   },
   "HYZN": {
-    "sector": "Consumer Cyclical",
-    "industry": "Auto Parts"
-  },
-  "HYZNW": {
     "sector": "Consumer Cyclical",
     "industry": "Auto Parts"
   },
@@ -10063,10 +9167,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "ICUCW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "ICUI": {
     "sector": "Healthcare",
     "industry": "Medical Instruments & Supplies"
@@ -10159,10 +9259,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "IGTAW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "IHG": {
     "sector": "Consumer Cyclical",
     "industry": "Lodging"
@@ -10199,10 +9295,6 @@
     "sector": "Healthcare",
     "industry": "Medical Devices"
   },
-  "IINNW": {
-    "sector": "Healthcare",
-    "industry": "Medical Devices"
-  },
   "IIPR": {
     "sector": "Real Estate",
     "industry": "REIT - Industrial"
@@ -10228,14 +9320,6 @@
     "industry": "REIT - Industrial"
   },
   "IMAQ": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "IMAQU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "IMAQW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -10271,10 +9355,6 @@
     "sector": "Energy",
     "industry": "Oil & Gas Midstream"
   },
-  "IMPPP": {
-    "sector": "Energy",
-    "industry": "Oil & Gas Midstream"
-  },
   "IMRX": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -10300,10 +9380,6 @@
     "industry": "Biotechnology"
   },
   "INAQ": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "INAQW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -10435,10 +9511,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "INTEW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "INTG": {
     "sector": "Consumer Cyclical",
     "industry": "Lodging"
@@ -10472,10 +9544,6 @@
     "industry": "Medical Devices"
   },
   "INVZ": {
-    "sector": "Consumer Cyclical",
-    "industry": "Auto Parts"
-  },
-  "INVZW": {
     "sector": "Consumer Cyclical",
     "industry": "Auto Parts"
   },
@@ -10559,10 +9627,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "IPXXU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "IQI": {
     "sector": "Financial Services",
     "industry": "Asset Management"
@@ -10576,10 +9640,6 @@
     "industry": "Specialty Industrial Machinery"
   },
   "IRAA": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "IRAAU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -10611,14 +9671,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "IROHU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "IROHW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "IRON": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -10644,10 +9696,6 @@
     "industry": "Diagnostics & Research"
   },
   "ISPO": {
-    "sector": "Consumer Cyclical",
-    "industry": "Travel Services"
-  },
-  "ISPOW": {
     "sector": "Consumer Cyclical",
     "industry": "Travel Services"
   },
@@ -10723,15 +9771,7 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "IVCAU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "IVCB": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "IVCBW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -10739,15 +9779,7 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "IVCPU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "IVDA": {
-    "sector": "Industrials",
-    "industry": "Security & Protection Services"
-  },
-  "IVDAW": {
     "sector": "Industrials",
     "industry": "Security & Protection Services"
   },
@@ -10772,10 +9804,6 @@
     "industry": "Asset Management"
   },
   "IXAQ": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "IXAQW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -10876,10 +9904,6 @@
     "industry": "Luxury Goods"
   },
   "JFBR": {
-    "sector": "Consumer Cyclical",
-    "industry": "Internet Retail"
-  },
-  "JFBRW": {
     "sector": "Consumer Cyclical",
     "industry": "Internet Retail"
   },
@@ -10991,19 +10015,7 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "JSPRW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "JTAI": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
-  "JTAIW": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
-  "JTAIZ": {
     "sector": "Technology",
     "industry": "Software - Application"
   },
@@ -11016,10 +10028,6 @@
     "industry": "Packaged Foods"
   },
   "JVSA": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "JVSAU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -11056,10 +10064,6 @@
     "industry": "Biotechnology"
   },
   "KACL": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "KACLU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -11104,10 +10108,6 @@
     "industry": "Information Technology Services"
   },
   "KDLY": {
-    "sector": "Healthcare",
-    "industry": "Medical Care Facilities"
-  },
-  "KDLYW": {
     "sector": "Healthcare",
     "industry": "Medical Care Facilities"
   },
@@ -11204,10 +10204,6 @@
     "industry": "Home Improvement Retail"
   },
   "KITT": {
-    "sector": "Industrials",
-    "industry": "Aerospace & Defense"
-  },
-  "KITTW": {
     "sector": "Industrials",
     "industry": "Aerospace & Defense"
   },
@@ -11327,10 +10323,6 @@
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
-  "KPLTW": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
   "KPRX": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -11360,14 +10352,6 @@
     "industry": "Medical Instruments & Supplies"
   },
   "KRNL": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "KRNLU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "KRNLW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -11447,23 +10431,11 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "KTTAW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "KURA": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
   "KVAC": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "KVACU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "KVACW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -11555,14 +10527,6 @@
     "sector": "Real Estate",
     "industry": "REIT - Specialty"
   },
-  "LANDO": {
-    "sector": "Real Estate",
-    "industry": "REIT - Specialty"
-  },
-  "LANDP": {
-    "sector": "Real Estate",
-    "industry": "REIT - Specialty"
-  },
   "LARK": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
@@ -11576,10 +10540,6 @@
     "industry": "Semiconductors"
   },
   "LATG": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "LATGU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -11608,10 +10568,6 @@
     "industry": "Telecom Services"
   },
   "LBRDK": {
-    "sector": "Communication Services",
-    "industry": "Telecom Services"
-  },
-  "LBRDP": {
     "sector": "Communication Services",
     "industry": "Telecom Services"
   },
@@ -11727,10 +10683,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "LEXXW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "LFCR": {
     "sector": "Healthcare",
     "industry": "Drug Manufacturers - Specialty & Generic"
@@ -11740,10 +10692,6 @@
     "industry": "Pharmaceutical Retailers"
   },
   "LFMD": {
-    "sector": "Healthcare",
-    "industry": "Health Information Services"
-  },
-  "LFMDP": {
     "sector": "Healthcare",
     "industry": "Health Information Services"
   },
@@ -11772,10 +10720,6 @@
     "industry": "Internet Retail"
   },
   "LGHL": {
-    "sector": "Financial Services",
-    "industry": "Capital Markets"
-  },
-  "LGHLW": {
     "sector": "Financial Services",
     "industry": "Capital Markets"
   },
@@ -11823,19 +10767,11 @@
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
-  "LIDRW": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
   "LIF": {
     "sector": "Technology",
     "industry": "Software - Application"
   },
   "LIFW": {
-    "sector": "Healthcare",
-    "industry": "Health Information Services"
-  },
-  "LIFWW": {
     "sector": "Healthcare",
     "industry": "Health Information Services"
   },
@@ -11892,10 +10828,6 @@
     "industry": "Medical Devices"
   },
   "LIXT": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "LIXTW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -12035,10 +10967,6 @@
     "sector": "Consumer Cyclical",
     "industry": "Auto Manufacturers"
   },
-  "LOTWW": {
-    "sector": "Consumer Cyclical",
-    "industry": "Auto Manufacturers"
-  },
   "LOVE": {
     "sector": "Consumer Cyclical",
     "industry": "Furnishings, Fixtures & Appliances"
@@ -12131,10 +11059,6 @@
     "sector": "Real Estate",
     "industry": "Real Estate - Development"
   },
-  "LSEAW": {
-    "sector": "Real Estate",
-    "industry": "Real Estate - Development"
-  },
   "LSPD": {
     "sector": "Technology",
     "industry": "Software - Application"
@@ -12220,10 +11144,6 @@
     "industry": "Airlines"
   },
   "LUXH": {
-    "sector": "Consumer Cyclical",
-    "industry": "Lodging"
-  },
-  "LUXHP": {
     "sector": "Consumer Cyclical",
     "industry": "Lodging"
   },
@@ -12359,15 +11279,7 @@
     "sector": "Technology",
     "industry": "Software - Application"
   },
-  "MAPSW": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
   "MAQC": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "MAQCW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -12451,18 +11363,6 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "MBINM": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "MBINN": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "MBINO": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
   "MBIO": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -12470,10 +11370,6 @@
   "MBLY": {
     "sector": "Consumer Cyclical",
     "industry": "Auto Parts"
-  },
-  "MBNKP": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
   },
   "MBOT": {
     "sector": "Healthcare",
@@ -12504,10 +11400,6 @@
     "industry": "Shell Companies"
   },
   "MCAG": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "MCAGU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -12591,10 +11483,6 @@
     "sector": "Healthcare",
     "industry": "Medical Devices"
   },
-  "MDAIW": {
-    "sector": "Healthcare",
-    "industry": "Medical Devices"
-  },
   "MDB": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
@@ -12623,10 +11511,6 @@
     "sector": "Real Estate",
     "industry": "REIT - Diversified"
   },
-  "MDRRP": {
-    "sector": "Real Estate",
-    "industry": "REIT - Diversified"
-  },
   "MDT": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
@@ -12646,10 +11530,6 @@
   "MDXG": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
-  },
-  "MDXH": {
-    "sector": "Healthcare",
-    "industry": "Diagnostics & Research"
   },
   "ME": {
     "sector": "Healthcare",
@@ -12947,10 +11827,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "MLECW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "MLI": {
     "sector": "Industrials",
     "industry": "Metal Fabrication"
@@ -13027,10 +11903,6 @@
     "sector": "Communication Services",
     "industry": "Entertainment"
   },
-  "MMVWW": {
-    "sector": "Communication Services",
-    "industry": "Entertainment"
-  },
   "MMYT": {
     "sector": "Consumer Cyclical",
     "industry": "Travel Services"
@@ -13075,10 +11947,6 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "MNSBP": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
   "MNST": {
     "sector": "Consumer Defensive",
     "industry": "Beverages - Non-Alcoholic"
@@ -13095,10 +11963,6 @@
     "sector": "Industrials",
     "industry": "Aerospace & Defense"
   },
-  "MNTSW": {
-    "sector": "Industrials",
-    "industry": "Aerospace & Defense"
-  },
   "MNTX": {
     "sector": "Industrials",
     "industry": "Farm & Heavy Construction Machinery"
@@ -13107,19 +11971,11 @@
     "sector": "Communication Services",
     "industry": "Internet Content & Information"
   },
-  "MNYWW": {
-    "sector": "Communication Services",
-    "industry": "Internet Content & Information"
-  },
   "MO": {
     "sector": "Consumer Defensive",
     "industry": "Tobacco"
   },
   "MOBX": {
-    "sector": "Technology",
-    "industry": "Semiconductors"
-  },
-  "MOBXW": {
     "sector": "Technology",
     "industry": "Semiconductors"
   },
@@ -13319,19 +12175,11 @@
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
-  "MSAIW": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
   "MSB": {
     "sector": "Basic Materials",
     "industry": "Steel"
   },
   "MSBI": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "MSBIP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -13383,10 +12231,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "MSSAW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "MSTR": {
     "sector": "Technology",
     "industry": "Software - Application"
@@ -13420,10 +12264,6 @@
     "industry": "Oil & Gas E&P"
   },
   "MTEK": {
-    "sector": "Technology",
-    "industry": "Electronic Components"
-  },
-  "MTEKW": {
     "sector": "Technology",
     "industry": "Electronic Components"
   },
@@ -13551,10 +12391,6 @@
     "sector": "Industrials",
     "industry": "Electrical Equipment & Parts"
   },
-  "MVSTW": {
-    "sector": "Industrials",
-    "industry": "Electrical Equipment & Parts"
-  },
   "MVT": {
     "sector": "Financial Services",
     "industry": "Asset Management"
@@ -13619,10 +12455,6 @@
     "sector": "Communication Services",
     "industry": "Electronic Gaming & Multimedia"
   },
-  "MYPSW": {
-    "sector": "Communication Services",
-    "industry": "Electronic Gaming & Multimedia"
-  },
   "MYRG": {
     "sector": "Industrials",
     "industry": "Engineering & Construction"
@@ -13648,10 +12480,6 @@
     "industry": "Packaged Foods"
   },
   "NAMS": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "NAMSW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -13759,10 +12587,6 @@
     "sector": "Financial Services",
     "industry": "Capital Markets"
   },
-  "NCPLW": {
-    "sector": "Financial Services",
-    "industry": "Capital Markets"
-  },
   "NCRA": {
     "sector": "Consumer Defensive",
     "industry": "Packaged Foods"
@@ -13835,10 +12659,6 @@
     "sector": "Industrials",
     "industry": "Electrical Equipment & Parts"
   },
-  "NEOVW": {
-    "sector": "Industrials",
-    "industry": "Electrical Equipment & Parts"
-  },
   "NEP": {
     "sector": "Utilities",
     "industry": "Utilities - Renewable"
@@ -13856,14 +12676,6 @@
     "industry": "Software - Infrastructure"
   },
   "NETD": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "NETDU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "NETDW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -13991,10 +12803,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "NKGNW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "NKLA": {
     "sector": "Industrials",
     "industry": "Farm & Heavy Construction Machinery"
@@ -14027,10 +12835,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "NLSPW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "NLY": {
     "sector": "Real Estate",
     "industry": "REIT - Mortgage"
@@ -14044,10 +12848,6 @@
     "industry": "Asset Management"
   },
   "NMHI": {
-    "sector": "Industrials",
-    "industry": "Specialty Industrial Machinery"
-  },
-  "NMHIW": {
     "sector": "Industrials",
     "industry": "Specialty Industrial Machinery"
   },
@@ -14090,18 +12890,6 @@
   "NNAG": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
-  },
-  "NNAGU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "NNAGW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "NNAVW": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
   },
   "NNBR": {
     "sector": "Industrials",
@@ -14171,23 +12959,11 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "NOVVW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "NOW": {
     "sector": "Technology",
     "industry": "Software - Application"
   },
   "NPAB": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "NPABU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "NPABW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -14271,19 +13047,11 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "NRSNW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "NRT": {
     "sector": "Energy",
     "industry": "Oil & Gas E&P"
   },
   "NRXP": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "NRXPW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -14363,19 +13131,11 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "NTRBW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "NTRP": {
     "sector": "Consumer Cyclical",
     "industry": "Travel Services"
   },
   "NTRS": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
-  "NTRSO": {
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
@@ -14431,10 +13191,6 @@
     "sector": "Healthcare",
     "industry": "Medical Devices"
   },
-  "NUVOW": {
-    "sector": "Healthcare",
-    "industry": "Medical Devices"
-  },
   "NUWE": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
@@ -14444,10 +13200,6 @@
     "industry": "Packaged Foods"
   },
   "NVAC": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "NVACW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -14535,10 +13287,6 @@
     "sector": "Consumer Cyclical",
     "industry": "Specialty Retail"
   },
-  "NVVEW": {
-    "sector": "Consumer Cyclical",
-    "industry": "Specialty Retail"
-  },
   "NVX": {
     "sector": "Industrials",
     "industry": "Electrical Equipment & Parts"
@@ -14587,10 +13335,6 @@
     "sector": "Consumer Cyclical",
     "industry": "Auto Manufacturers"
   },
-  "NWTNW": {
-    "sector": "Consumer Cyclical",
-    "industry": "Auto Manufacturers"
-  },
   "NX": {
     "sector": "Industrials",
     "industry": "Building Products & Equipment"
@@ -14607,19 +13351,11 @@
     "sector": "Healthcare",
     "industry": "Medical Instruments & Supplies"
   },
-  "NXGLW": {
-    "sector": "Healthcare",
-    "industry": "Medical Instruments & Supplies"
-  },
   "NXJ": {
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
   "NXL": {
-    "sector": "Healthcare",
-    "industry": "Medical Devices"
-  },
-  "NXLIW": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
   },
@@ -14636,10 +13372,6 @@
     "industry": "Semiconductors"
   },
   "NXPL": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
-  "NXPLW": {
     "sector": "Technology",
     "industry": "Software - Application"
   },
@@ -14683,19 +13415,7 @@
     "sector": "Real Estate",
     "industry": "REIT - Mortgage"
   },
-  "NYMTL": {
-    "sector": "Real Estate",
-    "industry": "REIT - Mortgage"
-  },
-  "NYMTM": {
-    "sector": "Real Estate",
-    "industry": "REIT - Mortgage"
-  },
   "NYMTN": {
-    "sector": "Real Estate",
-    "industry": "REIT - Mortgage"
-  },
-  "NYMTZ": {
     "sector": "Real Estate",
     "industry": "REIT - Mortgage"
   },
@@ -14712,10 +13432,6 @@
     "industry": "REIT - Retail"
   },
   "OABI": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "OABIW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -14763,23 +13479,11 @@
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
-  "OCCIN": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
-  "OCCIO": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
   "OCEA": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
   "OCFC": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "OCFCP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -14979,14 +13683,6 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "ONBPO": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "ONBPP": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
   "ONCO": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -15007,10 +13703,6 @@
     "sector": "Communication Services",
     "industry": "Internet Content & Information"
   },
-  "ONFOW": {
-    "sector": "Communication Services",
-    "industry": "Internet Content & Information"
-  },
   "ONIT": {
     "sector": "Financial Services",
     "industry": "Mortgage Finance"
@@ -15020,10 +13712,6 @@
     "industry": "REIT - Office"
   },
   "ONMD": {
-    "sector": "Healthcare",
-    "industry": "Health Information Services"
-  },
-  "ONMDW": {
     "sector": "Healthcare",
     "industry": "Health Information Services"
   },
@@ -15040,10 +13728,6 @@
     "industry": "Biotechnology"
   },
   "ONYX": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "ONYXW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -15123,10 +13807,6 @@
     "sector": "Technology",
     "industry": "Electronic Components"
   },
-  "OPTXW": {
-    "sector": "Technology",
-    "industry": "Electronic Components"
-  },
   "OPXS": {
     "sector": "Industrials",
     "industry": "Aerospace & Defense"
@@ -15148,10 +13828,6 @@
     "industry": "Software - Infrastructure"
   },
   "ORGN": {
-    "sector": "Basic Materials",
-    "industry": "Chemicals"
-  },
-  "ORGNW": {
     "sector": "Basic Materials",
     "industry": "Chemicals"
   },
@@ -15299,15 +13975,7 @@
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
-  "OXLCN": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
   "OXLCO": {
-    "sector": "Financial Services",
-    "industry": "Asset Management"
-  },
-  "OXLCP": {
     "sector": "Financial Services",
     "industry": "Asset Management"
   },
@@ -15324,10 +13992,6 @@
     "industry": "Oil & Gas E&P"
   },
   "OZK": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "OZKAP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -15419,10 +14083,6 @@
     "sector": "Healthcare",
     "industry": "Medical Devices"
   },
-  "PAVMZ": {
-    "sector": "Healthcare",
-    "industry": "Medical Devices"
-  },
   "PAVS": {
     "sector": "Consumer Defensive",
     "industry": "Packaged Foods"
@@ -15440,10 +14100,6 @@
     "industry": "Software - Application"
   },
   "PAYO": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
-  "PAYOW": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
@@ -15547,14 +14203,6 @@
     "sector": "Industrials",
     "industry": "Pollution & Treatment Controls"
   },
-  "PCTTU": {
-    "sector": "Industrials",
-    "industry": "Pollution & Treatment Controls"
-  },
-  "PCTTW": {
-    "sector": "Industrials",
-    "industry": "Pollution & Treatment Controls"
-  },
   "PCTY": {
     "sector": "Technology",
     "industry": "Software - Application"
@@ -15603,10 +14251,6 @@
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
-  "PDYNW": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
   "PEB": {
     "sector": "Real Estate",
     "industry": "REIT - Hotel & Motel"
@@ -15632,10 +14276,6 @@
     "industry": "Software - Application"
   },
   "PEGR": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "PEGRU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -15686,10 +14326,6 @@
   "PETS": {
     "sector": "Healthcare",
     "industry": "Pharmaceutical Retailers"
-  },
-  "PETWW": {
-    "sector": "Technology",
-    "industry": "Software - Application"
   },
   "PETZ": {
     "sector": "Consumer Cyclical",
@@ -15763,10 +14399,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "PFTAU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "PFX": {
     "sector": "Financial Services",
     "industry": "Asset Management"
@@ -15800,10 +14432,6 @@
     "industry": "REIT - Office"
   },
   "PGY": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
-  "PGYWW": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
@@ -15868,10 +14496,6 @@
     "industry": "Recreational Vehicles"
   },
   "PIII": {
-    "sector": "Healthcare",
-    "industry": "Medical Care Facilities"
-  },
-  "PIIIW": {
     "sector": "Healthcare",
     "industry": "Medical Care Facilities"
   },
@@ -15947,14 +14571,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "PLAOU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "PLAOW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "PLAY": {
     "sector": "Communication Services",
     "industry": "Entertainment"
@@ -15983,19 +14599,7 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "PLMIU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "PLMIW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "PLMJ": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "PLMJU": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -16123,10 +14727,6 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "PNFPP": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
   "PNI": {
     "sector": "Financial Services",
     "industry": "Asset Management"
@@ -16207,10 +14807,6 @@
     "sector": "Industrials",
     "industry": "Aerospace & Defense"
   },
-  "POWWP": {
-    "sector": "Industrials",
-    "industry": "Aerospace & Defense"
-  },
   "PPBI": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
@@ -16239,6 +14835,10 @@
     "sector": "Industrials",
     "industry": "Electrical Equipment & Parts"
   },
+  "PSIX": {
+    "sector": "Industrials",
+    "industry": "Specialty Industrial Machinery"
+  },
   "PPT": {
     "sector": "Financial Services",
     "industry": "Asset Management"
@@ -16248,14 +14848,6 @@
     "industry": "Other Precious Metals & Mining"
   },
   "PPYA": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "PPYAU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "PPYAW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -16288,10 +14880,6 @@
     "industry": "Education & Training Services"
   },
   "PRE": {
-    "sector": "Healthcare",
-    "industry": "Diagnostics & Research"
-  },
-  "PRENW": {
     "sector": "Healthcare",
     "industry": "Diagnostics & Research"
   },
@@ -16339,10 +14927,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "PRLHW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "PRM": {
     "sector": "Basic Materials",
     "industry": "Specialty Chemicals"
@@ -16360,10 +14944,6 @@
     "industry": "Software - Application"
   },
   "PROC": {
-    "sector": "Healthcare",
-    "industry": "Drug Manufacturers - Specialty & Generic"
-  },
-  "PROCW": {
     "sector": "Healthcare",
     "industry": "Drug Manufacturers - Specialty & Generic"
   },
@@ -16400,10 +14980,6 @@
     "industry": "Semiconductors"
   },
   "PRST": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
-  "PRSTW": {
     "sector": "Technology",
     "industry": "Software - Application"
   },
@@ -16523,10 +15099,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "PTIXW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "PTLO": {
     "sector": "Consumer Cyclical",
     "industry": "Restaurants"
@@ -16552,14 +15124,6 @@
     "industry": "Packaging & Containers"
   },
   "PTWO": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "PTWOU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "PTWOW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -16632,14 +15196,6 @@
     "industry": "Semiconductors"
   },
   "PXS": {
-    "sector": "Energy",
-    "industry": "Oil & Gas Midstream"
-  },
-  "PXSAP": {
-    "sector": "Energy",
-    "industry": "Oil & Gas Midstream"
-  },
-  "PXSAW": {
     "sector": "Energy",
     "industry": "Oil & Gas Midstream"
   },
@@ -16743,10 +15299,6 @@
     "sector": "Consumer Cyclical",
     "industry": "Internet Retail"
   },
-  "QRTEP": {
-    "sector": "Consumer Cyclical",
-    "industry": "Internet Retail"
-  },
   "QRVO": {
     "sector": "Technology",
     "industry": "Semiconductors"
@@ -16756,10 +15308,6 @@
     "industry": "Auto Parts"
   },
   "QSI": {
-    "sector": "Healthcare",
-    "industry": "Medical Devices"
-  },
-  "QSIAW": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
   },
@@ -16863,10 +15411,6 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "RBCP": {
-    "sector": "Industrials",
-    "industry": "Tools & Accessories"
-  },
   "RBKB": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
@@ -16920,10 +15464,6 @@
     "industry": "Conglomerates"
   },
   "RCRT": {
-    "sector": "Industrials",
-    "industry": "Staffing & Employment Services"
-  },
-  "RCRTW": {
     "sector": "Industrials",
     "industry": "Staffing & Employment Services"
   },
@@ -16987,10 +15527,6 @@
     "sector": "Technology",
     "industry": "Software - Application"
   },
-  "RDZNW": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
   "REAL": {
     "sector": "Consumer Cyclical",
     "industry": "Luxury Goods"
@@ -17019,14 +15555,6 @@
     "sector": "Real Estate",
     "industry": "REIT - Retail"
   },
-  "REGCO": {
-    "sector": "Real Estate",
-    "industry": "REIT - Retail"
-  },
-  "REGCP": {
-    "sector": "Real Estate",
-    "industry": "REIT - Retail"
-  },
   "REGN": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -17036,10 +15564,6 @@
     "industry": "Software - Infrastructure"
   },
   "RELI": {
-    "sector": "Financial Services",
-    "industry": "Insurance Brokers"
-  },
-  "RELIW": {
     "sector": "Financial Services",
     "industry": "Insurance Brokers"
   },
@@ -17056,10 +15580,6 @@
     "industry": "Biotechnology"
   },
   "RENE": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "RENEW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -17080,10 +15600,6 @@
     "industry": "Building Materials"
   },
   "REVB": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "REVBW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -17175,10 +15691,6 @@
     "sector": "Technology",
     "industry": "Computer Hardware"
   },
-  "RGTIW": {
-    "sector": "Technology",
-    "industry": "Computer Hardware"
-  },
   "RH": {
     "sector": "Consumer Cyclical",
     "industry": "Specialty Retail"
@@ -17204,14 +15716,6 @@
     "industry": "Biotechnology"
   },
   "RILY": {
-    "sector": "Financial Services",
-    "industry": "Financial Conglomerates"
-  },
-  "RILYL": {
-    "sector": "Financial Services",
-    "industry": "Financial Conglomerates"
-  },
-  "RILYP": {
     "sector": "Financial Services",
     "industry": "Financial Conglomerates"
   },
@@ -17367,14 +15871,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "ROCLU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "ROCLW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "ROG": {
     "sector": "Technology",
     "industry": "Electronic Components"
@@ -17499,10 +15995,6 @@
     "sector": "Communication Services",
     "industry": "Entertainment"
   },
-  "RSVRW": {
-    "sector": "Communication Services",
-    "industry": "Entertainment"
-  },
   "RTC": {
     "sector": "Technology",
     "industry": "Software - Application"
@@ -17512,10 +16004,6 @@
     "industry": "Aerospace & Defense"
   },
   "RUM": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
-  "RUMBW": {
     "sector": "Technology",
     "industry": "Software - Application"
   },
@@ -17539,10 +16027,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "RVMDW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "RVNC": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -17551,19 +16035,11 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "RVPHW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "RVSB": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
   "RVSN": {
-    "sector": "Industrials",
-    "industry": "Railroads"
-  },
-  "RVSNW": {
     "sector": "Industrials",
     "industry": "Railroads"
   },
@@ -17643,10 +16119,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "SABSW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "SAFE": {
     "sector": "Real Estate",
     "industry": "REIT - Diversified"
@@ -17715,10 +16187,6 @@
     "sector": "Industrials",
     "industry": "Aerospace & Defense"
   },
-  "SATLW": {
-    "sector": "Industrials",
-    "industry": "Aerospace & Defense"
-  },
   "SATS": {
     "sector": "Technology",
     "industry": "Communication Equipment"
@@ -17752,10 +16220,6 @@
     "industry": "Banks - Regional"
   },
   "SBFM": {
-    "sector": "Healthcare",
-    "industry": "Drug Manufacturers - Specialty & Generic"
-  },
-  "SBFMW": {
     "sector": "Healthcare",
     "industry": "Drug Manufacturers - Specialty & Generic"
   },
@@ -17835,10 +16299,6 @@
     "sector": "Healthcare",
     "industry": "Drug Manufacturers - General"
   },
-  "SCLXW": {
-    "sector": "Healthcare",
-    "industry": "Drug Manufacturers - General"
-  },
   "SCM": {
     "sector": "Financial Services",
     "industry": "Asset Management"
@@ -17915,10 +16375,6 @@
     "sector": "Communication Services",
     "industry": "Internet Content & Information"
   },
-  "SEATW": {
-    "sector": "Communication Services",
-    "industry": "Internet Content & Information"
-  },
   "SEDA": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
@@ -17964,10 +16420,6 @@
     "industry": "Packaged Foods"
   },
   "SEPA": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "SEPAW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -18103,10 +16555,6 @@
     "sector": "Healthcare",
     "industry": "Health Information Services"
   },
-  "SHCRW": {
-    "sector": "Healthcare",
-    "industry": "Health Information Services"
-  },
   "SHEL": {
     "sector": "Energy",
     "industry": "Oil & Gas Integrated"
@@ -18116,10 +16564,6 @@
     "industry": "Telecom Services"
   },
   "SHFS": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "SHFSW": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -18155,19 +16599,11 @@
     "sector": "Consumer Defensive",
     "industry": "Beverages - Non-Alcoholic"
   },
-  "SHOTW": {
-    "sector": "Consumer Defensive",
-    "industry": "Beverages - Non-Alcoholic"
-  },
   "SHPH": {
     "sector": "Healthcare",
     "industry": "Drug Manufacturers - Specialty & Generic"
   },
   "SHPW": {
-    "sector": "Industrials",
-    "industry": "Specialty Industrial Machinery"
-  },
-  "SHPWW": {
     "sector": "Industrials",
     "industry": "Specialty Industrial Machinery"
   },
@@ -18200,10 +16636,6 @@
     "industry": "Drug Manufacturers - Specialty & Generic"
   },
   "SIGI": {
-    "sector": "Financial Services",
-    "industry": "Insurance - Property & Casualty"
-  },
-  "SIGIP": {
     "sector": "Financial Services",
     "industry": "Insurance - Property & Casualty"
   },
@@ -18275,10 +16707,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "SKGRW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "SKIL": {
     "sector": "Consumer Defensive",
     "industry": "Education & Training Services"
@@ -18331,14 +16759,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "SLAMU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "SLAMW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "SLB": {
     "sector": "Energy",
     "industry": "Oil & Gas Equipment & Services"
@@ -18352,10 +16772,6 @@
     "industry": "Biotechnology"
   },
   "SLDP": {
-    "sector": "Consumer Cyclical",
-    "industry": "Auto Parts"
-  },
-  "SLDPW": {
     "sector": "Consumer Cyclical",
     "industry": "Auto Parts"
   },
@@ -18387,19 +16803,11 @@
     "sector": "Consumer Cyclical",
     "industry": "Resorts & Casinos"
   },
-  "SLNAW": {
-    "sector": "Consumer Cyclical",
-    "industry": "Resorts & Casinos"
-  },
   "SLNG": {
     "sector": "Energy",
     "industry": "Oil & Gas Integrated"
   },
   "SLNH": {
-    "sector": "Financial Services",
-    "industry": "Capital Markets"
-  },
-  "SLNHP": {
     "sector": "Financial Services",
     "industry": "Capital Markets"
   },
@@ -18526,10 +16934,6 @@
   "SMXT": {
     "sector": "Technology",
     "industry": "Solar"
-  },
-  "SMXWW": {
-    "sector": "Industrials",
-    "industry": "Specialty Business Services"
   },
   "SN": {
     "sector": "Consumer Cyclical",
@@ -18695,10 +17099,6 @@
     "sector": "Consumer Cyclical",
     "industry": "Lodging"
   },
-  "SONDW": {
-    "sector": "Consumer Cyclical",
-    "industry": "Lodging"
-  },
   "SONM": {
     "sector": "Technology",
     "industry": "Communication Equipment"
@@ -18735,10 +17135,6 @@
     "sector": "Technology",
     "industry": "Software - Application"
   },
-  "SOUNW": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
   "SOWG": {
     "sector": "Consumer Defensive",
     "industry": "Packaged Foods"
@@ -18760,10 +17156,6 @@
     "industry": "Asset Management"
   },
   "SPEC": {
-    "sector": "Industrials",
-    "industry": "Pollution & Treatment Controls"
-  },
-  "SPECW": {
     "sector": "Industrials",
     "industry": "Pollution & Treatment Controls"
   },
@@ -18800,14 +17192,6 @@
     "industry": "Specialty Business Services"
   },
   "SPKL": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "SPKLU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "SPKLW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -18887,14 +17271,6 @@
     "sector": "Real Estate",
     "industry": "REIT - Diversified"
   },
-  "SQFTP": {
-    "sector": "Real Estate",
-    "industry": "REIT - Diversified"
-  },
-  "SQFTW": {
-    "sector": "Real Estate",
-    "industry": "REIT - Diversified"
-  },
   "SQM": {
     "sector": "Basic Materials",
     "industry": "Specialty Chemicals"
@@ -18956,10 +17332,6 @@
     "industry": "Medical Devices"
   },
   "SRZN": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "SRZNW": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -19143,10 +17515,6 @@
     "sector": "Healthcare",
     "industry": "Diagnostics & Research"
   },
-  "STRRP": {
-    "sector": "Healthcare",
-    "industry": "Diagnostics & Research"
-  },
   "STRS": {
     "sector": "Real Estate",
     "industry": "Real Estate - Diversified"
@@ -19156,10 +17524,6 @@
     "industry": "Auto Parts"
   },
   "STSS": {
-    "sector": "Healthcare",
-    "industry": "Medical Instruments & Supplies"
-  },
-  "STSSW": {
     "sector": "Healthcare",
     "industry": "Medical Instruments & Supplies"
   },
@@ -19207,10 +17571,6 @@
     "sector": "Technology",
     "industry": "Software - Application"
   },
-  "SURGW": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
   "SVC": {
     "sector": "Real Estate",
     "industry": "REIT - Hotel & Motel"
@@ -19220,14 +17580,6 @@
     "industry": "Software - Application"
   },
   "SVII": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "SVIIU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "SVIIW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -19355,10 +17707,6 @@
     "sector": "Technology",
     "industry": "Communication Equipment"
   },
-  "SYTAW": {
-    "sector": "Technology",
-    "industry": "Communication Equipment"
-  },
   "SYY": {
     "sector": "Consumer Defensive",
     "industry": "Food Distribution"
@@ -19435,10 +17783,6 @@
     "sector": "Communication Services",
     "industry": "Internet Content & Information"
   },
-  "TBLAW": {
-    "sector": "Communication Services",
-    "industry": "Internet Content & Information"
-  },
   "TBLT": {
     "sector": "Industrials",
     "industry": "Tools & Accessories"
@@ -19464,10 +17808,6 @@
     "industry": "Banks - Regional"
   },
   "TCBI": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "TCBIO": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -19615,10 +17955,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "TETEW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "TEVA": {
     "sector": "Healthcare",
     "industry": "Drug Manufacturers - Specialty & Generic"
@@ -19643,10 +17979,6 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "TFINP": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
   "TFPM": {
     "sector": "Basic Materials",
     "industry": "Other Precious Metals & Mining"
@@ -19664,10 +17996,6 @@
     "industry": "Metal Fabrication"
   },
   "TGAA": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "TGAAW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -19815,10 +18143,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "TLGYW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "TLIS": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
@@ -19843,10 +18167,6 @@
     "sector": "Healthcare",
     "industry": "Medical Devices"
   },
-  "TLSIW": {
-    "sector": "Healthcare",
-    "industry": "Medical Devices"
-  },
   "TLYS": {
     "sector": "Consumer Cyclical",
     "industry": "Apparel Retail"
@@ -19858,10 +18178,6 @@
   "TMCI": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
-  },
-  "TMCWW": {
-    "sector": "Basic Materials",
-    "industry": "Other Industrial Metals & Mining"
   },
   "TMDX": {
     "sector": "Healthcare",
@@ -19924,10 +18240,6 @@
     "industry": "Biotechnology"
   },
   "TOI": {
-    "sector": "Healthcare",
-    "industry": "Medical Care Facilities"
-  },
-  "TOIIW": {
     "sector": "Healthcare",
     "industry": "Medical Care Facilities"
   },
@@ -20084,14 +18396,6 @@
     "industry": "Industrial Distribution"
   },
   "TRON": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "TRONU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
-  "TRONW": {
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
@@ -20287,10 +18591,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "TVGNW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "TVTX": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -20415,6 +18715,10 @@
     "sector": "Technology",
     "industry": "Software - Application"
   },
+  "UBFO": {
+    "sector": "Financial Services",
+    "industry": "Banks - Regional"
+  },
   "UBS": {
     "sector": "Financial Services",
     "industry": "Banks - Diversified"
@@ -20432,10 +18736,6 @@
     "industry": "Software - Infrastructure"
   },
   "UCBI": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "UCBIO": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -20679,6 +18979,10 @@
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
+  "USLM": {
+    "sector": "Basic Materials",
+    "industry": "Building Materials"
+  },
   "USM": {
     "sector": "Communication Services",
     "industry": "Telecom Services"
@@ -20891,10 +19195,6 @@
     "sector": "Basic Materials",
     "industry": "Chemicals"
   },
-  "VIASP": {
-    "sector": "Utilities",
-    "industry": "Utilities - Regulated Electric"
-  },
   "VIAV": {
     "sector": "Technology",
     "industry": "Communication Equipment"
@@ -21019,10 +19319,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "VMCAW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "VMD": {
     "sector": "Healthcare",
     "industry": "Medical Devices"
@@ -21075,6 +19371,10 @@
     "sector": "Technology",
     "industry": "Consumer Electronics"
   },
+  "VOYA": {
+    "sector": "Financial Services",
+    "industry": "Financial Conglomerates"
+  },
   "VPG": {
     "sector": "Technology",
     "industry": "Scientific & Technical Instruments"
@@ -21116,10 +19416,6 @@
     "industry": "Auto & Truck Dealerships"
   },
   "VRME": {
-    "sector": "Industrials",
-    "industry": "Security & Protection Services"
-  },
-  "VRMEW": {
     "sector": "Industrials",
     "industry": "Security & Protection Services"
   },
@@ -21190,10 +19486,6 @@
   "VSME": {
     "sector": "Communication Services",
     "industry": "Advertising Agencies"
-  },
-  "VSSYW": {
-    "sector": "Technology",
-    "industry": "Software - Application"
   },
   "VST": {
     "sector": "Utilities",
@@ -21295,10 +19587,6 @@
     "sector": "Consumer Defensive",
     "industry": "Beverages - Wineries & Distilleries"
   },
-  "VWEWW": {
-    "sector": "Consumer Defensive",
-    "industry": "Beverages - Wineries & Distilleries"
-  },
   "VXRT": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
@@ -21332,10 +19620,6 @@
     "industry": "Banks - Regional"
   },
   "WAFD": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "WAFDP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -21455,10 +19739,6 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "WENAW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "WERN": {
     "sector": "Industrials",
     "industry": "Trucking"
@@ -21468,10 +19748,6 @@
     "industry": "Oil & Gas Midstream"
   },
   "WEST": {
-    "sector": "Consumer Defensive",
-    "industry": "Packaged Foods"
-  },
-  "WESTW": {
     "sector": "Consumer Defensive",
     "industry": "Packaged Foods"
   },
@@ -21508,10 +19784,6 @@
     "industry": "Recreational Vehicles"
   },
   "WGS": {
-    "sector": "Healthcare",
-    "industry": "Health Information Services"
-  },
-  "WGSWW": {
     "sector": "Healthcare",
     "industry": "Health Information Services"
   },
@@ -21571,10 +19843,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "WINVU": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "WIRE": {
     "sector": "Industrials",
     "industry": "Electrical Equipment & Parts"
@@ -21615,19 +19883,11 @@
     "sector": "Consumer Cyclical",
     "industry": "Auto Parts"
   },
-  "WKSPW": {
-    "sector": "Consumer Cyclical",
-    "industry": "Auto Parts"
-  },
   "WLDN": {
     "sector": "Industrials",
     "industry": "Engineering & Construction"
   },
   "WLDS": {
-    "sector": "Technology",
-    "industry": "Consumer Electronics"
-  },
-  "WLDSW": {
     "sector": "Technology",
     "industry": "Consumer Electronics"
   },
@@ -21759,10 +20019,6 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "WSBCP": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
   "WSBF": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
@@ -21804,10 +20060,6 @@
     "industry": "Banks - Regional"
   },
   "WTFCM": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "WTFCP": {
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
@@ -21891,19 +20143,11 @@
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
-  "XBIOW": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
   "XBIT": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
   "XBP": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
-  "XBPEW": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },
@@ -21916,10 +20160,6 @@
     "industry": "Utilities - Regulated Electric"
   },
   "XELA": {
-    "sector": "Technology",
-    "industry": "Software - Application"
-  },
-  "XELAP": {
     "sector": "Technology",
     "industry": "Software - Application"
   },
@@ -21976,14 +20216,6 @@
     "industry": "Oil & Gas Integrated"
   },
   "XOMA": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "XOMAO": {
-    "sector": "Healthcare",
-    "industry": "Biotechnology"
-  },
-  "XOMAP": {
     "sector": "Healthcare",
     "industry": "Biotechnology"
   },
@@ -22143,10 +20375,6 @@
     "sector": "Industrials",
     "industry": "Rental & Leasing Services"
   },
-  "ZCARW": {
-    "sector": "Industrials",
-    "industry": "Rental & Leasing Services"
-  },
   "ZCMD": {
     "sector": "Healthcare",
     "industry": "Health Information Services"
@@ -22156,10 +20384,6 @@
     "industry": "Advertising Agencies"
   },
   "ZEO": {
-    "sector": "Technology",
-    "industry": "Solar"
-  },
-  "ZEOWW": {
     "sector": "Technology",
     "industry": "Solar"
   },
@@ -22191,14 +20415,6 @@
     "sector": "Financial Services",
     "industry": "Banks - Regional"
   },
-  "ZIONO": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
-  "ZIONP": {
-    "sector": "Financial Services",
-    "industry": "Banks - Regional"
-  },
   "ZIP": {
     "sector": "Industrials",
     "industry": "Staffing & Employment Services"
@@ -22219,10 +20435,6 @@
     "sector": "Financial Services",
     "industry": "Shell Companies"
   },
-  "ZLSWW": {
-    "sector": "Financial Services",
-    "industry": "Shell Companies"
-  },
   "ZM": {
     "sector": "Technology",
     "industry": "Software - Application"
@@ -22232,10 +20444,6 @@
     "industry": "Biotechnology"
   },
   "ZPTA": {
-    "sector": "Technology",
-    "industry": "Software - Infrastructure"
-  },
-  "ZPTAW": {
     "sector": "Technology",
     "industry": "Software - Infrastructure"
   },

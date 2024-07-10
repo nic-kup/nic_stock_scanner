@@ -31,18 +31,54 @@ h1, h3 {
     gap: 10px;
 }
 
+.fuzzy-search {
+    width: 200px;
+    padding: 5px;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    right: 0;
+    background-color: white;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    margin-top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 0.9em;
+}
+
+.search-result {
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.search-result:hover, .search-result-active {
+    background-color: #e0e0f0;
+}
+
+.no-results {
+    padding: 5px 10px;
+    color: #656565;
+    font-style: italic;
+}
+
 .property-row {
     display: flex;
-    align-items: center;
+    align-items: flex-start;
     gap: 10px;
+    position: relative;
 }
 
 .property-row label {
     white-space: nowrap;
 }
 
-.property-row select {
-    width: 200px;
+.input-wrapper {
+    position: relative;
+    flex-grow: 1;
 }
 
 #swapProperties {

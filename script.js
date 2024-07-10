@@ -1,9 +1,11 @@
 // Global variables
 let tickerInfo = {};
 let secInfo = {};
-let trackedStocks = [];
 let numericalProperties = [];
-let sectorColors = {};
+let trackedStocks = []; // Add this line to define trackedStocks
+
+import { updatePlot } from "./plotFunctions.js";
+import { initializeFuzzySearch } from "./fuzzySearch.js";
 
 const infoMetrics = [
 	"marketCap",
@@ -44,7 +46,7 @@ async function init() {
 		tickerInfo = await fetchJSONData("ticker_info.json");
 		secInfo = await fetchJSONData("sec_info.json");
 
-		// Get numerical properties using AAPL as the sample ticker
+		// Get numerical properties
 		const sampleTicker = "AAPL";
 		if (!tickerInfo[sampleTicker]) {
 			throw new Error(`Sample ticker ${sampleTicker} not found in data`);
@@ -56,63 +58,72 @@ async function init() {
 		// Populate dropdowns
 		populateDropdowns();
 
-		// Update Plot
-		document
-			.getElementById("property1")
-			.addEventListener("change", () => updatePlot(true));
-		document
-			.getElementById("property2")
-			.addEventListener("change", () => updatePlot(true));
-		document
-			.getElementById("logScale1")
-			.addEventListener("change", () => updatePlot(true));
-		document
-			.getElementById("logScale2")
-			.addEventListener("change", () => updatePlot(true));
-
-		// Update Plot (but within own function)
-		document
-			.getElementById("swapProperties")
-			.addEventListener("click", swapProperties);
-		// Don't update plot
-		document
-			.getElementById("colorBySector")
-			.addEventListener("change", () => updatePlot(false));
-		document
-			.getElementById("showDiagonal")
-			.addEventListener("change", () => updatePlot(false));
-		document
-			.getElementById("showBestFit")
-			.addEventListener("change", () => updatePlot(false));
-
-		document
-			.getElementById("addFilter")
-			.addEventListener("click", addFilter);
-		document
-			.getElementById("addStockButton")
-			.addEventListener("click", addStock);
-
 		// Set default values
 		const property1Select = document.getElementById("property1");
 		const property2Select = document.getElementById("property2");
+		document
+			.getElementById("logScale1")
+			.addEventListener("change", () =>
+				updatePlot(tickerInfo, secInfo, trackedStocks, true)
+			);
+		document
+			.getElementById("logScale2")
+			.addEventListener("change", () =>
+				updatePlot(tickerInfo, secInfo, trackedStocks, true)
+			);
+		document
+			.getElementById("colorBySector")
+			.addEventListener("change", () =>
+				updatePlot(tickerInfo, secInfo, trackedStocks, false)
+			);
+		document
+			.getElementById("showDiagonal")
+			.addEventListener("change", () =>
+				updatePlot(tickerInfo, secInfo, trackedStocks, false)
+			);
+		document
+			.getElementById("showBestFit")
+			.addEventListener("change", () =>
+				updatePlot(tickerInfo, secInfo, trackedStocks, false)
+			);
+
 		if (numericalProperties.includes("marketCap")) {
 			property1Select.value = "marketCap";
 			console.log("Set Property1 to Market Cap.");
-		} else {
-			console.log("Market Cap not found?");
 		}
 		if (numericalProperties.includes("totalCash")) {
 			property2Select.value = "totalCash";
 			console.log("Set Property2 to Total Cash.");
 		}
 
-		document.getElementById("logScale1").value = true;
-		document.getElementById("logScale2").value = true;
+		console.log("About to initialize fuzzy search...");
+
+		// Initialize fuzzy search with a small delay
+		setTimeout(() => {
+			initializeFuzzySearch(numericalProperties, () =>
+				updatePlot(tickerInfo, secInfo, trackedStocks, true)
+			);
+		}, 100);
+
+		// Set up filter functionality
+		document
+			.getElementById("addFilter")
+			.addEventListener("click", addFilter);
+
+		// Set up swap properties functionality
+		document
+			.getElementById("swapProperties")
+			.addEventListener("click", swapProperties);
+
+		// Set up add stock functionality
+		document
+			.getElementById("addStockButton")
+			.addEventListener("click", addStock);
 
 		// Initial plot
-		updatePlot();
+		updatePlot(tickerInfo, secInfo, trackedStocks);
 
-		// Update "Last Updated"
+		// Update last updated timestamp
 		await updateLastUpdated();
 	} catch (error) {
 		console.error("Error initializing application:", error);
@@ -141,10 +152,14 @@ function addFilter() {
 	// Add event listeners for the new filter inputs
 	document
 		.getElementById(`filterProperty${filterCount}`)
-		.addEventListener("change", () => updatePlot(false));
+		.addEventListener("change", () =>
+			updatePlot(tickerInfo, secInfo, trackedStocks, false)
+		);
 	document
 		.getElementById(`filterValue${filterCount}`)
-		.addEventListener("input", () => updatePlot(false));
+		.addEventListener("input", () =>
+			updatePlot(tickerInfo, secInfo, trackedStocks, false)
+		);
 
 	// Add event listener for the comparison button
 	const comparisonButton = document.getElementById(
@@ -152,11 +167,11 @@ function addFilter() {
 	);
 	comparisonButton.addEventListener("click", function () {
 		this.textContent = this.textContent === "≥" ? "≤" : "≥";
-		updatePlot(false);
+		updatePlot(tickerInfo, secInfo, trackedStocks, false);
 	});
 
 	filterCount++;
-	updatePlot();
+	updatePlot(tickerInfo, secInfo, trackedStocks);
 }
 
 function removeFilter(id) {
@@ -165,11 +180,11 @@ function removeFilter(id) {
 	);
 	if (filterToRemove) {
 		filterToRemove.remove();
-		updatePlot();
+		updatePlot(tickerInfo, secInfo, trackedStocks);
 	}
 }
 
-// Populate dropdown menus
+// // Populate dropdown menus
 function populateDropdowns() {
 	console.log("Populating dropdowns...");
 	const dropdowns = ["property1", "property2"];
@@ -197,21 +212,6 @@ function populateFilterDropdown(dropdown) {
 	});
 }
 
-// Helper function to transform data based on log scale
-function transformData(xData, yData, isLogScaleX, isLogScaleY) {
-	const transformedX = [];
-	const transformedY = [];
-
-	for (let i = 0; i < xData.length; i++) {
-		if ((!isLogScaleX || xData[i] > 0) && (!isLogScaleY || yData[i] > 0)) {
-			transformedX.push(isLogScaleX ? Math.log(xData[i]) : xData[i]);
-			transformedY.push(isLogScaleY ? Math.log(yData[i]) : yData[i]);
-		}
-	}
-
-	return { transformedX, transformedY };
-}
-
 async function updateLastUpdated() {
 	try {
 		const response = await fetch("last_updated.json");
@@ -229,355 +229,12 @@ async function updateLastUpdated() {
 	}
 }
 
-function updatePlot(resetZoom = false) {
-	console.log("Updating plot...");
-	const prop1 = document.getElementById("property1").value;
-	const prop2 = document.getElementById("property2").value;
-	const logScale1 = document.getElementById("logScale1").checked;
-	const logScale2 = document.getElementById("logScale2").checked;
-	const colorBySector = document.getElementById("colorBySector").checked;
-	const showDiagonal = document.getElementById("showDiagonal").checked;
-	const showBestFit = document.getElementById("showBestFit").checked;
-
-	const currentLayout = document.getElementById("plotDiv").layout;
-
-	console.log("Selected properties:", prop1, prop2);
-
-	const data = {};
-	const sectors = new Set();
-	let allX = [];
-	let allY = [];
-
-	// Set to keep track of plotted tickers
-	const plottedTickers = new Set();
-
-	function addDataPoint(ticker, x, y, sector, isTracked) {
-		if (!plottedTickers.has(ticker)) {
-			plottedTickers.add(ticker);
-
-			if (isTracked) {
-				return;
-			}
-
-			const dataKey = colorBySector ? sector : "All Stocks";
-			if (!data[dataKey]) {
-				data[dataKey] = {
-					x: [],
-					y: [],
-					text: [],
-					type: "scatter",
-					mode: "markers",
-					name: dataKey,
-				};
-			}
-
-			data[dataKey].x.push(x);
-			data[dataKey].y.push(y);
-			data[dataKey].text.push(ticker);
-
-			allX.push(x);
-			allY.push(y);
-		}
-	}
-
-	const filters = document.querySelectorAll(".filter");
-
-	for (const [ticker, info] of Object.entries(tickerInfo)) {
-		if (prop1 in info && prop2 in info) {
-			const x = info[prop1];
-			const y = info[prop2];
-
-			if (isValidNumber(x) && isValidNumber(y)) {
-				let passesAllFilters = true;
-
-				// Only apply filters if there are any
-				if (filters.length > 0) {
-					filters.forEach((filter) => {
-						const filterId = filter.dataset.filterId;
-						const filterPropElement = document.getElementById(
-							`filterProperty${filterId}`
-						);
-						const filterValueElement = document.getElementById(
-							`filterValue${filterId}`
-						);
-						const filterComparisonElement = document.getElementById(
-							`filterComparison${filterId}`
-						);
-
-						// Check if all filter elements exist
-						if (
-							filterPropElement &&
-							filterValueElement &&
-							filterComparisonElement
-						) {
-							const filterProp = filterPropElement.value;
-							const filterValue = filterValueElement.value;
-							const filterComparison =
-								filterComparisonElement.textContent;
-
-							if (
-								filterProp !== "None" &&
-								filterProp in info &&
-								filterValue !== ""
-							) {
-								const filterVal = info[filterProp];
-								if (
-									!applyFilter(
-										filterVal,
-										parseFloat(filterValue),
-										filterComparison
-									)
-								) {
-									passesAllFilters = false;
-									return false; // Exit the forEach loop early
-								}
-							}
-						}
-					});
-				}
-
-				if (passesAllFilters) {
-					if ((!logScale1 || x > 0) && (!logScale2 || y > 0)) {
-						const sector = secInfo[ticker]?.sector || "Unknown";
-						sectors.add(sector);
-						const isTracked = trackedStocks.includes(ticker);
-						addDataPoint(ticker, x, y, sector, isTracked);
-					}
-				}
-			}
-		}
-	}
-
-	// Assign colors to sectors
-	assignSectorColors(sectors);
-
-	// Convert data object to array and assign colors
-	const plotData = Object.entries(data).map(([key, sectorData]) => ({
-		...sectorData,
-		marker: { color: colorBySector ? sectorColors[key] : "blue" },
-		hovertemplate: `<b>%{text}</b><br>${prop1}: %{x}<br>${prop2}: %{y}<extra></extra>`,
-	}));
-
-	// Add traced stocks
-	const tracedData = {
-		x: [],
-		y: [],
-		text: [],
-		type: "scatter",
-		mode: "markers",
-		name: "Tracked Stocks",
-		marker: {
-			color: "red",
-			size: 10,
-			line: { width: 2, color: "DarkSlateGrey" },
-		},
-		hovertemplate: `<b>%{text}</b><br>${prop1}: %{x}<br>${prop2}: %{y}<extra></extra>`,
-	};
-
-	trackedStocks.forEach((ticker) => {
-		if (
-			ticker in tickerInfo &&
-			prop1 in tickerInfo[ticker] &&
-			prop2 in tickerInfo[ticker]
-		) {
-			const x = tickerInfo[ticker][prop1];
-			const y = tickerInfo[ticker][prop2];
-			if ((!logScale1 || x > 0) && (!logScale2 || y > 0)) {
-				tracedData.x.push(x);
-				tracedData.y.push(y);
-				tracedData.text.push(ticker);
-				plottedTickers.add(ticker); // Mark as plotted
-			}
-		}
-	});
-
-	if (tracedData.x.length > 0) {
-		plotData.push(tracedData);
-	}
-
-	// Add diagonal line if requested
-	if (showDiagonal) {
-		console.log("Generating diagonal.");
-		const min = Math.min(...allX, ...allY);
-		const max = Math.max(...allX, ...allY);
-		plotData.push({
-			x: [min, max],
-			y: [min, max],
-			type: "scatter",
-			mode: "lines",
-			name: "x = y",
-			line: { color: "black", dash: "dash" },
-		});
-	}
-
-	// Add line of best fit if requested
-	if (showBestFit && allX.length > 1) {
-		console.log("Calculating Best Fit Line");
-		const bestFitLine = calculateBestFitLine(
-			allX,
-			allY,
-			logScale1,
-			logScale2
-		);
-		plotData.push(bestFitLine);
-	}
-
-	const layout = {
-		title: `${prop2} vs ${prop1}`,
-		xaxis: {
-			title: prop1,
-			type: logScale1 ? "log" : "linear",
-			range: resetZoom
-				? undefined
-				: currentLayout
-				? currentLayout.xaxis.range
-				: undefined,
-		},
-		yaxis: {
-			title: prop2,
-			type: logScale2 ? "log" : "linear",
-			range: resetZoom
-				? undefined
-				: currentLayout
-				? currentLayout.yaxis.range
-				: undefined,
-		},
-		hovermode: "closest",
-	};
-
-	Plotly.newPlot("plotDiv", plotData, layout).then(function () {
-		document.getElementById("plotDiv").on("plotly_click", function (data) {
-			if (data.points.length > 0) {
-				var clickPoint = data.points[0];
-				var ticker = clickPoint.text;
-				handleStockClick(ticker);
-			}
-		});
-	});
-	console.log("Plot updated.");
-}
-
-// Helper function to calculate the best fit line
-function calculateBestFitLine(xData, yData, isLogScaleX, isLogScaleY) {
-	// Filter out non-positive values for log scales
-	const filteredData = xData
-		.map((x, i) => [x, yData[i]])
-		.filter(([x, y]) => (!isLogScaleX || x > 0) && (!isLogScaleY || y > 0));
-
-	const transformedX = filteredData.map(([x, _]) =>
-		isLogScaleX ? Math.log(x) : x
-	);
-	const transformedY = filteredData.map(([_, y]) =>
-		isLogScaleY ? Math.log(y) : y
-	);
-
-	const { slope, intercept } = linearRegression(transformedX, transformedY);
-
-	console.log("slope intercept", slope, intercept);
-
-	// Generate points for the best fit line
-	const minX = Math.min(...filteredData.map(([x, _]) => x));
-	const maxX = Math.max(...filteredData.map(([x, _]) => x));
-
-	const bestFitX = [minX, maxX];
-	let bestFitY;
-
-	if (isLogScaleX && isLogScaleY) {
-		bestFitY = bestFitX.map((x) =>
-			Math.exp(slope * Math.log(x) + intercept)
-		);
-	} else if (isLogScaleX) {
-		bestFitY = bestFitX.map((x) => slope * Math.log(x) + intercept);
-	} else if (isLogScaleY) {
-		bestFitY = bestFitX.map((x) => Math.exp(slope * x + intercept));
-	} else {
-		bestFitY = bestFitX.map((x) => slope * x + intercept);
-	}
-
-	return {
-		x: bestFitX,
-		y: bestFitY,
-		type: "scatter",
-		mode: "lines",
-		name: "Best Fit Line",
-		line: { color: "red", dash: "solid" },
-	};
-}
-
-// Helper function to check if a value is a valid number
-function isValidNumber(value) {
-	return typeof value === "number" && isFinite(value);
-}
-
-// Update the applyFilter function
-function applyFilter(value, filterValue, comparison) {
-	if (isNaN(filterValue)) return false;
-	switch (comparison) {
-		case "≥":
-			return value >= filterValue;
-		case "≤":
-			return value <= filterValue;
-		default:
-			return true;
-	}
-}
-
-function handleStockClick(ticker) {
-	console.log("Clicked on stock:", ticker);
-	if (!trackedStocks.includes(ticker)) {
-		trackedStocks.push(ticker);
-		updateTrackedStocksList();
-		updatePlot();
-	} else {
-		console.log("Stock is already tracked:", ticker);
-	}
-}
-
-// Assign colors to sectors
-function assignSectorColors(sectors) {
-	const colors = [
-		"#1f77b4",
-		"#ff7f0e",
-		"#2ca02c",
-		"#d62728",
-		"#9467bd",
-		"#8c564b",
-		"#e377c2",
-		"#7f7f7f",
-		"#bcbd22",
-		"#17becf",
-	];
-	[...sectors].forEach((sector, index) => {
-		if (!(sector in sectorColors)) {
-			sectorColors[sector] = colors[index % colors.length];
-		}
-	});
-}
-
-// Linear regression function
-function linearRegression(x, y) {
-	const n = x.length;
-	let sumX = 0,
-		sumY = 0,
-		sumXY = 0,
-		sumXX = 0;
-	for (let i = 0; i < n; i++) {
-		sumX += x[i];
-		sumY += y[i];
-		sumXY += x[i] * y[i];
-		sumXX += x[i] * x[i];
-	}
-	const slope = (n * sumXY - sumX * sumY) / (n * sumXX - sumX * sumX);
-	const intercept = (sumY - slope * sumX) / n;
-	return { slope, intercept };
-}
-
 // Swap properties
 function swapProperties() {
 	const prop1 = document.getElementById("property1");
 	const prop2 = document.getElementById("property2");
 	[prop1.value, prop2.value] = [prop2.value, prop1.value];
-	updatePlot(true);
+	updatePlot(tickerInfo, secInfo, trackedStocks, true);
 }
 
 // Add stock to tracked stocks
@@ -586,9 +243,20 @@ function addStock() {
 	if (ticker in tickerInfo && !trackedStocks.includes(ticker)) {
 		trackedStocks.push(ticker);
 		updateTrackedStocksList();
-		updatePlot();
+		updatePlot(tickerInfo, secInfo, trackedStocks, false);
 	}
 	document.getElementById("addStock").value = "";
+}
+
+function handleStockClick(ticker) {
+	console.log("Clicked on stock:", ticker);
+	if (!trackedStocks.includes(ticker)) {
+		trackedStocks.push(ticker);
+		updateTrackedStocksList();
+		updatePlot(tickerInfo, secInfo, trackedStocks, false);
+	} else {
+		console.log("Stock is already tracked:", ticker);
+	}
 }
 
 // Update tracked stocks list
@@ -661,12 +329,16 @@ function formatValue(metric, value) {
 function removeStock(ticker) {
 	trackedStocks = trackedStocks.filter((t) => t !== ticker);
 	updateTrackedStocksList();
-	updatePlot();
+	updatePlot(tickerInfo, secInfo, trackedStocks);
 }
 
 // Initialize the application when the DOM is fully loaded
 document.addEventListener("DOMContentLoaded", init);
-// Add event listener for closing the stock info
-// document.getElementById("closeStockInfo").addEventListener("click", () => {
-// 	document.getElementById("stockInfoContainer").style.display = "none";
-// });
+
+export {
+	tickerInfo,
+	secInfo,
+	numericalProperties,
+	trackedStocks,
+	handleStockClick,
+};
