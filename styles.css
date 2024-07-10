@@ -13,30 +13,49 @@ body {
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
 }
 
-.controls {
+h1, h3 {
+    margin-bottom: 10px;
+}
+
+/* Properties Control Styles */
+.properties-control {
     display: flex;
-    flex-direction: column;
+    align-items: flex-start;
     gap: 15px;
-    margin-bottom: 20px;
+    margin-bottom: 15px;
 }
 
 .properties-container {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     gap: 10px;
-    align-items: flex-start;
 }
 
 .property-row {
-    flex: 1;
-    min-width: 250px;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
+.property-row label {
+    white-space: nowrap;
+}
+
+.property-row select {
+    width: 200px;
+}
+
+#swapProperties {
+    align-self: center;
+}
+
+/* Other Controls Styles */
 .control-row {
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
     align-items: center;
+    margin-top: 15px;
 }
 
 .control-group {
@@ -45,19 +64,74 @@ body {
     gap: 5px;
 }
 
+/* Button Styles */
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #303a55;
+    color: white;
+    transition: background-color 0.5s ease;
+}
+
+button:hover {
+    background-color: #3a4b98;
+}
+
+button.removeStock {
+    background-color: #dc5151;
+}
+
+button.removeStock:hover {
+    background-color: #ff5252;
+}
+
+button.removeFilter {
+    background-color: #dc5151;
+}
+
+button.removeFilter:hover {
+    background-color: #ff5252;
+}
+
+/* Filter Styles */
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+/* .filterProperty {
+    width: 150px;
+} */
+
+.filterValue {
+    width: 100px;
+}
+
+
+.filterComparison:hover {
+    background-color: #3a4b98;
+}
+
+/* Plot Styles */
 #plotDiv {
     width: 100%;
     height: 600px;
+    margin-bottom: 20px;
 }
 
+/* Tracked Stocks Styles */
 .tracked-stocks-container {
     display: flex;
-    margin-top: 20px;
+    gap: 20px;
 }
 
 .tracked-stocks {
     flex: 1;
-    margin-right: 20px;
 }
 
 #trackedStocksList {
@@ -84,37 +158,7 @@ body {
     gap: 5px;
 }
 
-/* Updated button styles */
-button {
-    padding: 5px 10px;
-    border: none;
-    border-radius: 3px;
-    cursor: pointer;
-    background-color: #4ecdc4;
-    color: white;
-    transition: background-color 0.3s ease;
-}
-
-button:hover {
-    background-color: #45b7ae;
-}
-
-button.removeStock {
-    background-color: #ff6b6b;
-}
-
-button.removeStock:hover {
-    background-color: #ff5252;
-}
-
-button.removeFilter {
-    background-color: #ff6b6b;
-}
-
-button.removeFilter:hover {
-    background-color: #ff5252;
-}
-
+/* Stock Info Styles */
 #stockInfoContainer {
     flex: 1;
     padding: 20px;
@@ -137,66 +181,37 @@ button.removeFilter:hover {
 #stockInfoTable th {
     background-color: #f2f2f2;
 }
-.properties-container {
-    position: relative;
-    display: flex;
-    flex-direction: column;
-    gap: 15px;
-    margin-bottom: 15px;
+
+
+
+
+/* Last Updated Styles */
+#lastUpdated {
+    color: grey;
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 20px;
 }
 
-.property-row {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.control-group {
-    display: flex;
-    align-items: center;
-    gap: 10px;
-}
-
-.control-group label {
-    min-width: 80px;
-}
-
-.control-group select {
-    width: 250px;
-}
-
-.checkbox-group {
-    display: flex;
-    align-items: center;
-    gap: 5px;
-}
-
-#swapProperties {
-    position: absolute;
-    right: 0;
-    top: 50%;
-    transform: translateY(-50%);
-}
-
-/* Responsive adjustments */
+/* Responsive Adjustments */
 @media (max-width: 768px) {
-    .property-row {
+    .properties-control {
         flex-direction: column;
-        align-items: flex-start;
     }
 
-    .control-group {
-        width: 100%;
+    .property-row {
+        flex-wrap: wrap;
     }
 
-    .control-group select {
+    .property-row select {
         width: 100%;
     }
 
     #swapProperties {
-        position: static;
-        transform: none;
-        margin-top: 10px;
-        align-self: flex-end;
+        vertical-align: middle;
+    }
+
+    .tracked-stocks-container {
+        flex-direction: column;
     }
 }

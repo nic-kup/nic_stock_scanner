@@ -129,10 +129,7 @@ function addFilter() {
         <label for="filterProperty${filterCount}">Filter Property:</label>
         <select id="filterProperty${filterCount}" class="filterProperty"></select>
         <input type="number" id="filterValue${filterCount}" class="filterValue" placeholder="Filter Value">
-        <select id="filterComparison${filterCount}" class="filterComparison">
-            <option value=">">&gt;</option>
-            <option value="<">&lt;</option>
-        </select>
+        <button id="filterComparison${filterCount}" class="filterComparison">≥</button>
         <button class="removeFilter" onclick="removeFilter(${filterCount})">Remove</button>
     `;
 	filtersDiv.appendChild(newFilter);
@@ -148,9 +145,15 @@ function addFilter() {
 	document
 		.getElementById(`filterValue${filterCount}`)
 		.addEventListener("input", () => updatePlot(false));
-	document
-		.getElementById(`filterComparison${filterCount}`)
-		.addEventListener("change", () => updatePlot(false));
+
+	// Add event listener for the comparison button
+	const comparisonButton = document.getElementById(
+		`filterComparison${filterCount}`
+	);
+	comparisonButton.addEventListener("click", function () {
+		this.textContent = this.textContent === "≥" ? "≤" : "≥";
+		updatePlot(false);
+	});
 
 	filterCount++;
 	updatePlot();
@@ -310,7 +313,7 @@ function updatePlot(resetZoom = false) {
 							const filterProp = filterPropElement.value;
 							const filterValue = filterValueElement.value;
 							const filterComparison =
-								filterComparisonElement.value;
+								filterComparisonElement.textContent;
 
 							if (
 								filterProp !== "None" &&
@@ -506,16 +509,14 @@ function isValidNumber(value) {
 	return typeof value === "number" && isFinite(value);
 }
 
-// Apply filter to data
+// Update the applyFilter function
 function applyFilter(value, filterValue, comparison) {
 	if (isNaN(filterValue)) return false;
 	switch (comparison) {
-		case ">":
-			return value > filterValue;
-		case "<":
-			return value < filterValue;
-		case "==":
-			return value == filterValue;
+		case "≥":
+			return value >= filterValue;
+		case "≤":
+			return value <= filterValue;
 		default:
 			return true;
 	}
