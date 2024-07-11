@@ -116,8 +116,11 @@ async function checkLastUpdated() {
 		const data = await fs.readFile(lastUpdatedFilePath, "utf8");
 		const { timestamp } = JSON.parse(data);
 		const lastUpdated = new Date(timestamp);
+		console.log("Last Update:", lastUpdated);
 		const now = new Date();
+		console.log("Date Now:", now);
 		const hoursSinceLastUpdate = (now - lastUpdated) / (1000 * 60 * 60);
+		console.log(hoursSinceLastUpdate);
 		return hoursSinceLastUpdate > 4;
 	} catch (error) {
 		console.error("Error reading last_updated.json:", error);
@@ -135,6 +138,7 @@ async function updateLastUpdated() {
 }
 
 async function fetchStockData() {
+	console.log("Checking time since last update.");
 	const shouldUpdate = await checkLastUpdated();
 	if (!shouldUpdate) {
 		console.log("Data is less than 4 hours old.");
