@@ -23,6 +23,10 @@ jobs:
             - name: Fetch stock data
               run: node stock-data-fetcher.mjs
 
+            - name: Replace Google Analytics ID
+              run: |
+                  sed -i 's/GOOGLE_ANALYTICS_ID/${{ secrets.GOOGLE_ANALYTICS_ID }}/g' index.html
+
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
               with:

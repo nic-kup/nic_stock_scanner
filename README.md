@@ -10,3 +10,9 @@ For now only allows for stocks denominated in USD.
 - Filtering with properties
 - Coloring by Sector
 - Track stocks across searches
+
+## Upcoming features
+- Comparative Filters (i.e. comparing two properties)
+- Non USD stocks (surprisingly hard due to inconsistent data)
+- Filter by Sector
+- Other things

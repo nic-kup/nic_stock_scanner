@@ -4,6 +4,7 @@ import csv from "csv-parser";
 import yahooFinance from "yahoo-finance2";
 
 const tickersFilePath = "all_usd_tickers.csv";
+const lastUpdatedFilePath = "last_updated.json";
 const numericalProperties = [
 	"52WeekChange",
 	"SandP52WeekChange",
@@ -110,7 +111,35 @@ const numericalProperties = [
 // Add a delay function
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
+async function checkLastUpdated() {
+	try {
+		const data = await fs.readFile(lastUpdatedFilePath, "utf8");
+		const { timestamp } = JSON.parse(data);
+		const lastUpdated = new Date(timestamp);
+		const now = new Date();
+		const hoursSinceLastUpdate = (now - lastUpdated) / (1000 * 60 * 60);
+		return hoursSinceLastUpdate > 4;
+	} catch (error) {
+		console.error("Error reading last_updated.json:", error);
+		return true; // If there's an error reading the file, proceed with update
+	}
+}
+
+async function updateLastUpdated() {
+	const timestamp = new Date().toISOString();
+	await fs.writeFile(
+		lastUpdatedFilePath,
+		JSON.stringify({ timestamp }, null, 2)
+	);
+	console.log(`Timestamp updated: ${timestamp}`);
+}
+
 async function fetchStockData() {
+	const shouldUpdate = await checkLastUpdated();
+	if (!shouldUpdate) {
+		console.log("Data is less than 4 hours old.");
+		return;
+	}
 	const tickers = [];
 	const tickerInfo = {};
 	const secInfo = {};
@@ -191,27 +220,8 @@ async function fetchStockData() {
 				await delay(60000); // Wait for 60 seconds
 			}
 		}
-
-		if (i % 100 === 0 || i === tickers.length - 1) {
+		if (i % 200 === 0 || i === tickers.length - 1) {
 			console.log(`Progress: ${i + 1}/${tickers.length}`);
-
-			// Save intermediate results every 100 tickers
-			// await fs.writeFile(
-			// 	"ticker_info_intermediate.json",
-			// 	JSON.stringify(tickerInfo, null, 2)
-			// );
-			// await fs.writeFile(
-			// 	"sec_info_intermediate.json",
-			// 	JSON.stringify(secInfo, null, 2)
-			// );
-			// await fs.writeFile(
-			// 	"valid_tickers_intermediate.json",
-			// 	JSON.stringify(validTickers, null, 2)
-			// );
-			// await fs.writeFile(
-			// 	"errors_intermediate.json",
-			// 	JSON.stringify(errors, null, 2)
-			// );
 		}
 	}
 
@@ -233,13 +243,7 @@ async function fetchStockData() {
 			Object.keys(errors).length
 		} tickers. See errors.json for details.`
 	);
-	// Save Update Date
-	const timestamp = new Date().toISOString();
-	await fs.writeFile(
-		"last_updated.json",
-		JSON.stringify({ timestamp }, null, 2)
-	);
-	console.log(`Timestamp saved: ${timestamp}`);
+	await updateLastUpdated();
 }
 
 fetchStockData().catch(console.error);
