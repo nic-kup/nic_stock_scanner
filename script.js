@@ -129,39 +129,48 @@ async function init() {
 }
 
 function addFilter() {
+	console.log("new filter", filterCount);
 	const filtersDiv = document.getElementById("filters");
 	const newFilter = document.createElement("div");
+	const currentFilterId = filterCount;
 	newFilter.className = "filter";
-	newFilter.dataset.filterId = filterCount;
+	newFilter.dataset.filterId = currentFilterId;
 	newFilter.innerHTML = `
         <div class="input-wrapper">
-            <input type="text" id="filterProperty${filterCount}" class="filterProperty fuzzy-search" placeholder="Filter Property" autocomplete="off">
-            <div id="filterPropertyResults${filterCount}" class="search-results"></div>
+            <input type="text" id="filterProperty${currentFilterId}" class="filterProperty fuzzy-search" placeholder="Filter Property" autocomplete="off">
+            <div id="filterPropertyResults${currentFilterId}" class="search-results"></div>
         </div>
-        <input type="number" id="filterValue${filterCount}" class="filterValue" placeholder="Filter Value">
-        <button id="filterComparison${filterCount}" class="filterComparison">≥</button>
-        <button class="removeFilter" onclick="removeFilter(${filterCount})">Remove</button>
+        <input type="number" id="filterValue${currentFilterId}" class="filterValue" placeholder="Filter Value">
+        <button id="filterComparison${currentFilterId}" class="filterComparison">≥</button>
+        <button class="removeFilter">Remove</button>
     `;
 	filtersDiv.appendChild(newFilter);
 
+	// Add event listener for the remove button
+	newFilter
+		.querySelector(".removeFilter")
+		.addEventListener("click", function () {
+			removeFilter(currentFilterId);
+		});
+
 	// Initialize fuzzy search for the new filter property
 	handleFuzzySearch(
-		`filterProperty${filterCount}`,
-		`filterPropertyResults${filterCount}`,
+		`filterProperty${currentFilterId}`,
+		`filterPropertyResults${currentFilterId}`,
 		numericalProperties,
 		() => updatePlot(tickerInfo, secInfo, trackedStocks, false)
 	);
 
 	// Add event listener for the filter value input
 	document
-		.getElementById(`filterValue${filterCount}`)
+		.getElementById(`filterValue${currentFilterId}`)
 		.addEventListener("input", () =>
 			updatePlot(tickerInfo, secInfo, trackedStocks, false)
 		);
 
 	// Add event listener for the comparison button
 	const comparisonButton = document.getElementById(
-		`filterComparison${filterCount}`
+		`filterComparison${currentFilterId}`
 	);
 	comparisonButton.addEventListener("click", function () {
 		this.textContent = this.textContent === "≥" ? "≤" : "≥";
@@ -172,7 +181,9 @@ function addFilter() {
 	updatePlot(tickerInfo, secInfo, trackedStocks);
 }
 
+// TODO: Fix Remove Filter
 function removeFilter(id) {
+	console.log("remove filter", id);
 	const filterToRemove = document.querySelector(
 		`.filter[data-filter-id="${id}"]`
 	);
@@ -181,17 +192,6 @@ function removeFilter(id) {
 		updatePlot(tickerInfo, secInfo, trackedStocks);
 	}
 }
-
-// Add this helper function to populate filter dropdowns
-// function populateFilterDropdown(dropdown) {
-// 	dropdown.innerHTML = '<option value="None">None</option>';
-// 	numericalProperties.forEach((prop) => {
-// 		const option = document.createElement("option");
-// 		option.value = prop;
-// 		option.textContent = prop;
-// 		dropdown.appendChild(option);
-// 	});
-// }
 
 async function updateLastUpdated() {
 	try {
@@ -204,7 +204,7 @@ async function updateLastUpdated() {
 		const lastUpdatedElement = document.getElementById("lastUpdated");
 		lastUpdatedElement.textContent = `Last updated: ${hoursAgo} hour${
 			hoursAgo !== 1 ? "s" : ""
-		} ago`;
+		} ago.`;
 	} catch (error) {
 		console.error("Error fetching last updated timestamp:", error);
 	}
@@ -318,6 +318,7 @@ document.addEventListener("DOMContentLoaded", init);
 
 export {
 	tickerInfo,
+	removeFilter,
 	secInfo,
 	numericalProperties,
 	trackedStocks,
