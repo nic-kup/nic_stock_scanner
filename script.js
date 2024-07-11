@@ -5,7 +5,7 @@ let numericalProperties = [];
 let trackedStocks = []; // Add this line to define trackedStocks
 
 import { updatePlot } from "./plotFunctions.js";
-import { initializeFuzzySearch } from "./fuzzySearch.js";
+import { initializeFuzzySearch, handleFuzzySearch } from "./fuzzySearch.js";
 
 const infoMetrics = [
 	"marketCap",
@@ -54,9 +54,6 @@ async function init() {
 		numericalProperties = Object.keys(tickerInfo[sampleTicker]).filter(
 			(prop) => typeof tickerInfo[sampleTicker][prop] === "number"
 		);
-
-		// Populate dropdowns
-		populateDropdowns();
 
 		// Set default values
 		const property1Select = document.getElementById("property1");
@@ -137,24 +134,25 @@ function addFilter() {
 	newFilter.className = "filter";
 	newFilter.dataset.filterId = filterCount;
 	newFilter.innerHTML = `
-        <label for="filterProperty${filterCount}">Filter Property:</label>
-        <select id="filterProperty${filterCount}" class="filterProperty"></select>
+        <div class="input-wrapper">
+            <input type="text" id="filterProperty${filterCount}" class="filterProperty fuzzy-search" placeholder="Filter Property" autocomplete="off">
+            <div id="filterPropertyResults${filterCount}" class="search-results"></div>
+        </div>
         <input type="number" id="filterValue${filterCount}" class="filterValue" placeholder="Filter Value">
         <button id="filterComparison${filterCount}" class="filterComparison">≥</button>
         <button class="removeFilter" onclick="removeFilter(${filterCount})">Remove</button>
     `;
 	filtersDiv.appendChild(newFilter);
 
-	// Populate the new dropdown
-	const newDropdown = document.getElementById(`filterProperty${filterCount}`);
-	populateFilterDropdown(newDropdown);
+	// Initialize fuzzy search for the new filter property
+	handleFuzzySearch(
+		`filterProperty${filterCount}`,
+		`filterPropertyResults${filterCount}`,
+		numericalProperties,
+		() => updatePlot(tickerInfo, secInfo, trackedStocks, false)
+	);
 
-	// Add event listeners for the new filter inputs
-	document
-		.getElementById(`filterProperty${filterCount}`)
-		.addEventListener("change", () =>
-			updatePlot(tickerInfo, secInfo, trackedStocks, false)
-		);
+	// Add event listener for the filter value input
 	document
 		.getElementById(`filterValue${filterCount}`)
 		.addEventListener("input", () =>
@@ -184,33 +182,16 @@ function removeFilter(id) {
 	}
 }
 
-// // Populate dropdown menus
-function populateDropdowns() {
-	console.log("Populating dropdowns...");
-	const dropdowns = ["property1", "property2"];
-	dropdowns.forEach((id) => {
-		const select = document.getElementById(id);
-		select.innerHTML = ""; // Clear existing options
-		numericalProperties.forEach((prop) => {
-			const option = document.createElement("option");
-			option.value = prop;
-			option.textContent = prop;
-			select.appendChild(option);
-		});
-	});
-	console.log("Dropdowns populated.");
-}
-
 // Add this helper function to populate filter dropdowns
-function populateFilterDropdown(dropdown) {
-	dropdown.innerHTML = '<option value="None">None</option>';
-	numericalProperties.forEach((prop) => {
-		const option = document.createElement("option");
-		option.value = prop;
-		option.textContent = prop;
-		dropdown.appendChild(option);
-	});
-}
+// function populateFilterDropdown(dropdown) {
+// 	dropdown.innerHTML = '<option value="None">None</option>';
+// 	numericalProperties.forEach((prop) => {
+// 		const option = document.createElement("option");
+// 		option.value = prop;
+// 		option.textContent = prop;
+// 		dropdown.appendChild(option);
+// 	});
+// }
 
 async function updateLastUpdated() {
 	try {

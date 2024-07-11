@@ -65,8 +65,6 @@ function handleFuzzySearch(
 				currentFocus = -1;
 			}
 		});
-
-		console.log(`Fuzzy search setup complete for ${inputId}`);
 	}
 
 	function updateResults(matches) {
@@ -125,4 +123,4 @@ function initializeFuzzySearch(numericalProperties, updatePlotFunction) {
 	);
 }
 
-export { initializeFuzzySearch };
+export { initializeFuzzySearch, handleFuzzySearch };
