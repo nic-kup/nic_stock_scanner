@@ -1,6 +1,9 @@
 // fuzzySearch.js
 
 function fuzzySearch(query, list) {
+	if (query === "") {
+		return list; // Return all items when query is empty
+	}
 	return list.filter((item) =>
 		item.toLowerCase().includes(query.toLowerCase())
 	);
@@ -23,6 +26,10 @@ function handleFuzzySearch(
 			setTimeout(setupSearch, 500);
 			return;
 		}
+
+		input.addEventListener("focus", function () {
+			updateResults(fuzzySearch("", numericalProperties));
+		});
 
 		input.addEventListener("input", function () {
 			const query = this.value;
