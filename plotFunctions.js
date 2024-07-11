@@ -106,17 +106,6 @@ function assignSectorColors(sectors) {
 	});
 }
 
-// function handleStockClick(ticker) {
-// 	console.log("Clicked on stock:", ticker);
-// 	if (!trackedStocks.includes(ticker)) {
-// 		trackedStocks.push(ticker);
-// 		updateTrackedStocksList();
-// 		updatePlot(tickerInfo, secInfo, trackedStocks, false);
-// 	} else {
-// 		console.log("Stock is already tracked:", ticker);
-// 	}
-// }
-
 function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 	console.log("Updating plot...");
 	const prop1 = document.getElementById("property1").value;
@@ -331,6 +320,13 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 				: undefined,
 		},
 		hovermode: "closest",
+		legend: {
+			orientation: "h",
+			yanchor: "bottom",
+			y: -0.35,
+			xanchor: "center",
+			x: 0.5,
+		},
 	};
 
 	Plotly.newPlot("plotDiv", plotData, layout).then(function () {

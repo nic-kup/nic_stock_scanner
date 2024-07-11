@@ -19,6 +19,7 @@ const numericalProperties = [
 	"bidSize",
 	"boardRisk",
 	"bookValue",
+	"cash",
 	"compensationAsOfEpochDate",
 	"compensationRisk",
 	"currentPrice",
@@ -47,9 +48,8 @@ const numericalProperties = [
 	"forwardPE",
 	"freeCashflow",
 	"fullTimeEmployees",
-	"gmtOffSetMilliseconds",
-	"governanceEpochDate",
 	"grossMargins",
+	"grossProfits",
 	"heldPercentInsiders",
 	"heldPercentInstitutions",
 	"impliedSharesOutstanding",
@@ -60,7 +60,9 @@ const numericalProperties = [
 	"marketCap",
 	"maxAge",
 	"mostRecentQuarter",
+	"netIncome",
 	"netIncomeToCommon",
+	"netTangibleAssets",
 	"nextFiscalYearEnd",
 	"numberOfAnalystOpinions",
 	"open",
@@ -96,8 +98,10 @@ const numericalProperties = [
 	"targetLowPrice",
 	"targetMeanPrice",
 	"targetMedianPrice",
+	"totalAssets",
 	"totalCash",
 	"totalCashPerShare",
+	"totalCurrentAssets",
 	"totalDebt",
 	"totalRevenue",
 	"trailingAnnualDividendRate",
@@ -172,6 +176,7 @@ async function fetchStockData() {
 					"price",
 					"summaryProfile",
 					"summaryDetail",
+					"balanceSheetHistory",
 					"financialData",
 					"defaultKeyStatistics",
 				],
@@ -201,6 +206,21 @@ async function fetchStockData() {
 					) {
 						tickerInfo[ticker][prop] =
 							info.defaultKeyStatistics[prop];
+					} else if (
+						info.balanceSheetHistory &&
+						prop in info.balanceSheetHistory
+					) {
+						tickerInfo[ticker][prop] =
+							info.balanceSheetHistory[prop];
+					} else if (
+						info.balanceSheetHistory["balanceSheetStatements"] &&
+						prop in
+							info.balanceSheetHistory["balanceSheetStatements"]
+					) {
+						tickerInfo[ticker][prop] =
+							info.balanceSheetHistory["balanceSheetStatements"][
+								prop
+							];
 					}
 				}
 
