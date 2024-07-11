@@ -20,6 +20,12 @@ jobs:
             - name: Install dependencies
               run: npm install
 
+            - name: Fetch latest data from gh-pages
+              run: |
+                  git fetch origin gh-pages:gh-pages
+                  git checkout gh-pages -- last_updated.json ticker_info.json sec_info.json valid_tickers.json errors.json all_usd_tickers.csv
+                  git checkout main
+
             - name: Fetch stock data
               run: node stock-data-fetcher.mjs
 
