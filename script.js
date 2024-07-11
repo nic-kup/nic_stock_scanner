@@ -137,11 +137,14 @@ function addFilter() {
 	newFilter.dataset.filterId = currentFilterId;
 	newFilter.innerHTML = `
         <div class="input-wrapper">
-            <input type="text" id="filterProperty${currentFilterId}" class="filterProperty fuzzy-search" placeholder="Filter Property" autocomplete="off">
-            <div id="filterPropertyResults${currentFilterId}" class="search-results"></div>
+            <input type="text" id="filterLeft${currentFilterId}" class="filterInput fuzzy-search" placeholder="Property or Value" autocomplete="off">
+            <div id="filterLeftResults${currentFilterId}" class="search-results"></div>
         </div>
-        <input type="number" id="filterValue${currentFilterId}" class="filterValue" placeholder="Filter Value">
         <button id="filterComparison${currentFilterId}" class="filterComparison">≥</button>
+        <div class="input-wrapper">
+            <input type="text" id="filterRight${currentFilterId}" class="filterInput fuzzy-search" placeholder="Property or Value" autocomplete="off">
+            <div id="filterRightResults${currentFilterId}" class="search-results"></div>
+        </div>
         <button class="removeFilter">Remove</button>
     `;
 	filtersDiv.appendChild(newFilter);
@@ -153,20 +156,24 @@ function addFilter() {
 			removeFilter(currentFilterId);
 		});
 
-	// Initialize fuzzy search for the new filter property
-	handleFuzzySearch(
-		`filterProperty${currentFilterId}`,
-		`filterPropertyResults${currentFilterId}`,
-		numericalProperties,
-		() => updatePlot(tickerInfo, secInfo, trackedStocks, false)
-	);
-
-	// Add event listener for the filter value input
-	document
-		.getElementById(`filterValue${currentFilterId}`)
-		.addEventListener("input", () =>
-			updatePlot(tickerInfo, secInfo, trackedStocks, false)
+	// Initialize fuzzy search for both input fields
+	["Left", "Right"].forEach((side) => {
+		handleFuzzySearch(
+			`filter${side}${currentFilterId}`,
+			`filter${side}Results${currentFilterId}`,
+			numericalProperties,
+			() => updatePlot(tickerInfo, secInfo, trackedStocks, false)
 		);
+	});
+
+	// Add event listeners for both input fields
+	["Left", "Right"].forEach((side) => {
+		document
+			.getElementById(`filter${side}${currentFilterId}`)
+			.addEventListener("input", () =>
+				updatePlot(tickerInfo, secInfo, trackedStocks, false)
+			);
+	});
 
 	// Add event listener for the comparison button
 	const comparisonButton = document.getElementById(

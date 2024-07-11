@@ -78,7 +78,7 @@ h1, h3 {
 
 .input-wrapper {
     position: relative;
-    flex-grow: 1;
+    /* flex-grow: 1; */
 }
 
 #swapProperties {

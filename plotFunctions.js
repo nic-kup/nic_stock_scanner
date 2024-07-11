@@ -69,20 +69,7 @@ function linearRegression(x, y) {
 
 // Helper function to check if a value is a valid number
 function isValidNumber(value) {
-	return typeof value === "number" && isFinite(value);
-}
-
-// Update the applyFilter function
-function applyFilter(value, filterValue, comparison) {
-	if (isNaN(filterValue)) return false;
-	switch (comparison) {
-		case "≥":
-			return value >= filterValue;
-		case "≤":
-			return value <= filterValue;
-		default:
-			return true;
-	}
+	return typeof value === "number" && isFinite(value) && !isNaN(value);
 }
 
 // Assign colors to sectors
@@ -169,48 +156,63 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 
 				// Only apply filters if there are any
 				if (filters.length > 0) {
-					filters.forEach((filter) => {
+					for (const filter of filters) {
 						const filterId = filter.dataset.filterId;
-						const filterPropElement = document.getElementById(
-							`filterProperty${filterId}`
+						const leftInput = document.getElementById(
+							`filterLeft${filterId}`
 						);
-						const filterValueElement = document.getElementById(
-							`filterValue${filterId}`
+						const rightInput = document.getElementById(
+							`filterRight${filterId}`
 						);
-						const filterComparisonElement = document.getElementById(
+						const comparisonButton = document.getElementById(
 							`filterComparison${filterId}`
 						);
 
 						// Check if all filter elements exist
-						if (
-							filterPropElement &&
-							filterValueElement &&
-							filterComparisonElement
-						) {
-							const filterProp = filterPropElement.value;
-							const filterValue = filterValueElement.value;
-							const filterComparison =
-								filterComparisonElement.textContent;
+						if (leftInput && rightInput && comparisonButton) {
+							const leftValue = leftInput.value.trim();
+							const rightValue = rightInput.value.trim();
+							const comparison = comparisonButton.textContent;
+
+							// Skip empty filters
+							if (leftValue === "" || rightValue === "") {
+								continue;
+							}
+
+							let leftNumber = parseFloat(leftValue);
+							let rightNumber = parseFloat(rightValue);
+
+							if (isNaN(leftNumber)) {
+								leftNumber = info[leftValue];
+							}
+							if (isNaN(rightNumber)) {
+								rightNumber = info[rightValue];
+							}
 
 							if (
-								filterProp !== "None" &&
-								filterProp in info &&
-								filterValue !== ""
+								isValidNumber(leftNumber) &&
+								isValidNumber(rightNumber)
 							) {
-								const filterVal = info[filterProp];
 								if (
-									!applyFilter(
-										filterVal,
-										parseFloat(filterValue),
-										filterComparison
-									)
+									comparison === "≥" &&
+									leftNumber < rightNumber
 								) {
 									passesAllFilters = false;
-									return false; // Exit the forEach loop early
+									break;
+								} else if (
+									comparison === "≤" &&
+									leftNumber > rightNumber
+								) {
+									passesAllFilters = false;
+									break;
 								}
+							} else {
+								// If we can't compare the values, we exclude the item
+								passesAllFilters = false;
+								break;
 							}
 						}
-					});
+					}
 				}
 
 				if (passesAllFilters) {
@@ -343,4 +345,4 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 	console.log("Plot updated.");
 }
 
-export { updatePlot, applyFilter };
+export { updatePlot };
