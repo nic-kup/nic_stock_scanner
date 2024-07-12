@@ -12,7 +12,7 @@ For now only allows for stocks denominated in USD.
 - Track stocks across searches
 
 ## Upcoming features
-- Comparative Filters (i.e. comparing two properties)
+- Better hovering
 - Non USD stocks (surprisingly hard due to inconsistent data)
 - Filter by Sector
 - Other things

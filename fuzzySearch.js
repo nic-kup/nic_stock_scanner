@@ -13,7 +13,7 @@ function handleFuzzySearch(
 	inputId,
 	resultsId,
 	numericalProperties,
-	updatePlotFunction
+	selectCallback
 ) {
 	let currentFocus = -1;
 
@@ -55,6 +55,8 @@ function handleFuzzySearch(
 					if (items[currentFocus]) {
 						selectItem(items[currentFocus]);
 					}
+				} else if (items.length > 0) {
+					selectItem(items[0]);
 				}
 			}
 		});
@@ -108,7 +110,7 @@ function handleFuzzySearch(
 		input.value = item.textContent;
 		document.getElementById(resultsId).innerHTML = "";
 		currentFocus = -1;
-		updatePlotFunction();
+		selectCallback(item.textContent);
 	}
 
 	// Start the setup process

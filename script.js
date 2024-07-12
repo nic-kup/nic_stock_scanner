@@ -88,11 +88,9 @@ async function init() {
 
 		if (numericalProperties.includes("marketCap")) {
 			property1Select.value = "marketCap";
-			console.log("Set Property1 to Market Cap.");
 		}
-		if (numericalProperties.includes("totalCash")) {
-			property2Select.value = "totalCash";
-			console.log("Set Property2 to Total Cash.");
+		if (numericalProperties.includes("freeCashflow")) {
+			property2Select.value = "freeCashflow";
 		}
 
 		console.log("About to initialize fuzzy search...");
@@ -115,9 +113,12 @@ async function init() {
 			.addEventListener("click", swapProperties);
 
 		// Set up add stock functionality
-		document
-			.getElementById("addStockButton")
-			.addEventListener("click", addStock);
+		handleFuzzySearch(
+			"addStock",
+			"addStockResults",
+			Object.keys(tickerInfo),
+			addStock
+		);
 
 		// Initial plot
 		updatePlot(tickerInfo, secInfo, trackedStocks);
@@ -227,8 +228,8 @@ function swapProperties() {
 }
 
 // Add stock to tracked stocks
-function addStock() {
-	const ticker = document.getElementById("addStock").value.toUpperCase();
+function addStock(ticker) {
+	ticker = ticker.toUpperCase();
 	if (ticker in tickerInfo && !trackedStocks.includes(ticker)) {
 		trackedStocks.push(ticker);
 		updateTrackedStocksList();

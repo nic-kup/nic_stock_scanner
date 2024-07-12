@@ -72,8 +72,13 @@
         <div class="tracked-stocks-container">
             <div class="tracked-stocks">
                 <h2>Tracked Stocks</h2>
-                <input type="text" id="addStock" placeholder="Add stock ticker">
-                <button id="addStockButton">Add</button>
+                <div class="property-row">
+                    <div class="input-wrapper">
+                        <input type="text" id="addStock" class="fuzzy-search" placeholder="Add stock ticker"
+                            autocomplete="off">
+                        <div id="addStockResults" class="search-results"></div>
+                    </div>
+                </div>
                 <ul id="trackedStocksList"></ul>
             </div>
             <div id="stockInfoContainer" style="display: none;">
