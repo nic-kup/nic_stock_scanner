@@ -201,6 +201,11 @@ async function fetchStockData() {
 					) {
 						tickerInfo[ticker][prop] = info.summaryDetail[prop];
 					} else if (
+						info.summaryProfile &&
+						prop in info.summaryProfile
+					) {
+						tickerInfo[ticker][prop] = info.summaryProfile[prop];
+					} else if (
 						info.defaultKeyStatistics &&
 						prop in info.defaultKeyStatistics
 					) {
@@ -212,15 +217,6 @@ async function fetchStockData() {
 					) {
 						tickerInfo[ticker][prop] =
 							info.balanceSheetHistory[prop];
-					} else if (
-						info.balanceSheetHistory["balanceSheetStatements"] &&
-						prop in
-							info.balanceSheetHistory["balanceSheetStatements"]
-					) {
-						tickerInfo[ticker][prop] =
-							info.balanceSheetHistory["balanceSheetStatements"][
-								prop
-							];
 					}
 				}
 
