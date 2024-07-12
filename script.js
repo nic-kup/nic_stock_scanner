@@ -1,6 +1,7 @@
 // Global variables
 let tickerInfo = {};
 let secInfo = {};
+let yearFinData = {};
 let numericalProperties = [];
 let trackedStocks = []; // Add this line to define trackedStocks
 
@@ -45,6 +46,7 @@ async function init() {
 		// Fetch data
 		tickerInfo = await fetchJSONData("ticker_info.json");
 		secInfo = await fetchJSONData("sec_info.json");
+		yearFinData = await fetchJSONData("yearfin.json");
 
 		// Get numerical properties
 		const sampleTicker = "AAPL";
@@ -272,15 +274,24 @@ function updateTrackedStocksList() {
 function showStockInfo(ticker) {
 	const infoContainer = document.getElementById("stockInfoContainer");
 	const infoTitle = document.getElementById("stockInfoTitle");
-	const infoTable = document
-		.getElementById("stockInfoTable")
-		.querySelector("tbody");
 
 	infoTitle.textContent = `${ticker} - ${secInfo[ticker]?.sector}`;
-	infoTable.innerHTML = "";
+
+	// Clear previous content
+	infoContainer.innerHTML = "";
+
+	// Re-add the title
+	infoContainer.appendChild(infoTitle);
+
+	// Create the table for stock metrics
+	const newInfoTable = document.createElement("table");
+	newInfoTable.id = "stockInfoTable";
+	const tbody = document.createElement("tbody");
+	newInfoTable.appendChild(tbody);
+	infoContainer.appendChild(newInfoTable);
 
 	infoMetrics.forEach((metric) => {
-		const row = infoTable.insertRow();
+		const row = tbody.insertRow();
 		const cell1 = row.insertCell(0);
 		const cell2 = row.insertCell(1);
 
@@ -288,29 +299,124 @@ function showStockInfo(ticker) {
 		const value = tickerInfo[ticker][metric];
 		cell2.textContent = formatValue(metric, value);
 	});
-	if (yearFinData[ticker]) {
-		const yearlyData = yearFinData[ticker];
-		yearlyData.forEach((yearData) => {
-			const revenueRow = infoTable.insertRow();
-			const earningsRow = infoTable.insertRow();
 
-			revenueRow.insertCell(0).textContent = `Revenue (${yearData.date})`;
-			revenueRow.insertCell(1).textContent = formatValue(
-				"revenue",
-				yearData.revenue
-			);
+	// Create a new div for the financial chart
+	const chartDiv = document.createElement("div");
+	chartDiv.id = "financialChart";
+	infoContainer.appendChild(chartDiv);
 
-			earningsRow.insertCell(
-				0
-			).textContent = `Earnings (${yearData.date})`;
-			earningsRow.insertCell(1).textContent = formatValue(
-				"earnings",
-				yearData.earnings
-			);
-		});
-	}
+	// Generate the financial chart
+	generateSimpleFinancialChart(ticker);
 
 	infoContainer.style.display = "block";
+}
+
+function generateSimpleFinancialChart(ticker) {
+	const yearlyData = yearFinData[ticker];
+	if (!yearlyData || yearlyData.length === 0) {
+		console.log("No financial data available for", ticker);
+		return;
+	}
+
+	const chartDiv = document.getElementById("financialChart");
+	chartDiv.innerHTML = "<h4>Annual Revenue and Earnings</h4>";
+
+	const allValues = yearlyData.flatMap((data) => [
+		data.revenue,
+		data.earnings,
+	]);
+
+	const max = Math.max(...allValues);
+	const min = Math.min(...allValues);
+
+	const squish = 0.8;
+	const squish_center = 0.8;
+
+	const zeroLine = Math.max(0, Math.min(1, min / (min - max)));
+	console.log("Zero Line:", zeroLine);
+
+	// Outer housing
+	const chartContent = document.createElement("div");
+	chartContent.className = "chart-content";
+
+	// Add zero line
+	const zeroLineElement = document.createElement("div");
+	zeroLineElement.className = "zero-line";
+	zeroLineElement.style.left = `${
+		100 * (zeroLine * squish + squish_center * (1 - squish))
+	}%`;
+	chartContent.appendChild(zeroLineElement);
+
+	// Add yearly data
+	yearlyData.forEach((data) => {
+		const yearDiv = document.createElement("div");
+		yearDiv.className = "chart-year";
+
+		const yearLabel = document.createElement("div");
+		yearLabel.className = "year-label";
+		yearLabel.textContent = data.date;
+		yearDiv.appendChild(yearLabel);
+
+		const bars = document.createElement("div");
+		bars.className = "bars";
+		bars.style.width = `${100 * squish}%`;
+		bars.style.left = `${(1 - squish) * squish_center * 100}%`; // Center the bars
+
+		const revenueBar = createBar(
+			data.revenue,
+			min,
+			max,
+			zeroLine,
+			"revenue"
+		);
+		const earningsBar = createBar(
+			data.earnings,
+			min,
+			max,
+			zeroLine,
+			"earnings"
+		);
+
+		bars.appendChild(revenueBar);
+		bars.appendChild(earningsBar);
+		yearDiv.appendChild(bars);
+		chartContent.appendChild(yearDiv);
+	});
+
+	chartDiv.appendChild(chartContent);
+
+	const legend = document.createElement("div");
+	legend.className = "chart-legend";
+	legend.innerHTML = `
+        <div class="legend-item">
+            <span class="legend-color revenue"></span> Revenue
+        </div>
+        <div class="legend-item">
+            <span class="legend-color earnings"></span> Earnings
+        </div>
+    `;
+	chartDiv.appendChild(legend);
+}
+
+function createBar(value, min, max, zeroLine, className) {
+	const bar = document.createElement("div");
+	bar.className = `chart-bar ${className}`;
+
+	const totalRange = Math.max(max, 0) - Math.min(min, 0);
+
+	const width = (value / totalRange) * 100;
+	if (value >= 0) {
+		bar.style.left = `${zeroLine * 100}%`;
+		bar.style.width = `${width}%`;
+		bar.style.textAlign = "right";
+	} else {
+		bar.style.right = `${(1 - zeroLine) * 100}%`;
+		bar.style.width = `${-width}%`;
+		bar.style.textAlign = "left";
+	}
+
+	bar.textContent = `$${(value / 1e9).toFixed(2)}B`;
+	return bar;
 }
 
 function formatValue(metric, value) {

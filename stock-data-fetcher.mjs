@@ -221,15 +221,18 @@ async function fetchStockData() {
 							info.balanceSheetHistory[prop];
 					}
 				}
-				if (info.earnings && info.earnings.financialsChart) {
-					const { yearly } = info.earnings.financialsChart;
-					yearFinData[ticker] = yearly
-						.map((year) => ({
+				// Process yearly financial data
+				if (
+					info.earnings &&
+					info.earnings.financialsChart &&
+					info.earnings.financialsChart.yearly
+				) {
+					yearFinData[ticker] =
+						info.earnings.financialsChart.yearly.map((year) => ({
 							date: year.date,
-							revenue: year.revenue.raw,
-							earnings: year.earnings.raw,
-						}))
-						.slice(-4); // Get the last 4 years of data
+							revenue: year.revenue,
+							earnings: year.earnings,
+						}));
 				}
 
 				// Only add to validTickers if we have some financial data

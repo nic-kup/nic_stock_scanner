@@ -251,3 +251,98 @@ button.removeFilter:hover {
         flex-direction: column;
     }
 }
+
+/* Chart */
+
+#financialChart {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.chart-content {
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+}
+
+.zero-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #999;
+    z-index: 1;
+}
+
+.chart-year {
+    margin-bottom: 15px;
+    position: relative;
+    height: 50px;
+}
+
+.year-label {
+    position: absolute;
+    /* left: -60px;  Adjust as needed */
+    width: 50px;
+    text-align: right;
+    font-weight: bold;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bars {
+    position: relative;
+    height: 100%
+}
+
+.chart-bar {
+    position: absolute;
+    height: 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 12px;
+    line-height: 20px;
+    border-radius: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.chart-bar.revenue {
+    background-color: #3366cc;
+    top: 0;
+}
+
+.chart-bar.earnings {
+    background-color: #dc3912;
+    bottom: 0;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 10px;
+    margin-right: 5px;
+    border-radius: 2px;
+}
+
+.legend-color.revenue {
+    background-color: #3366cc;
+}
+
+.legend-color.earnings {
+    background-color: #dc3912;
+}
