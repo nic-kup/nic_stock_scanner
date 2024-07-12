@@ -112,7 +112,6 @@ const numericalProperties = [
 	"twoHundredDayAverage",
 	"volume",
 ];
-// Add a delay function
 const delay = (ms) => new Promise((resolve) => setTimeout(resolve, ms));
 
 async function checkLastUpdated() {
@@ -170,7 +169,7 @@ async function fetchStockData() {
 		const ticker = tickers[i];
 		try {
 			// Add a delay between requests to avoid rate limiting
-			await delay(500); // 1 second delay
+			await delay(500); // 0.5 second delay
 
 			const info = await yahooFinance.quoteSummary(ticker, {
 				modules: [
@@ -233,6 +232,14 @@ async function fetchStockData() {
 							revenue: year.revenue,
 							earnings: year.earnings,
 						}));
+
+					// Add custom earnings property for each year
+					yearFinData[ticker].forEach((yearData) => {
+						tickerInfo[ticker][`earnings(${yearData.date})`] =
+							yearData.earnings;
+						tickerInfo[ticker][`revenue(${yearData.date})`] =
+							yearData.revenue;
+					});
 				}
 
 				// Only add to validTickers if we have some financial data
