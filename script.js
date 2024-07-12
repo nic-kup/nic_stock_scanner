@@ -188,7 +188,6 @@ function addFilter() {
 	updatePlot(tickerInfo, secInfo, trackedStocks);
 }
 
-// TODO: Fix Remove Filter
 function removeFilter(id) {
 	console.log("remove filter", id);
 	const filterToRemove = document.querySelector(
@@ -289,6 +288,27 @@ function showStockInfo(ticker) {
 		const value = tickerInfo[ticker][metric];
 		cell2.textContent = formatValue(metric, value);
 	});
+	if (yearFinData[ticker]) {
+		const yearlyData = yearFinData[ticker];
+		yearlyData.forEach((yearData) => {
+			const revenueRow = infoTable.insertRow();
+			const earningsRow = infoTable.insertRow();
+
+			revenueRow.insertCell(0).textContent = `Revenue (${yearData.date})`;
+			revenueRow.insertCell(1).textContent = formatValue(
+				"revenue",
+				yearData.revenue
+			);
+
+			earningsRow.insertCell(
+				0
+			).textContent = `Earnings (${yearData.date})`;
+			earningsRow.insertCell(1).textContent = formatValue(
+				"earnings",
+				yearData.earnings
+			);
+		});
+	}
 
 	infoContainer.style.display = "block";
 }
@@ -301,6 +321,8 @@ function formatValue(metric, value) {
 		case "enterpriseValue":
 		case "freeCashflow":
 		case "operatingCashflow":
+		case "revenue":
+		case "earnings":
 			return `$${(value / 1e9).toFixed(2)}B`;
 		case "trailingPE":
 		case "forwardPE":

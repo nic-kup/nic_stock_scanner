@@ -125,7 +125,7 @@ async function checkLastUpdated() {
 		console.log("Date Now:", now);
 		const hoursSinceLastUpdate = (now - lastUpdated) / (1000 * 60 * 60);
 		console.log(hoursSinceLastUpdate);
-		return hoursSinceLastUpdate > 4;
+		return hoursSinceLastUpdate > 3;
 	} catch (error) {
 		console.error("Error reading last_updated.json:", error);
 		return true; // If there's an error reading the file, proceed with update
@@ -145,7 +145,7 @@ async function fetchStockData() {
 	console.log("Checking time since last update.");
 	const shouldUpdate = await checkLastUpdated();
 	if (!shouldUpdate) {
-		console.log("Data is less than 4 hours old.");
+		console.log("Data is less than 3 hours old.");
 		return;
 	}
 	const tickers = [];
@@ -153,6 +153,7 @@ async function fetchStockData() {
 	const secInfo = {};
 	const validTickers = [];
 	const errors = {};
+	const yearFinData = {};
 
 	// Read tickers from CSV
 	await new Promise((resolve, reject) => {
@@ -179,6 +180,7 @@ async function fetchStockData() {
 					"balanceSheetHistory",
 					"financialData",
 					"defaultKeyStatistics",
+					"earnings",
 				],
 			});
 
@@ -219,6 +221,16 @@ async function fetchStockData() {
 							info.balanceSheetHistory[prop];
 					}
 				}
+				if (info.earnings && info.earnings.financialsChart) {
+					const { yearly } = info.earnings.financialsChart;
+					yearFinData[ticker] = yearly
+						.map((year) => ({
+							date: year.date,
+							revenue: year.revenue.raw,
+							earnings: year.earnings.raw,
+						}))
+						.slice(-4); // Get the last 4 years of data
+				}
 
 				// Only add to validTickers if we have some financial data
 				if (Object.keys(tickerInfo[ticker]).length > 0) {
@@ -253,6 +265,7 @@ async function fetchStockData() {
 		JSON.stringify(validTickers, null, 2)
 	);
 	await fs.writeFile("errors.json", JSON.stringify(errors, null, 2));
+	await fs.writeFile("yearfin.json", JSON.stringify(yearFinData, null, 2));
 
 	console.log(`Data fetching complete. JSON files have been created.`);
 	console.log(

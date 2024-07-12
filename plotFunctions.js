@@ -234,6 +234,8 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 	const plotData = Object.entries(data).map(([key, sectorData]) => ({
 		...sectorData,
 		marker: { color: colorBySector ? sectorColors[key] : "blue" },
+		// hoverinfo: "none",
+		// hovertemplate: null,
 		hovertemplate: `<b>%{text}</b><br>${prop1}: %{x}<br>${prop2}: %{y}<extra></extra>`,
 	}));
 
