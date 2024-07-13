@@ -1,4 +1,4 @@
-import { handleStockClick } from "./script.js";
+import { handleStockClick, updateURLWithState } from "./script.js";
 
 // Helper functions
 let sectorColors = {};
@@ -343,6 +343,7 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 				handleStockClick(ticker);
 			}
 		});
+		updateURLWithState();
 	});
 	console.log("Plot updated.");
 }

@@ -19,6 +19,14 @@ const infoMetrics = [
 	"priceToBook",
 ];
 
+const defaultState = {
+	p1: "marketCap",
+	p2: "freeCashflow",
+	l1: false,
+	l2: false,
+	f: [],
+};
+
 // Global variable
 let filterCount = 0;
 
@@ -86,21 +94,9 @@ async function init() {
 				updatePlot(tickerInfo, secInfo, trackedStocks, false)
 			);
 
-		if (numericalProperties.includes("marketCap")) {
-			property1Select.value = "marketCap";
-		}
-		if (numericalProperties.includes("freeCashflow")) {
-			property2Select.value = "freeCashflow";
-		}
-
-		console.log("About to initialize fuzzy search...");
-
-		// Initialize fuzzy search with a small delay
-		setTimeout(() => {
-			initializeFuzzySearch(numericalProperties, () =>
-				updatePlot(tickerInfo, secInfo, trackedStocks, true)
-			);
-		}, 100);
+		initializeFuzzySearch(numericalProperties, () =>
+			updatePlot(tickerInfo, secInfo, trackedStocks, true)
+		);
 
 		// Set up filter functionality
 		document
@@ -119,6 +115,21 @@ async function init() {
 			Object.keys(tickerInfo),
 			addStock
 		);
+		// Read state from URL if available
+		console.log("Loading State...");
+		const stateLoaded = readStateFromURL();
+		console.log(stateLoaded);
+
+		// Update URL with initial state if not loaded from URL
+		if (!stateLoaded) {
+			if (numericalProperties.includes("marketCap")) {
+				property1Select.value = "marketCap";
+			}
+			if (numericalProperties.includes("freeCashflow")) {
+				property2Select.value = "freeCashflow";
+			}
+			updateURLWithState();
+		}
 
 		// Initial plot
 		updatePlot(tickerInfo, secInfo, trackedStocks);
@@ -442,6 +453,71 @@ function formatValue(metric, value) {
 	}
 }
 
+function updateURLWithState() {
+	const state = {
+		p1: document.getElementById("property1").value,
+		p2: document.getElementById("property2").value,
+		l1: document.getElementById("logScale1").checked,
+		l2: document.getElementById("logScale2").checked,
+		f: Array.from(document.querySelectorAll(".filter")).map((filter) => {
+			const id = filter.dataset.filterId;
+			const left = document.getElementById(`filterLeft${id}`).value;
+			const right = document.getElementById(`filterRight${id}`).value;
+			const comparison = document.getElementById(
+				`filterComparison${id}`
+			).textContent;
+
+			// If comparison is '≤', swap left and right
+			return comparison === "≤" ? [right, left] : [left, right];
+		}),
+	};
+
+	// Only include non-default values
+	const compactState = {};
+	for (const [key, value] of Object.entries(state)) {
+		if (JSON.stringify(value) !== JSON.stringify(defaultState[key])) {
+			compactState[key] = value;
+		}
+	}
+
+	const stateString = JSON.stringify(compactState);
+	const compressedState = LZString.compressToEncodedURIComponent(stateString);
+	history.pushState(state, "", `?s=${compressedState}`);
+}
+
+// Function to read state from URL
+function readStateFromURL() {
+	const urlParams = new URLSearchParams(window.location.search);
+	const compressedState = urlParams.get("s");
+
+	if (compressedState) {
+		const stateString =
+			LZString.decompressFromEncodedURIComponent(compressedState);
+		const state = { ...defaultState, ...JSON.parse(stateString) };
+
+		document.getElementById("property1").value = state.p1;
+		document.getElementById("property2").value = state.p2;
+		document.getElementById("logScale1").checked = state.l1;
+		document.getElementById("logScale2").checked = state.l2;
+
+		// Clear existing filters
+		document.getElementById("filters").innerHTML = "";
+
+		// Add filters from state
+		state.f.forEach((filter) => {
+			addFilter();
+			const newFilter = document.querySelector(".filter:last-child");
+			const id = newFilter.dataset.filterId;
+			document.getElementById(`filterLeft${id}`).value = filter[0];
+			document.getElementById(`filterRight${id}`).value = filter[1];
+		});
+
+		return true;
+	}
+
+	return false;
+}
+
 // Remove stock from tracked stocks
 function removeStock(ticker) {
 	trackedStocks = trackedStocks.filter((t) => t !== ticker);
@@ -457,6 +533,7 @@ export {
 	removeFilter,
 	secInfo,
 	numericalProperties,
+	updateURLWithState,
 	trackedStocks,
 	handleStockClick,
 };
