@@ -4,7 +4,7 @@ on:
     push:
         branches: [main]
     schedule:
-        - cron: "0 */8 * * *" # Runs every 8 hours
+        - cron: "0 */4 * * *" # Runs every 4 hours
 
 jobs:
     build-and-deploy:
@@ -23,15 +23,11 @@ jobs:
             - name: Fetch latest data from gh-pages
               run: |
                   git fetch origin gh-pages:gh-pages
-                  git checkout gh-pages -- last_updated.json ticker_info.json sec_info.json valid_tickers.json errors.json all_usd_tickers.csv
+                  git checkout gh-pages -- last_updated.json ticker_info.json sec_info.json valid_tickers.json errors.json all_usd_tickers.csv yearfin.json
                   git checkout main
 
             - name: Fetch stock data
               run: node stock-data-fetcher.mjs
-
-            - name: Replace Google Analytics ID
-              run: |
-                  sed -i 's/GOOGLE_ANALYTICS_ID/${{ secrets.GOOGLE_ANALYTICS_ID }}/g' index.html
 
             - name: Deploy to GitHub Pages
               uses: peaceiris/actions-gh-pages@v3
