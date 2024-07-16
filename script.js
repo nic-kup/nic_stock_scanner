@@ -3,8 +3,11 @@ let tickerInfo = {};
 let secInfo = {};
 let yearFinData = {};
 let numericalProperties = [];
-let trackedStocks = []; // Add this line to define trackedStocks
+let trackedStocks = [];
+let selectedSectors = [];
 let selectedIndustries = [];
+let allIndustries = [];
+let bestFitState = 0;
 
 import { updatePlot } from "./plotFunctions.js";
 import { initializeFuzzySearch, handleFuzzySearch } from "./fuzzySearch.js";
@@ -79,21 +82,16 @@ async function init() {
 			.addEventListener("change", () =>
 				updatePlot(tickerInfo, secInfo, trackedStocks, true)
 			);
-		document
-			.getElementById("colorBySector")
-			.addEventListener("change", () =>
-				updatePlot(tickerInfo, secInfo, trackedStocks, false)
-			);
-		document
-			.getElementById("showDiagonal")
-			.addEventListener("change", () =>
-				updatePlot(tickerInfo, secInfo, trackedStocks, false)
-			);
-		document
-			.getElementById("showBestFit")
-			.addEventListener("change", () =>
-				updatePlot(tickerInfo, secInfo, trackedStocks, false)
-			);
+
+		const bestFitPill = document.getElementById("bestFitPill");
+		bestFitPill.addEventListener("click", toggleBestFit);
+
+		// Replace existing event listeners for color by sector and show diagonal
+		const colorBySectorPill = document.getElementById("colorBySectorPill");
+		colorBySectorPill.addEventListener("click", toggleColorBySector);
+
+		const showDiagonalPill = document.getElementById("showDiagonalPill");
+		showDiagonalPill.addEventListener("click", toggleShowDiagonal);
 
 		// Specifically for Prop1 and Prop2
 		initializeFuzzySearch(numericalProperties, () =>
@@ -118,20 +116,24 @@ async function init() {
 			addStock
 		);
 
-		const industries = [
-			...new Set(Object.values(secInfo).map((info) => info.industry)),
+		const sectors = [
+			...new Set(Object.values(secInfo).map((info) => info.sector)),
 		];
 
 		handleFuzzySearch(
-			"industryFilter",
-			"industryFilterResults",
-			industries,
-			addIndustryFilter
+			"sectorFilter",
+			"sectorFilterResults",
+			sectors,
+			addSectorFilter
 		);
+
+		allIndustries = [
+			...new Set(Object.values(secInfo).map((info) => info.industry)),
+		];
+		updateIndustryFilterOptions();
+
 		// Read state from URL if available
-		console.log("Loading State...");
 		const stateLoaded = readStateFromURL();
-		console.log(stateLoaded);
 
 		// Update URL with initial state if not loaded from URL
 		if (!stateLoaded) {
@@ -153,6 +155,102 @@ async function init() {
 		console.error("Error initializing application:", error);
 		document.body.innerHTML = `<h1>Error initializing application</h1><p>${error.message}</p>`;
 	}
+}
+
+function toggleBestFit() {
+	if (selectedSectors.length === 0) {
+		bestFitState = (bestFitState + 1) % 2;
+	} else {
+		bestFitState = (bestFitState + 1) % 3;
+	}
+
+	const bestFitPill = document.getElementById("bestFitPill");
+	bestFitPill.classList.toggle("active", bestFitState > 0);
+
+	switch (bestFitState) {
+		case 0:
+			bestFitPill.textContent = "Best Fit (Off)";
+			break;
+		case 1:
+			bestFitPill.textContent = "Best Fit (All)";
+			break;
+		case 2:
+			bestFitPill.textContent = "Best Fit (Sector)";
+			break;
+	}
+
+	updatePlot(tickerInfo, secInfo, trackedStocks, false);
+}
+
+function toggleColorBySector() {
+	const pill = document.getElementById("colorBySectorPill");
+	pill.classList.toggle("active");
+	updatePlot(tickerInfo, secInfo, trackedStocks, false);
+}
+
+function toggleShowDiagonal() {
+	const pill = document.getElementById("showDiagonalPill");
+	pill.classList.toggle("active");
+	updatePlot(tickerInfo, secInfo, trackedStocks, false);
+}
+function addSectorFilter(sector) {
+	if (!selectedSectors.includes(sector)) {
+		selectedSectors.push(sector);
+		updateSelectedSectorsList();
+		updateIndustryFilterOptions();
+		updatePlot(tickerInfo, secInfo, trackedStocks, false);
+	}
+	document.getElementById("sectorFilter").value = "";
+}
+
+function removeSectorFilter(sector) {
+	selectedSectors = selectedSectors.filter((s) => s !== sector);
+	updateSelectedSectorsList();
+	updateIndustryFilterOptions();
+	updatePlot(tickerInfo, secInfo, trackedStocks, false);
+}
+
+function updateSelectedSectorsList() {
+	const container = document.getElementById("selectedSectors");
+	container.innerHTML = "";
+	selectedSectors.forEach((sector) => {
+		const pill = document.createElement("span");
+		pill.className = "filter-pill";
+		pill.textContent = sector;
+		pill.dataset.sector = sector;
+		pill.onclick = () => removeSectorFilter(sector);
+		container.appendChild(pill);
+	});
+}
+
+function updateIndustryFilterOptions() {
+	let relevantIndustries;
+	if (selectedSectors.length === 0) {
+		relevantIndustries = allIndustries;
+	} else {
+		relevantIndustries = [
+			...new Set(
+				Object.entries(secInfo)
+					.filter(([_, info]) =>
+						selectedSectors.includes(info.sector)
+					)
+					.map(([_, info]) => info.industry)
+			),
+		];
+	}
+	// Update the fuzzy search handler for industry filter
+	handleFuzzySearch(
+		"industryFilter",
+		"industryFilterResults",
+		relevantIndustries,
+		addIndustryFilter
+	);
+
+	// Remove any selected industries that are no longer relevant
+	selectedIndustries = selectedIndustries.filter((industry) =>
+		relevantIndustries.includes(industry)
+	);
+	updateSelectedIndustriesList();
 }
 
 function addIndustryFilter(industry) {
@@ -577,4 +675,7 @@ export {
 	updateURLWithState,
 	trackedStocks,
 	handleStockClick,
+	bestFitState,
+	selectedSectors,
+	selectedIndustries,
 };

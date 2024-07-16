@@ -1,4 +1,10 @@
-import { handleStockClick, updateURLWithState } from "./script.js";
+import {
+	handleStockClick,
+	updateURLWithState,
+	bestFitState,
+	selectedSectors,
+	selectedIndustries,
+} from "./script.js";
 
 // Helper functions
 let sectorColors = {};
@@ -99,9 +105,14 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 	const prop2 = document.getElementById("property2").value;
 	const logScale1 = document.getElementById("logScale1").checked;
 	const logScale2 = document.getElementById("logScale2").checked;
-	const colorBySector = document.getElementById("colorBySector").checked;
-	const showDiagonal = document.getElementById("showDiagonal").checked;
-	const showBestFit = document.getElementById("showBestFit").checked;
+
+	const colorBySector = document
+		.getElementById("colorBySectorPill")
+		.classList.contains("active");
+	const showDiagonal = document
+		.getElementById("showDiagonalPill")
+		.classList.contains("active");
+	// const showBestFit = document.getElementById("showBestFit").checked;
 
 	const currentLayout = document.getElementById("plotDiv").layout;
 
@@ -144,20 +155,20 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 		}
 	}
 
-	const filters = document.querySelectorAll(".filter");
-	const selectedIndustriesElement =
-		document.getElementById("selectedIndustries");
-	const selectedIndustries = Array.from(
-		selectedIndustriesElement.children
-	).map((child) => child.dataset.industry);
-
-	for (const [ticker, info] of Object.entries(tickerInfo)) {
-		if (
+	const filteredData = Object.entries(tickerInfo).filter(([ticker, info]) => {
+		const sectorMatch =
+			selectedSectors.length === 0 ||
+			selectedSectors.includes(secInfo[ticker].sector);
+		const industryMatch =
 			selectedIndustries.length === 0 ||
-			(selectedIndustries.includes(secInfo[ticker].industry) &&
-				prop1 in info &&
-				prop2 in info)
-		) {
+			selectedIndustries.includes(secInfo[ticker].industry);
+		return sectorMatch && industryMatch;
+	});
+
+	const filters = document.querySelectorAll(".filter");
+
+	filteredData.forEach(([ticker, info]) => {
+		if (prop1 in info && prop2 in info) {
 			const x = info[prop1];
 			const y = info[prop2];
 
@@ -235,7 +246,7 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 				}
 			}
 		}
-	}
+	});
 
 	// Assign colors to sectors
 	assignSectorColors(sectors);
@@ -302,15 +313,52 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 	}
 
 	// Add line of best fit if requested
-	if (showBestFit && allX.length > 1) {
-		console.log("Calculating Best Fit Line");
-		const bestFitLine = calculateBestFitLine(
-			allX,
-			allY,
-			logScale1,
-			logScale2
-		);
-		plotData.push(bestFitLine);
+	if (bestFitState > 0) {
+		if (bestFitState == 1) {
+			const bestFitLine = calculateBestFitLine(
+				allX,
+				allY,
+				logScale1,
+				logScale2
+			);
+			plotData.push(bestFitLine);
+		} else if (bestFitState == 2) {
+			selectedSectors.forEach((sector) => {
+				const sectorX = [];
+				const sectorY = [];
+				Object.entries(tickerInfo).forEach(([ticker, info]) => {
+					if (
+						secInfo[ticker].sector == sector &&
+						prop1 in info &&
+						prop2 in info
+					) {
+						const x = info[prop1];
+						const y = info[prop2];
+						if (
+							isValidNumber(x) &&
+							isValidNumber(y) &&
+							(!logScale1 || x > 0) &&
+							(!logScale2 || y > 0)
+						) {
+							sectorX.push(x);
+							sectorY.push(y);
+						}
+					}
+				});
+				if (sectorX.length > 1) {
+					console.log(`Calculating best fit for sector: ${sector}`);
+					const sectorBestFitLine = calculateBestFitLine(
+						sectorX,
+						sectorY,
+						logScale1,
+						logScale2
+					);
+					sectorBestFitLine.name = `Best Fit: ${sector}`;
+					sectorBestFitLine.line.color = sectorColors[sector];
+					plotData.push(sectorBestFitLine);
+				}
+			});
+		}
 	}
 
 	const layout = {

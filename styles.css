@@ -379,8 +379,14 @@ button.removeFilter:hover {
     margin-bottom: 5px;
     font-size: 14px;
     cursor: pointer;
+    transition: background-color 0.3s ease;
   }
   
   .filter-pill:hover {
     background-color: #d0d0d0;
+  }
+
+  .filter-pill.active {
+    background-color: #303a55;
+    color: #e0e0e0;
   }

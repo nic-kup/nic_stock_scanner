@@ -46,6 +46,16 @@
                     </div>
                 </div>
                 <button id="swapProperties">Swap Properties</button>
+
+                <div class="sector-filter">
+                    <div class="input-wrapper">
+                        <input type="text" id="sectorFilter" , class="fuzzy-search" placeholder="Add Sector Filter"
+                            autocomplete="off">
+                        <div id="sectorFilterResults" class="search-results"></div>
+                    </div>
+                    <div id="selectedSectors" class="selected-filters"></div>
+                </div>
+
                 <div class="industry-filter">
                     <div class="input-wrapper">
                         <input type="text" id="industryFilter" , class="fuzzy-search" placeholder="Add Industry Filter"
@@ -64,16 +74,13 @@
             </div>
             <div class="control-row">
                 <div class="control-group">
-                    <input type="checkbox" id="colorBySector">
-                    <label for="colorBySector">Color by Sector</label>
+                    <span id="colorBySectorPill" class="filter-pill">Color by Sector</span>
                 </div>
                 <div class="control-group">
-                    <input type="checkbox" id="showDiagonal">
-                    <label for="showDiagonal">Show x=y Line</label>
+                    <span id="showDiagonalPill" class="filter-pill">Show x=y Line</span>
                 </div>
                 <div class="control-group">
-                    <input type="checkbox" id="showBestFit">
-                    <label for="showBestFit">Show Best Fit Line</label>
+                    <span id="bestFitPill" class="filter-pill">Best Fit (Off)</span>
                 </div>
             </div>
         </div>
