@@ -4,6 +4,7 @@ let secInfo = {};
 let yearFinData = {};
 let numericalProperties = [];
 let trackedStocks = []; // Add this line to define trackedStocks
+let selectedIndustries = [];
 
 import { updatePlot } from "./plotFunctions.js";
 import { initializeFuzzySearch, handleFuzzySearch } from "./fuzzySearch.js";
@@ -94,6 +95,7 @@ async function init() {
 				updatePlot(tickerInfo, secInfo, trackedStocks, false)
 			);
 
+		// Specifically for Prop1 and Prop2
 		initializeFuzzySearch(numericalProperties, () =>
 			updatePlot(tickerInfo, secInfo, trackedStocks, true)
 		);
@@ -114,6 +116,17 @@ async function init() {
 			"addStockResults",
 			Object.keys(tickerInfo),
 			addStock
+		);
+
+		const industries = [
+			...new Set(Object.values(secInfo).map((info) => info.industry)),
+		];
+
+		handleFuzzySearch(
+			"industryFilter",
+			"industryFilterResults",
+			industries,
+			addIndustryFilter
 		);
 		// Read state from URL if available
 		console.log("Loading State...");
@@ -140,6 +153,34 @@ async function init() {
 		console.error("Error initializing application:", error);
 		document.body.innerHTML = `<h1>Error initializing application</h1><p>${error.message}</p>`;
 	}
+}
+
+function addIndustryFilter(industry) {
+	if (!selectedIndustries.includes(industry)) {
+		selectedIndustries.push(industry);
+		updateSelectedIndustriesList();
+		updatePlot(tickerInfo, secInfo, trackedStocks, false);
+	}
+	document.getElementById("industryFilter").value = "";
+}
+
+function removeIndustryFilter(industry) {
+	selectedIndustries = selectedIndustries.filter((i) => i !== industry);
+	updateSelectedIndustriesList();
+	updatePlot(tickerInfo, secInfo, trackedStocks, false);
+}
+
+function updateSelectedIndustriesList() {
+	const container = document.getElementById("selectedIndustries");
+	container.innerHTML = "";
+	selectedIndustries.forEach((industry) => {
+		const pill = document.createElement("span");
+		pill.className = "filter-pill";
+		pill.textContent = industry;
+		pill.dataset.industry = industry;
+		pill.onclick = () => removeIndustryFilter(industry);
+		container.appendChild(pill);
+	});
 }
 
 function addFilter() {

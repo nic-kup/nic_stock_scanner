@@ -145,9 +145,19 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 	}
 
 	const filters = document.querySelectorAll(".filter");
+	const selectedIndustriesElement =
+		document.getElementById("selectedIndustries");
+	const selectedIndustries = Array.from(
+		selectedIndustriesElement.children
+	).map((child) => child.dataset.industry);
 
 	for (const [ticker, info] of Object.entries(tickerInfo)) {
-		if (prop1 in info && prop2 in info) {
+		if (
+			selectedIndustries.length === 0 ||
+			(selectedIndustries.includes(secInfo[ticker].industry) &&
+				prop1 in info &&
+				prop2 in info)
+		) {
 			const x = info[prop1];
 			const y = info[prop2];
 

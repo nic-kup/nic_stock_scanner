@@ -22,8 +22,7 @@
 
 <body>
     <div class="container">
-        <h1>Nic's Stock Screener</h1>
-        <h3>Data from Yahoo Finance API.</h3>
+        <h1 style="margin: 1%;">Nic's Stock Screener</h1>
         <div class="controls">
             <div class="properties-control">
                 <div class="properties-container">
@@ -47,7 +46,16 @@
                     </div>
                 </div>
                 <button id="swapProperties">Swap Properties</button>
+                <div class="industry-filter">
+                    <div class="input-wrapper">
+                        <input type="text" id="industryFilter" , class="fuzzy-search" placeholder="Add Industry Filter"
+                            autocomplete="off">
+                        <div id="industryFilterResults" class="search-results"></div>
+                    </div>
+                    <div id="selectedIndustries" class="selected-filters"></div>
+                </div>
             </div>
+
             <div class="control-row">
                 <div id="filters">
                     <!-- Filters will be added dynamically -->
@@ -102,6 +110,7 @@
     <script type="module" src="plotFunctions.js"></script>
     <script type="module" src="script.js"></script>
     <div id="lastUpdated" style="color: grey; font-size: 0.8em; text-align: center; margin-top: 20px;"></div>
+    <div style="color: grey; font-size: 0.8em; text-align: center; margin-top: 20px;">All data from Yahoo Finance.</div>
     <div style="text-align: center; margin-top: 10px;"><a style="color: grey; font-size: 0.8em;"
             href="https://ko-fi.com/nic_kup">Support me on Ko-Fi.</a>
     </div>

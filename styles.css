@@ -19,8 +19,9 @@ h1, h3 {
 
 /* Properties Control Styles */
 .properties-control {
+    position: relative;
     display: flex;
-    align-items: flex-start;
+    align-items: stretch;
     gap: 15px;
     margin-bottom: 15px;
 }
@@ -40,7 +41,7 @@ h1, h3 {
     position: absolute;
     top: 100%;
     left: 0;
-    right: 0;
+    width: 214px;
     background-color: white;
     max-height: 300px;
     overflow-y: auto;
@@ -66,19 +67,20 @@ h1, h3 {
 }
 
 .property-row {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
     position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
 }
 
 .property-row label {
     white-space: nowrap;
+    height: auto;
 }
 
 .input-wrapper {
     position: relative;
-    /* flex-grow: 1; */
+    width: 100%;
 }
 
 #swapProperties {
@@ -87,6 +89,7 @@ h1, h3 {
 
 /* Other Controls Styles */
 .control-row {
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
     gap: 10px;
@@ -113,6 +116,8 @@ button {
 
 button:hover {
     background-color: #3a4b98;
+    border: 2px;
+    border-color: #0d0d0d;
 }
 
 button.removeStock {
@@ -140,9 +145,6 @@ button.removeFilter:hover {
     margin-bottom: 3px;
 }
 
-/* .filterProperty {
-    width: 150px;
-} */
 
 .filterValue {
     width: 100px;
@@ -275,6 +277,7 @@ button.removeFilter:hover {
     z-index: 1;
 }
 
+
 .chart-year {
     margin-bottom: 15px;
     position: relative;
@@ -346,3 +349,38 @@ button.removeFilter:hover {
 .legend-color.earnings {
     background-color: #dc3912;
 }
+
+/* Industry */
+
+/* 
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  } */
+  
+  .industry-filter {
+    flex: 1;
+    width: 300px;
+    left: 10%;
+    padding-left: 20px;
+  }
+  
+  .selected-filters {
+    margin-top: 10px;
+  }
+  
+  .filter-pill {
+    display: inline-block;
+    background-color: #e0e0e0;
+    border-radius: 16px;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    cursor: pointer;
+  }
+  
+  .filter-pill:hover {
+    background-color: #d0d0d0;
+  }
