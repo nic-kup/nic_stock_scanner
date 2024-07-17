@@ -9,7 +9,7 @@ let selectedIndustries = [];
 let allIndustries = [];
 let bestFitState = 0;
 
-import { updatePlot } from "./plotFunctions.js";
+import { updatePlot, sectorColors } from "./plotFunctions.js";
 import { initializeFuzzySearch, handleFuzzySearch } from "./fuzzySearch.js";
 
 const infoMetrics = [
@@ -156,6 +156,21 @@ async function init() {
 		document.body.innerHTML = `<h1>Error initializing application</h1><p>${error.message}</p>`;
 	}
 }
+function getContrastColor(hexcolor) {
+	// If hexcolor is undefined or null, return black
+	if (!hexcolor) return "#000000";
+
+	// Convert hex to RGB
+	const r = parseInt(hexcolor.slice(1, 3), 16);
+	const g = parseInt(hexcolor.slice(3, 5), 16);
+	const b = parseInt(hexcolor.slice(5, 7), 16);
+
+	// Calculate luminance
+	const luminance = (0.299 * r + 0.587 * g + 0.114 * b) / 255;
+
+	// Return black for light colors, white for dark colors
+	return luminance > 0.5 ? "#000000" : "#ffffff";
+}
 
 function toggleBestFit() {
 	if (selectedSectors.length === 0) {
@@ -218,6 +233,8 @@ function updateSelectedSectorsList() {
 		pill.className = "filter-pill";
 		pill.textContent = sector;
 		pill.dataset.sector = sector;
+		pill.style.backgroundColor = sectorColors[sector];
+		pill.style.color = getContrastColor(sectorColors[sector]);
 		pill.onclick = () => removeSectorFilter(sector);
 		container.appendChild(pill);
 	});
@@ -276,6 +293,13 @@ function updateSelectedIndustriesList() {
 		pill.className = "filter-pill";
 		pill.textContent = industry;
 		pill.dataset.industry = industry;
+		const sector = Object.values(secInfo).find(
+			(info) => info.industry === industry
+		)?.sector;
+		if (sector && sectorColors[sector]) {
+			pill.style.backgroundColor = sectorColors[sector];
+			pill.style.color = getContrastColor(sectorColors[sector]);
+		}
 		pill.onclick = () => removeIndustryFilter(industry);
 		container.appendChild(pill);
 	});

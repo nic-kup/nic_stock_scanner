@@ -6,7 +6,6 @@ import {
 	selectedIndustries,
 } from "./script.js";
 
-// Helper functions
 let sectorColors = {};
 
 function createCustomLegend(plotData) {
@@ -430,4 +429,4 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 	console.log("Plot updated.");
 }
 
-export { updatePlot };
+export { updatePlot, sectorColors };
