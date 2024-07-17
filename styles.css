@@ -390,3 +390,28 @@ button.removeFilter:hover {
     background-color: #303a55;
     color: #e0e0e0;
   }
+
+  /* Custom Legend */
+
+  .custom-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px;
+    /* background-color: #f9f9f9; */
+    border-radius: 5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 10px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 3px;
+}

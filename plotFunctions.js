@@ -9,6 +9,35 @@ import {
 // Helper functions
 let sectorColors = {};
 
+function createCustomLegend(plotData) {
+	const legendContainer = document.getElementById("customLegend");
+	legendContainer.innerHTML = "";
+
+	plotData.forEach((trace) => {
+		if (
+			trace.name &&
+			trace.name !== "Best Fit Line" &&
+			trace.name !== "x = y"
+		) {
+			const legendItem = document.createElement("div");
+			legendItem.className = "legend-item";
+
+			const colorBox = document.createElement("span");
+			colorBox.className = "legend-color";
+			colorBox.style.backgroundColor = trace.marker
+				? trace.marker.color
+				: trace.line.color;
+
+			const nameSpan = document.createElement("span");
+			nameSpan.textContent = trace.name;
+
+			legendItem.appendChild(colorBox);
+			legendItem.appendChild(nameSpan);
+			legendContainer.appendChild(legendItem);
+		}
+	});
+}
+
 // Helper function to calculate the best fit line
 function calculateBestFitLine(xData, yData, isLogScaleX, isLogScaleY) {
 	// Filter out non-positive values for log scales
@@ -382,13 +411,7 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 				: undefined,
 		},
 		hovermode: "closest",
-		legend: {
-			orientation: "h",
-			yanchor: "bottom",
-			y: -0.35,
-			xanchor: "center",
-			x: 0.5,
-		},
+		showlegend: false,
 	};
 
 	Plotly.newPlot("plotDiv", plotData, layout).then(function () {
@@ -402,6 +425,7 @@ function updatePlot(tickerInfo, secInfo, trackedStocks, resetZoom = false) {
 			}
 		});
 		updateURLWithState();
+		createCustomLegend(plotData);
 	});
 	console.log("Plot updated.");
 }

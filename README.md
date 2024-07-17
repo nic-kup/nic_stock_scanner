@@ -14,5 +14,4 @@ For now only allows for stocks denominated in USD.
 ## Upcoming features
 - Better hovering
 - Non USD stocks (surprisingly hard due to inconsistent data)
-- Filter by Sector
-- Other things
+- Use something other than `.json`
