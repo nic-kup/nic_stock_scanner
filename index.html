@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-QQB0KEEY6F"></script>
+    <script>
+        window.dataLayer = window.dataLayer || [];
+        function gtag() { dataLayer.push(arguments); }
+        gtag('js', new Date());
+
+        gtag('config', 'G-QQB0KEEY6F');
+    </script>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Nic's Stock Screener</title>
+    <script src="plotly-2.24.1.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/lz-string/1.4.4/lz-string.min.js"></script>
+    <link rel="stylesheet" href="styles.css">
+</head>
+
+
+<body>
+    <div class="container">
+        <h1 style="margin: 1%;">Nic's Stock Screener</h1>
+        <div class="controls">
+            <div class="properties-control">
+                <div class="properties-container">
+                    <div class="property-row">
+                        <label for="property1">Property 1:</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="property1" class="fuzzy-search" autocomplete="off">
+                            <div id="property1Results" class="search-results"></div>
+                        </div>
+                        <input type="checkbox" id="logScale1" checked>
+                        <label for="logScale1">Log Scale</label>
+                    </div>
+                    <div class="property-row">
+                        <label for="property2">Property 2:</label>
+                        <div class="input-wrapper">
+                            <input type="text" id="property2" class="fuzzy-search" autocomplete="off">
+                            <div id="property2Results" class="search-results"></div>
+                        </div>
+                        <input type="checkbox" id="logScale2" checked>
+                        <label for="logScale2">Log Scale</label>
+                    </div>
+                </div>
+                <button id="swapProperties">Swap Properties</button>
+
+                <div class="sector-filter">
+                    <div class="input-wrapper">
+                        <input type="text" id="sectorFilter" , class="fuzzy-search" placeholder="Add Sector Filter"
+                            autocomplete="off">
+                        <div id="sectorFilterResults" class="search-results"></div>
+                    </div>
+                    <div id="selectedSectors" class="selected-filters"></div>
+                </div>
+
+                <div class="industry-filter">
+                    <div class="input-wrapper">
+                        <input type="text" id="industryFilter" , class="fuzzy-search" placeholder="Add Industry Filter"
+                            autocomplete="off">
+                        <div id="industryFilterResults" class="search-results"></div>
+                    </div>
+                    <div id="selectedIndustries" class="selected-filters"></div>
+                </div>
+            </div>
+
+            <div class="control-row">
+                <div id="filters">
+                    <!-- Filters will be added dynamically -->
+                </div>
+                <button id="addFilter">Add Filter</button>
+            </div>
+            <div class="control-row">
+                <div class="control-group">
+                    <span id="colorBySectorPill" class="filter-pill">Color by Sector</span>
+                </div>
+                <div class="control-group">
+                    <span id="showDiagonalPill" class="filter-pill">Show x=y Line</span>
+                </div>
+                <div class="control-group">
+                    <span id="bestFitPill" class="filter-pill">Best Fit (Off)</span>
+                </div>
+            </div>
+        </div>
+        <div id="plotDiv"></div>
+        <div id="customLegend" class="custom-legend"></div>
+        <div class="tracked-stocks-container">
+            <div class="tracked-stocks">
+                <h2>Tracked Stocks</h2>
+                <div class="property-row">
+                    <div class="input-wrapper">
+                        <input type="text" id="addStock" class="fuzzy-search" placeholder="Add stock ticker"
+                            autocomplete="off">
+                        <div id="addStockResults" class="search-results"></div>
+                    </div>
+                </div>
+                <ul id="trackedStocksList"></ul>
+            </div>
+            <div id="stockInfoContainer" style="display: none;">
+                <h3 id="stockInfoTitle"></h3>
+                <table id="stockInfoTable">
+                    <thead>
+                        <tr>
+                            <th>Metric</th>
+                            <th>Value</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <!-- Table content will go here -->
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+    <script type="module" src="fuzzySearch.js"></script>
+    <script type="module" src="plotFunctions.js"></script>
+    <script type="module" src="script.js"></script>
+    <div id="lastUpdated" style="color: grey; font-size: 0.8em; text-align: center; margin-top: 20px;"></div>
+    <div style="color: grey; font-size: 0.8em; text-align: center; margin-top: 20px;">All data from Yahoo Finance.</div>
+    <div style="text-align: center; margin-top: 10px;"><a style="color: grey; font-size: 0.8em;"
+            href="https://ko-fi.com/nic_kup">Support me on Ko-Fi.</a>
+    </div>
+</body>
+
+</html>
