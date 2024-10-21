@@ -1,0 +1,8 @@
+{
+  "type": "module",
+  "dependencies": {
+    "csv-parser": "^3.0.0",
+    "log-update": "^6.0.0",
+    "yahoo-finance2": "^2.11.3"
+  }
+}
