@@ -1,0 +1,417 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f0f0;
+}
+
+.container {
+    max-width: 1200px;
+    margin: 0 auto;
+    background-color: white;
+    padding: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+h1, h3 {
+    margin-bottom: 10px;
+}
+
+/* Properties Control Styles */
+.properties-control {
+    position: relative;
+    display: flex;
+    align-items: stretch;
+    gap: 15px;
+    margin-bottom: 15px;
+}
+
+.properties-container {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.fuzzy-search {
+    width: 200px;
+    padding: 5px;
+}
+
+.search-results {
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 214px;
+    background-color: white;
+    max-height: 300px;
+    overflow-y: auto;
+    z-index: 1000;
+    margin-top: 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    font-size: 0.9em;
+}
+
+.search-result {
+    padding: 5px 5px;
+    cursor: pointer;
+}
+
+.search-result:hover, .search-result-active {
+    background-color: #e0e0f0;
+}
+
+.no-results {
+    padding: 5px 10px;
+    color: #656565;
+    font-style: italic;
+}
+
+.property-row {
+    position: relative;
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.property-row label {
+    white-space: nowrap;
+    height: auto;
+}
+
+.input-wrapper {
+    position: relative;
+    width: 100%;
+}
+
+#swapProperties {
+    align-self: center;
+}
+
+/* Other Controls Styles */
+.control-row {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 10px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.control-group {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+}
+
+/* Button Styles */
+button {
+    padding: 5px 10px;
+    border: none;
+    border-radius: 3px;
+    cursor: pointer;
+    background-color: #303a55;
+    color: white;
+    transition: background-color 0.5s ease;
+}
+
+button:hover {
+    background-color: #3a4b98;
+    border: 2px;
+    border-color: #0d0d0d;
+}
+
+button.removeStock {
+    background-color: #dc5151;
+}
+
+button.removeStock:hover {
+    background-color: #ff5252;
+}
+
+button.removeFilter {
+    background-color: #dc5151;
+}
+
+button.removeFilter:hover {
+    background-color: #ff5252;
+}
+
+/* Filter Styles */
+.filter {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}
+
+
+.filterValue {
+    width: 100px;
+}
+
+
+.filterComparison:hover {
+    background-color: #3a4b98;
+}
+
+/* Plot Styles */
+#plotDiv {
+    width: 100%;
+    height: 600px;
+    margin-bottom: 20px;
+}
+
+/* Tracked Stocks Styles */
+.tracked-stocks-container {
+    display: flex;
+    gap: 20px;
+}
+
+.tracked-stocks {
+    flex: 1;
+}
+
+#trackedStocksList {
+    list-style-type: none;
+    padding: 0;
+}
+
+#trackedStocksList li {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border-radius: 3px;
+}
+
+#trackedStocksList li span {
+    flex: 0 0 80px;
+    margin-right: 10px;
+}
+
+#trackedStocksList li .button-container {
+    display: flex;
+    gap: 5px;
+}
+
+/* Stock Info Styles */
+#stockInfoContainer {
+    flex: 1;
+    padding: 20px;
+    background-color: #f9f9f9;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+}
+
+#stockInfoTable {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#stockInfoTable th, #stockInfoTable td {
+    padding: 8px;
+    border-bottom: 1px solid #ddd;
+    text-align: left;
+}
+
+#stockInfoTable th {
+    background-color: #f2f2f2;
+}
+
+
+
+
+/* Last Updated Styles */
+#lastUpdated {
+    color: grey;
+    font-size: 0.8em;
+    text-align: center;
+    margin-top: 20px;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 768px) {
+    .properties-control {
+        flex-direction: column;
+    }
+
+    .property-row {
+        flex-wrap: wrap;
+    }
+
+    .property-row select {
+        width: 100%;
+    }
+
+    #swapProperties {
+        vertical-align: middle;
+    }
+
+    .tracked-stocks-container {
+        flex-direction: column;
+    }
+}
+
+/* Chart */
+
+#financialChart {
+    margin-top: 20px;
+    font-family: Arial, sans-serif;
+    position: relative;
+}
+
+.chart-content {
+    position: relative;
+    width: 100%;
+    margin-left: 0;
+}
+
+.zero-line {
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    width: 1px;
+    background-color: #999;
+    z-index: 1;
+}
+
+
+.chart-year {
+    margin-bottom: 15px;
+    position: relative;
+    height: 50px;
+}
+
+.year-label {
+    position: absolute;
+    /* left: -60px;  Adjust as needed */
+    width: 50px;
+    text-align: right;
+    font-weight: bold;
+    top: 50%;
+    transform: translateY(-50%);
+}
+
+.bars {
+    position: relative;
+    height: 100%
+}
+
+.chart-bar {
+    position: absolute;
+    height: 20px;
+    background-color: #4CAF50;
+    color: white;
+    font-size: 12px;
+    line-height: 20px;
+    border-radius: 2px;
+    white-space: nowrap;
+    overflow: hidden;
+    padding: 0 5px;
+    box-sizing: border-box;
+}
+
+.chart-bar.revenue {
+    background-color: #3366cc;
+    top: 0;
+}
+
+.chart-bar.earnings {
+    background-color: #dc3912;
+    bottom: 0;
+}
+
+.chart-legend {
+    display: flex;
+    justify-content: center;
+    margin-top: 10px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 0 10px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 10px;
+    margin-right: 5px;
+    border-radius: 2px;
+}
+
+.legend-color.revenue {
+    background-color: #3366cc;
+}
+
+.legend-color.earnings {
+    background-color: #dc3912;
+}
+
+/* Industry */
+
+/* 
+.controls {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+  } */
+  
+  .industry-filter {
+    flex: 1;
+    width: 300px;
+    left: 10%;
+    padding-left: 20px;
+  }
+  
+  .selected-filters {
+    margin-top: 10px;
+  }
+  
+  .filter-pill {
+    display: inline-block;
+    border-radius: 16px;
+    background-color: #e0e0f0;
+    padding: 5px 10px;
+    margin-right: 5px;
+    margin-bottom: 5px;
+    font-size: 14px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .filter-pill:hover {
+    opacity: 0.8;
+  }
+
+  .filter-pill.active {
+    background-color: #303a55;
+    color: #e0e0e0;
+  }
+
+  /* Custom Legend */
+
+  .custom-legend {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    margin-top: 10px;
+    padding: 10px;
+    /* background-color: #f9f9f9; */
+    border-radius: 5px;
+}
+
+.legend-item {
+    display: flex;
+    align-items: center;
+    margin: 5px 10px;
+}
+
+.legend-color {
+    width: 20px;
+    height: 20px;
+    margin-right: 5px;
+    border-radius: 3px;
+}
